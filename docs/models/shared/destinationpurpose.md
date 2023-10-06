@@ -1,0 +1,10 @@
+# DestinationPurpose
+
+
+## Fields
+
+| Field                                                                          | Type                                                                           | Required                                                                       | Description                                                                    | Example                                                                        |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `at_type`                                                                      | *Optional[str]*                                                                | :heavy_minus_sign:                                                             | N/A                                                                            | DestinationPurpose                                                             |
+| `destination`                                                                  | [Optional[shared.DestinationEnum]](undefined/models/shared/destinationenum.md) | :heavy_check_mark:                                                             | N/A                                                                            |                                                                                |
+| `purpose`                                                                      | [Optional[shared.PurposeEnum]](undefined/models/shared/purposeenum.md)         | :heavy_check_mark:                                                             | N/A                                                                            |                                                                                |

@@ -1,0 +1,10 @@
+# PriceBreakdown
+
+
+## Fields
+
+| Field                                                                | Type                                                                 | Required                                                             | Description                                                          | Example                                                              |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `at_type`                                                            | *Optional[str]*                                                      | :heavy_check_mark:                                                   | N/A                                                                  | PriceBreakdownAir                                                    |
+| `amount`                                                             | [Optional[shared.Amount]](undefined/models/shared/amount.md)         | :heavy_minus_sign:                                                   | N/A                                                                  |                                                                      |
+| `commission`                                                         | [Optional[shared.Commission]](undefined/models/shared/commission.md) | :heavy_minus_sign:                                                   | N/A                                                                  |                                                                      |

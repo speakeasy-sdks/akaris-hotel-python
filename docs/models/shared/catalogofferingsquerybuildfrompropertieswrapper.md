@@ -1,0 +1,8 @@
+# CatalogOfferingsQueryBuildFromPropertiesWrapper
+
+
+## Fields
+
+| Field                                                                                                                            | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
+| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `catalog_offerings_query_build_from_properties`                                                                                  | [Optional[shared.CatalogOfferingsQueryBuildFromProperties]](undefined/models/shared/catalogofferingsquerybuildfromproperties.md) | :heavy_minus_sign:                                                                                                               | N/A                                                                                                                              |

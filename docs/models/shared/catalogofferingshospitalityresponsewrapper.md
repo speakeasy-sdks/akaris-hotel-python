@@ -1,0 +1,8 @@
+# CatalogOfferingsHospitalityResponseWrapper
+
+
+## Fields
+
+| Field                                                                                                                  | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `catalog_offerings_hospitality_response`                                                                               | [Optional[shared.CatalogOfferingsHospitalityResponse]](undefined/models/shared/catalogofferingshospitalityresponse.md) | :heavy_minus_sign:                                                                                                     | N/A                                                                                                                    |

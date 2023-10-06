@@ -1,0 +1,10 @@
+# DocumentNumber
+
+
+## Fields
+
+| Field                                                                            | Type                                                                             | Required                                                                         | Description                                                                      | Example                                                                          |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `document_issuer`                                                                | *Optional[str]*                                                                  | :heavy_minus_sign:                                                               | Document issuer                                                                  | BA                                                                               |
+| `document_type`                                                                  | [Optional[shared.DocumentTypeEnum]](undefined/models/shared/documenttypeenum.md) | :heavy_minus_sign:                                                               | Document type like EMD, MCO                                                      | Ticket                                                                           |
+| `value`                                                                          | *Optional[str]*                                                                  | :heavy_minus_sign:                                                               | N/A                                                                              | 1259900123456                                                                    |

@@ -1,0 +1,8 @@
+# PropertiesQuerySpecificPrecisionPropertyListWrapper
+
+
+## Fields
+
+| Field                                                                                                                                    | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `properties_query_specific_precision_property_list`                                                                                      | [Optional[shared.PropertiesQuerySpecificPrecisionPropertyList]](undefined/models/shared/propertiesqueryspecificprecisionpropertylist.md) | :heavy_minus_sign:                                                                                                                       | N/A                                                                                                                                      |

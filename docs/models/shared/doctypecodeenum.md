@@ -1,0 +1,33 @@
+# DocTypeCodeEnum
+
+Codes from OTA DOC - Document Type
+
+
+## Values
+
+| Name                                  | Value                                 |
+| ------------------------------------- | ------------------------------------- |
+| `VISA`                                | Visa                                  |
+| `PASSPORT`                            | Passport                              |
+| `MILITARY_IDENTIFICATION`             | MilitaryIdentification                |
+| `DRIVERS_LICENSE`                     | DriversLicense                        |
+| `NATIONAL_IDENTITY_DOCUMENT`          | NationalIdentityDocument              |
+| `VACCINATION_CERTIFICATE`             | VaccinationCertificate                |
+| `ALIEN_REGISTRATION_NUMBER`           | AlienRegistrationNumber               |
+| `INSURANCE_POLICY_NUMBER`             | InsurancePolicyNumber                 |
+| `TAX_EXEMPTION_NUMBER`                | TaxExemptionNumber                    |
+| `VEHICLE_REGISTRATION_LICENSE_NUMBER` | VehicleRegistrationLicenseNumber      |
+| `BODER_CROSSING_CARD`                 | BoderCrossingCard                     |
+| `REFUGEE_TRAVEL_DOCUMENT`             | RefugeeTravelDocument                 |
+| `PILOTS_LICENSE`                      | PilotsLicense                         |
+| `PERMANENT_RESIDENT_CARD`             | PermanentResidentCard                 |
+| `REDRESS_NUMBER`                      | RedressNumber                         |
+| `KNOWN_TRAVELER_NUMBER`               | KnownTravelerNumber                   |
+| `NON_STANDARD`                        | Non-Standard                          |
+| `MERCHANT_NUMBER`                     | MerchantNumber                        |
+| `AIR_NEXUS_CARD`                      | AirNexusCard                          |
+| `CREW_MEMBER_CERTIFICATE`             | CrewMemberCertificate                 |
+| `PASSPORT_CARD`                       | PassportCard                          |
+| `NATURALIZATION_CERTIFICATE`          | NaturalizationCertificate             |
+| `TICKET_NUMBER`                       | TicketNumber                          |
+| `LARGE_FAMILY_DISCOUNT_CARD`          | LargeFamilyDiscountCard               |

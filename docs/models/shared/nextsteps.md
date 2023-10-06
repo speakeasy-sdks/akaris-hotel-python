@@ -1,0 +1,10 @@
+# NextSteps
+
+
+## Fields
+
+| Field                                                                             | Type                                                                              | Required                                                                          | Description                                                                       | Example                                                                           |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `next_step`                                                                       | list[[shared.NextStep](undefined/models/shared/nextstep.md)]                      | :heavy_check_mark:                                                                | N/A                                                                               |                                                                                   |
+| `base_uri`                                                                        | *Optional[str]*                                                                   | :heavy_check_mark:                                                                | The base portion of the uri in order to shorten the uri's in the individual steps |                                                                                   |
+| `id`                                                                              | *Optional[str]*                                                                   | :heavy_minus_sign:                                                                | Optional internally referenced id                                                 | 5                                                                                 |

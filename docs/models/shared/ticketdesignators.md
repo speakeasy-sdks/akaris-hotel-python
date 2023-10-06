@@ -1,0 +1,10 @@
+# TicketDesignators
+
+
+## Fields
+
+| Field                                                                                  | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `at_type`                                                                              | *Optional[str]*                                                                        | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `ticket_designator`                                                                    | *Optional[str]*                                                                        | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `traveler_identifier_ref`                                                              | list[[shared.TravelerIdentifierRef](undefined/models/shared/traveleridentifierref.md)] | :heavy_minus_sign:                                                                     | N/A                                                                                    |

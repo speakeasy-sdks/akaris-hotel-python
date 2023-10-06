@@ -1,0 +1,12 @@
+# Measurement
+
+Used for dimensional units (width, height, depth) or weight
+
+
+## Fields
+
+| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     | Example                                                                                         |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `measurement_type`                                                                              | [Optional[shared.MeasurementTypeEnum]](undefined/models/shared/measurementtypeenum.md)          | :heavy_minus_sign:                                                                              | The type of measurement such as width, height, weight                                           |                                                                                                 |
+| `unit`                                                                                          | [Optional[shared.UnitOfMeasureEnum]](undefined/models/shared/unitofmeasureenum.md)              | :heavy_minus_sign:                                                                              | The unit of measure in a code format. Refer to OpenTravel Code List Unit of Measure Code (UOM). |                                                                                                 |
+| `value`                                                                                         | *Optional[float]*                                                                               | :heavy_minus_sign:                                                                              | N/A                                                                                             | 2.22                                                                                            |

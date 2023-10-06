@@ -1,0 +1,41 @@
+# RateCategoryEnum
+
+Rate Category
+
+
+## Values
+
+| Name                           | Value                          |
+| ------------------------------ | ------------------------------ |
+| `ALL`                          | All                            |
+| `ASSOCIATION`                  | Association                    |
+| `BUSINESS`                     | Business                       |
+| `BUSINESS_STANDARD`            | BusinessStandard               |
+| `CLUB`                         | Club                           |
+| `CONVENTION`                   | Convention                     |
+| `CORPORATE`                    | Corporate                      |
+| `CONSORTIUMS`                  | Consortiums                    |
+| `DISCOUNT`                     | Discount                       |
+| `CREDENTIAL`                   | Credential                     |
+| `EMPLOYEE`                     | Employee                       |
+| `FAMILY_PLAN`                  | FamilyPlan                     |
+| `FULL_INCLUSIVE`               | FullInclusive                  |
+| `GOVERNMENT`                   | Government                     |
+| `INCLUSIVE`                    | Inclusive                      |
+| `INDUSTRY_TRAVEL_AGENT_RATE`   | Industry/TravelAgentRate       |
+| `LEISURE`                      | Leisure                        |
+| `MILITARY`                     | Military                       |
+| `MONTHLY`                      | Monthly                        |
+| `MULTI_DAY_PACKAGE`            | Multi-DayPackage               |
+| `MULT_LEVEL_NEGOTIATED_SECURE` | MultLevel/Negotiated/Secure    |
+| `OTHER`                        | Other                          |
+| `PACKAGE`                      | Package                        |
+| `PRE_PAID`                     | PrePaid                        |
+| `PROMOTIONAL`                  | Promotional                    |
+| `RACK_GENERAL`                 | RackGeneral                    |
+| `SENIOR_CITIZEN`               | SeniorCitizen                  |
+| `STANDARD`                     | Standard                       |
+| `TOUR`                         | Tour                           |
+| `VIP`                          | VIP                            |
+| `WEEKEND`                      | Weekend                        |
+| `WEEKLY`                       | Weekly                         |

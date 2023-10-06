@@ -1,0 +1,11 @@
+# Result
+
+
+## Fields
+
+| Field                                                                            | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `at_type`                                                                        | *Optional[str]*                                                                  | :heavy_minus_sign:                                                               | N/A                                                                              |
+| `error`                                                                          | list[[shared.Error](undefined/models/shared/error.md)]                           | :heavy_minus_sign:                                                               | N/A                                                                              |
+| `warning`                                                                        | list[[shared.WarningT](undefined/models/shared/warningt.md)]                     | :heavy_minus_sign:                                                               | N/A                                                                              |
+| `status`                                                                         | [Optional[shared.ResultStatusEnum]](undefined/models/shared/resultstatusenum.md) | :heavy_minus_sign:                                                               | The status of an error or warning                                                |
