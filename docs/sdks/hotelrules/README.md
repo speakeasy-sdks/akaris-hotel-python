@@ -64,13 +64,18 @@ req = operations.BuildFromCatalogOfferingsRequest(
                         id='product_1',
                         product_ref='product_1',
                     ),
+                    shared.ProductIdentifier(
+                        identifier=shared.Identifier(
+                            authority='TVPT',
+                            value='A0656EFF-FAF4-456F-B061-0161008D7C4E',
+                        ),
+                        id='product_1',
+                        product_ref='product_1',
+                    ),
                 ],
             ),
         ),
     ),
-    trace_id='silver',
-    travelport_plus_session_id='Grocery joule',
-    xauth_travelport_accessgroup='West',
 )
 
 res = s.hotel_rules.build_from_catalog_offerings(req)
@@ -121,8 +126,6 @@ req = operations.BuildHotelRulesFromCatalogOfferingRequest(
             ),
         ),
     ),
-    trace_id='Borders',
-    xauth_travelport_accessgroup='Maserati Avon',
 )
 
 res = s.hotel_rules.build_hotel_rules_from_catalog_offering(req)
@@ -164,18 +167,14 @@ req = operations.CreateHotelRulesRequest(
     offer_query_hospitality_request_wrapper=shared.OfferQueryHospitalityRequestWrapper(
         offer_query_hospitality_request=shared.OfferQueryHospitalityRequest(
             at_type='OfferQueryHospitalityRequest',
-            hotel_aggregator=shared.HotelAggregatorEnum.BONOTEL,
             property_key=shared.PropertyKey(
-                at_type='firewall',
                 chain_code='HL',
-                property_code='greedily convergence',
+                property_code='Islands harness programming',
             ),
             rate_candidate=shared.RateCandidate(
                 at_type='RateCandidate',
                 chain_code='HL',
-                priority=897319,
                 property_code='HL12345',
-                rate_category=shared.RateCategoryEnum.TOUR,
                 rate_code='HL123',
             ),
             room_stay_candidates=shared.RoomStayCandidates(
@@ -194,32 +193,21 @@ req = operations.CreateHotelRulesRequest(
                         ),
                         room_amenity=[
                             shared.RoomAmenity(
-                                at_type='cyan Southwest',
                                 inclusion=[
-                                    'Sports',
+                                    'joyously',
                                 ],
                                 name='24 hour Room Service',
-                                code='COM hmph Liaison',
                                 description='WiFi',
-                                included_ind=False,
-                                quantity=738116,
-                                surcharge_ind=False,
                             ),
                         ],
                     ),
                 ],
             ),
-            booking_code='female',
-            checkin_date=dateutil.parser.parse('2023-04-26').date(),
-            checkout_date=dateutil.parser.parse('2021-11-24').date(),
-            number_of_guests=637308,
-            requested_currency='Ball time',
-            stored_amount=1058.18,
-            stored_currency='brr',
+            checkin_date=dateutil.parser.parse('2023-05-22').date(),
+            checkout_date=dateutil.parser.parse('2023-09-14').date(),
+            number_of_guests=105598,
         ),
     ),
-    trace_id='Market Multigender',
-    xauth_travelport_accessgroup='Hatchback',
 )
 
 res = s.hotel_rules.create_hotel_rules(req)

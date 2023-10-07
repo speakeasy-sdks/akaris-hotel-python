@@ -27,17 +27,11 @@ req = operations.CreatePrecisionRequest(
     properties_query_specific_precision_property_list_wrapper=shared.PropertiesQuerySpecificPrecisionPropertyListWrapper(
         properties_query_specific_precision_property_list=shared.PropertiesQuerySpecificPrecisionPropertyList(
             at_type='PropertiesQuerySpecificPropertyList',
-            commissionable_ind=False,
-            meals_included=shared.MealsIncluded(
-                breakfast_ind=False,
-                dinner_ind=False,
-                lunch_ind=False,
-            ),
+            meals_included=shared.MealsIncluded(),
             property_key=[
                 shared.PropertyKey(
-                    at_type='City',
                     chain_code='HL',
-                    property_code='Northeast',
+                    property_code='City',
                 ),
             ],
             rate_candidates=shared.RateCandidates(
@@ -46,16 +40,11 @@ req = operations.CreatePrecisionRequest(
                     shared.RateCandidate(
                         at_type='RateCandidate',
                         chain_code='HL',
-                        priority=694488,
                         property_code='HL12345',
-                        rate_category=shared.RateCategoryEnum.MULTI_DAY_PACKAGE,
                         rate_code='HL123',
                     ),
                 ],
-                post_pay_rates_only_ind=False,
-                pre_pay_rates_only_ind=False,
             ),
-            refundable_ind=False,
             room_stay_candidates=shared.RoomStayCandidates(
                 room_stay_candidate=[
                     shared.RoomStayCandidate(
@@ -72,35 +61,21 @@ req = operations.CreatePrecisionRequest(
                         ),
                         room_amenity=[
                             shared.RoomAmenity(
-                                at_type='orchid',
                                 inclusion=[
-                                    'intangible',
+                                    'Music',
                                 ],
                                 name='24 hour Room Service',
-                                code='lavender naive',
                                 description='WiFi',
-                                included_ind=False,
-                                quantity=380645,
-                                surcharge_ind=False,
                             ),
                         ],
                     ),
                 ],
             ),
-            smoking_ind=False,
-            checkin_date=dateutil.parser.parse('2021-12-06').date(),
-            checkout_date=dateutil.parser.parse('2023-05-08').date(),
-            image_size=shared.ImageSizeEnum.THUMBNAIL,
-            maximum_rate=3578.82,
-            minimum_rate=6203.38,
-            number_of_guests=123772,
-            number_of_rooms=905681,
-            requested_currency='synthesize Brand',
-            return_all_images_ind=False,
+            checkin_date=dateutil.parser.parse('2021-07-05').date(),
+            checkout_date=dateutil.parser.parse('2023-01-31').date(),
+            number_of_guests=598172,
         ),
     ),
-    trace_id='kilogram longingly Cambridgeshire',
-    xauth_travelport_accessgroup='Integration',
 )
 
 res = s.precision_search_hotel.create_precision(req)
@@ -147,16 +122,9 @@ req = operations.PrecisionSearchPropertiesRequest(
             ],
             check_in_date=dateutil.parser.parse('2022-03-27').date(),
             check_out_date=dateutil.parser.parse('2022-02-02').date(),
-            commissionable_ind=False,
-            hotel_name='Gender',
-            image_size=shared.ImageSizeEnum.SMALL,
-            meals_included=shared.MealsIncluded(
-                breakfast_ind=False,
-                dinner_ind=False,
-                lunch_ind=False,
-            ),
+            meals_included=shared.MealsIncluded(),
             property_amenity_code=[
-                'female',
+                'Rubber',
             ],
             rate_candidates=shared.RateCandidates(
                 at_type='RateCandidates',
@@ -164,17 +132,11 @@ req = operations.PrecisionSearchPropertiesRequest(
                     shared.RateCandidate(
                         at_type='RateCandidate',
                         chain_code='HL',
-                        priority=943883,
                         property_code='HL12345',
-                        rate_category=shared.RateCategoryEnum.VIP,
                         rate_code='HL123',
                     ),
                 ],
-                post_pay_rates_only_ind=False,
-                pre_pay_rates_only_ind=False,
             ),
-            refundable_ind=False,
-            requested_currency='Fundamental copy defect',
             room_stay_candidate=[
                 shared.RoomStayCandidate(
                     guest_counts=shared.GuestCounts(
@@ -190,16 +152,11 @@ req = operations.PrecisionSearchPropertiesRequest(
                     ),
                     room_amenity=[
                         shared.RoomAmenity(
-                            at_type='male Cambridgeshire',
                             inclusion=[
-                                'bulk',
+                                'capability',
                             ],
                             name='24 hour Room Service',
-                            code='Cotton',
                             description='WiFi',
-                            included_ind=False,
-                            quantity=204092,
-                            surcharge_ind=False,
                         ),
                     ],
                 ),
@@ -207,17 +164,11 @@ req = operations.PrecisionSearchPropertiesRequest(
             search_by=shared.SearchBy(
                 at_type='SearchBy',
                 search_radius=shared.Distance(
-                    unit_of_distance=shared.UnitOfDistanceEnum.MILES,
                     value=25,
                 ),
             ),
-            smoking_ind=False,
-            sort_order=shared.HotelSortOrderEnum.PROXIMITY,
-            return_all_images_ind=False,
         ),
     ),
-    trace_id='oddly system Customer',
-    xauth_travelport_accessgroup='glistening Blues',
 )
 
 res = s.precision_search_hotel.precision_search_properties(req)

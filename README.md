@@ -7,7 +7,7 @@
 </div>
 
 <!-- Start SDK Installation -->
-# SDK Installation
+## SDK Installation
 
 ```bash
 pip install git+https://github.com/speakeasy-sdks/akaris-hotel-python.git
@@ -16,8 +16,6 @@ pip install git+https://github.com/speakeasy-sdks/akaris-hotel-python.git
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
-
-
 ```python
 import akaris_backend
 import dateutil.parser
@@ -42,11 +40,9 @@ req = operations.CreateHotelAvailabilityRequest(
                             shared.PropertyRequest(
                                 at_type='PropertyRequest',
                                 property_key=shared.PropertyKey(
-                                    at_type='Philippines North',
                                     chain_code='HL',
-                                    property_code='male Locks',
+                                    property_code='Philippines North',
                                 ),
-                                more_rates_token='whereas',
                             ),
                         ],
                         rate_candidates=shared.RateCandidates(
@@ -55,14 +51,10 @@ req = operations.CreateHotelAvailabilityRequest(
                                 shared.RateCandidate(
                                     at_type='RateCandidate',
                                     chain_code='HL',
-                                    priority=219354,
                                     property_code='HL12345',
-                                    rate_category=shared.RateCategoryEnum.OTHER,
                                     rate_code='HL123',
                                 ),
                             ],
-                            post_pay_rates_only_ind=False,
-                            pre_pay_rates_only_ind=False,
                         ),
                         room_stay_candidates=shared.RoomStayCandidates(
                             room_stay_candidate=[
@@ -80,57 +72,42 @@ req = operations.CreateHotelAvailabilityRequest(
                                     ),
                                     room_amenity=[
                                         shared.RoomAmenity(
-                                            at_type='buckwheat HEX eius',
                                             inclusion=[
-                                                'Screen',
+                                                'yowza',
                                             ],
                                             name='24 hour Room Service',
-                                            code='Paradigm East',
                                             description='WiFi',
-                                            included_ind=False,
-                                            quantity=561488,
-                                            surcharge_ind=False,
                                         ),
                                     ],
                                 ),
                             ],
                         ),
-                        number_of_rooms=747350,
                     ),
                     maximum_amount=shared.CurrencyAmount(
                         approximate_ind=True,
                         code='USD',
-                        currency_source=shared.CurrencySourceEnum.SUPPLIER,
                         minor_unit=2,
                         value=124.56,
                     ),
                     minimum_amount=shared.CurrencyAmount(
                         approximate_ind=True,
                         code='USD',
-                        currency_source=shared.CurrencySourceEnum.SUPPLIER,
                         minor_unit=2,
                         value=124.56,
                     ),
                     search_control_console_channel_id=shared.SearchControlConsoleChannelID(
-                        scc_type='multimedia Pop',
                         value='2',
                     ),
                     stay_dates=shared.DateOrDateWindows(
                         duration='P1D',
-                        duration_unit=shared.DurationUnitEnum.HOURS,
                         end=dateutil.parser.parse('2023-03-03').date(),
                         specific=dateutil.parser.parse('2023-03-03').date(),
                         start=dateutil.parser.parse('2023-03-03').date(),
                     ),
-                    max_response_wait_time=37199,
-                    requested_currency='ROI',
-                    verbose_response_ind=False,
                 ),
             ],
         ),
     ),
-    trace_id='Folk Washington female',
-    xauth_travelport_accessgroup='phooey poorly male',
 )
 
 res = s.hotel_availability.create_hotel_availability(req)
@@ -141,26 +118,26 @@ if res.catalog_offerings_hospitality_response_wrapper is not None:
 <!-- End SDK Example Usage -->
 
 <!-- Start SDK Available Operations -->
-# Available Resources and Operations
+## Available Resources and Operations
 
 
-## [hotel_availability](docs/sdks/hotelavailability/README.md)
+### [hotel_availability](docs/sdks/hotelavailability/README.md)
 
 * [create_hotel_availability](docs/sdks/hotelavailability/README.md#create_hotel_availability) - Request hotel availability
 * [hotel_availability_from_properties](docs/sdks/hotelavailability/README.md#hotel_availability_from_properties) - Request hotel availability from precision search response
 
-## [hotel_rules](docs/sdks/hotelrules/README.md)
+### [hotel_rules](docs/sdks/hotelrules/README.md)
 
 * [build_from_catalog_offerings](docs/sdks/hotelrules/README.md#build_from_catalog_offerings) - To be deprecated and replaced with buildfromcatalogoffering
 * [build_hotel_rules_from_catalog_offering](docs/sdks/hotelrules/README.md#build_hotel_rules_from_catalog_offering) - Available January 2023. Build rules by referenceing availability response
 * [create_hotel_rules](docs/sdks/hotelrules/README.md#create_hotel_rules) - Full Payload hotel rules request
 
-## [precision_search_hotel](docs/sdks/precisionsearchhotel/README.md)
+### [precision_search_hotel](docs/sdks/precisionsearchhotel/README.md)
 
 * [create_precision](docs/sdks/precisionsearchhotel/README.md#create_precision) - Precision Search hotels by property ID
 * [precision_search_properties](docs/sdks/precisionsearchhotel/README.md#precision_search_properties) - Search hotels by location
 
-## [reservation_hotel](docs/sdks/reservationhotel/README.md)
+### [reservation_hotel](docs/sdks/reservationhotel/README.md)
 
 * [build_hotel_reservation](docs/sdks/reservationhotel/README.md#build_hotel_reservation) - Single payload booking request
 * [cancel_hotel_offer](docs/sdks/reservationhotel/README.md#cancel_hotel_offer) - Cancel an Offer within a Reservation
@@ -168,7 +145,7 @@ if res.catalog_offerings_hospitality_response_wrapper is not None:
 * [retrieve_hotel_reservation](docs/sdks/reservationhotel/README.md#retrieve_hotel_reservation) - Retrieve a Reservation
 * [update_hotel_reservation](docs/sdks/reservationhotel/README.md#update_hotel_reservation) - Update a reservation
 
-## [search_hotel](docs/sdks/searchhotel/README.md)
+### [search_hotel](docs/sdks/searchhotel/README.md)
 
 * [create](docs/sdks/searchhotel/README.md#create) - Search hotels by property ID
 * [get_properties_detail](docs/sdks/searchhotel/README.md#get_properties_detail) - Request hotel details
@@ -177,8 +154,6 @@ if res.catalog_offerings_hospitality_response_wrapper is not None:
 <!-- End SDK Available Operations -->
 
 <!-- Start Dev Containers -->
-
-
 
 <!-- End Dev Containers -->
 
@@ -190,8 +165,6 @@ returned response object will have a `Next` method that can be called to pull do
 return value of `Next` is `None`, then there are no more pages to be fetched.
 
 Here's an example of one such pagination call:
-
-
 <!-- End Pagination -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
