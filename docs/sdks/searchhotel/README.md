@@ -31,9 +31,8 @@ req = operations.CreateRequest(
             at_type='PropertiesQuerySpecificPropertyList',
             property_key=[
                 shared.PropertyKey(
-                    at_type='Electric pirouette',
                     chain_code='HL',
-                    property_code='Sausages ASCII',
+                    property_code='Electric pirouette',
                 ),
             ],
             rate_candidates=shared.RateCandidates(
@@ -42,14 +41,10 @@ req = operations.CreateRequest(
                     shared.RateCandidate(
                         at_type='RateCandidate',
                         chain_code='HL',
-                        priority=754558,
                         property_code='HL12345',
-                        rate_category=shared.RateCategoryEnum.LEISURE,
                         rate_code='HL123',
                     ),
                 ],
-                post_pay_rates_only_ind=False,
-                pre_pay_rates_only_ind=False,
             ),
             room_stay_candidates=shared.RoomStayCandidates(
                 room_stay_candidate=[
@@ -67,34 +62,21 @@ req = operations.CreateRequest(
                         ),
                         room_amenity=[
                             shared.RoomAmenity(
-                                at_type='4th connecting',
                                 inclusion=[
-                                    'Bespoke',
+                                    'conglomeration',
                                 ],
                                 name='24 hour Room Service',
-                                code='Congo channels AGP',
                                 description='WiFi',
-                                included_ind=False,
-                                quantity=373347,
-                                surcharge_ind=False,
                             ),
                         ],
                     ),
                 ],
             ),
-            checkin_date=dateutil.parser.parse('2022-02-20').date(),
-            checkout_date=dateutil.parser.parse('2021-05-08').date(),
-            image_size=shared.ImageSizeEnum.SMALL,
-            maximum_rate=7587.04,
-            minimum_rate=4275.16,
-            number_of_guests=418992,
-            number_of_rooms=285813,
-            requested_currency='mesh',
-            return_all_images_ind=False,
+            checkin_date=dateutil.parser.parse('2023-10-30').date(),
+            checkout_date=dateutil.parser.parse('2022-06-05').date(),
+            number_of_guests=113158,
         ),
     ),
-    trace_id='silver compressing Berkshire',
-    xauth_travelport_accessgroup='neque mainstream',
 )
 
 res = s.search_hotel.create(req)
@@ -132,11 +114,8 @@ s = akaris_backend.AkarisBackend(
 )
 
 req = operations.GetPropertiesDetailRequest(
-    image_size=shared.ImageSizeEnum.SMALL,
-    trace_id='Barium haptic Lead',
-    xauth_travelport_accessgroup='array Diverse Northwest',
-    chain_code='payment East ah',
-    property_code='transform Rustic',
+    chain_code='Road haptic',
+    property_code='Vineland array',
 )
 
 res = s.search_hotel.get_properties_detail(req)
@@ -174,10 +153,8 @@ s = akaris_backend.AkarisBackend(
 )
 
 req = operations.GetPropertiesPageRequest(
-    trace_id='toothbrush',
-    xauth_travelport_accessgroup='Cambridgeshire',
-    identifier='synergies Executive female',
-    page_number='quantifying Tesla',
+    identifier='toothbrush',
+    page_number='Cambridgeshire',
 )
 
 res = s.search_hotel.get_properties_page(req)
@@ -224,10 +201,8 @@ req = operations.SearchPropertiesRequest(
             ],
             check_in_date=dateutil.parser.parse('2022-01-14').date(),
             check_out_date=dateutil.parser.parse('2022-11-04').date(),
-            hotel_name='Clarita neural synthesize',
-            image_size=shared.ImageSizeEnum.MEDIUM,
             property_amenity_code=[
-                'Tricycle',
+                'Diesel',
             ],
             rate_candidates=shared.RateCandidates(
                 at_type='RateCandidates',
@@ -235,16 +210,11 @@ req = operations.SearchPropertiesRequest(
                     shared.RateCandidate(
                         at_type='RateCandidate',
                         chain_code='HL',
-                        priority=163919,
                         property_code='HL12345',
-                        rate_category=shared.RateCategoryEnum.CORPORATE,
                         rate_code='HL123',
                     ),
                 ],
-                post_pay_rates_only_ind=False,
-                pre_pay_rates_only_ind=False,
             ),
-            requested_currency='Sharable deploy Sports',
             room_stay_candidate=[
                 shared.RoomStayCandidate(
                     guest_counts=shared.GuestCounts(
@@ -260,16 +230,11 @@ req = operations.SearchPropertiesRequest(
                     ),
                     room_amenity=[
                         shared.RoomAmenity(
-                            at_type='Southeast Gloves array',
                             inclusion=[
-                                'United',
+                                'Gasoline',
                             ],
                             name='24 hour Room Service',
-                            code='lime',
                             description='WiFi',
-                            included_ind=False,
-                            quantity=146819,
-                            surcharge_ind=False,
                         ),
                     ],
                 ),
@@ -277,16 +242,11 @@ req = operations.SearchPropertiesRequest(
             search_by=shared.SearchBy(
                 at_type='SearchBy',
                 search_radius=shared.Distance(
-                    unit_of_distance=shared.UnitOfDistanceEnum.KILOMETERS,
                     value=25,
                 ),
             ),
-            sort_order=shared.HotelSortOrderEnum.STAR_RATING,
-            return_all_images_ind=False,
         ),
     ),
-    trace_id='South',
-    xauth_travelport_accessgroup='Wooden',
 )
 
 res = s.search_hotel.search_properties(req)

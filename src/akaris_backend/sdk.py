@@ -20,7 +20,7 @@ class AkarisBackend:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
-                 security: shared.Security = None,
+                 o_auth2: str,
                  server_idx: int = None,
                  server_url: str = None,
                  url_params: dict[str, str] = None,
@@ -29,8 +29,8 @@ class AkarisBackend:
                  ) -> None:
         """Instantiates the SDK configuring it with the provided parameters.
         
-        :param security: The security details required for authentication
-        :type security: shared.Security
+        :param o_auth2: The o_auth2 required for authentication
+        :type o_auth2: str
         :param server_idx: The index of the server to use for all operations
         :type server_idx: int
         :param server_url: The server URL to use for all operations
@@ -45,7 +45,9 @@ class AkarisBackend:
         if client is None:
             client = requests_http.Session()
         
+        
         security_client = utils.configure_security_client(client, security)
+        
         
         if server_url is not None:
             if url_params is not None:

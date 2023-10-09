@@ -25,11 +25,9 @@ req = operations.CreateHotelAvailabilityRequest(
                             shared.PropertyRequest(
                                 at_type='PropertyRequest',
                                 property_key=shared.PropertyKey(
-                                    at_type='Philippines North',
                                     chain_code='HL',
-                                    property_code='male Locks',
+                                    property_code='Philippines North',
                                 ),
-                                more_rates_token='whereas',
                             ),
                         ],
                         rate_candidates=shared.RateCandidates(
@@ -38,14 +36,10 @@ req = operations.CreateHotelAvailabilityRequest(
                                 shared.RateCandidate(
                                     at_type='RateCandidate',
                                     chain_code='HL',
-                                    priority=219354,
                                     property_code='HL12345',
-                                    rate_category=shared.RateCategoryEnum.OTHER,
                                     rate_code='HL123',
                                 ),
                             ],
-                            post_pay_rates_only_ind=False,
-                            pre_pay_rates_only_ind=False,
                         ),
                         room_stay_candidates=shared.RoomStayCandidates(
                             room_stay_candidate=[
@@ -63,57 +57,42 @@ req = operations.CreateHotelAvailabilityRequest(
                                     ),
                                     room_amenity=[
                                         shared.RoomAmenity(
-                                            at_type='buckwheat HEX eius',
                                             inclusion=[
-                                                'Screen',
+                                                'yowza',
                                             ],
                                             name='24 hour Room Service',
-                                            code='Paradigm East',
                                             description='WiFi',
-                                            included_ind=False,
-                                            quantity=561488,
-                                            surcharge_ind=False,
                                         ),
                                     ],
                                 ),
                             ],
                         ),
-                        number_of_rooms=747350,
                     ),
                     maximum_amount=shared.CurrencyAmount(
                         approximate_ind=True,
                         code='USD',
-                        currency_source=shared.CurrencySourceEnum.SUPPLIER,
                         minor_unit=2,
                         value=124.56,
                     ),
                     minimum_amount=shared.CurrencyAmount(
                         approximate_ind=True,
                         code='USD',
-                        currency_source=shared.CurrencySourceEnum.SUPPLIER,
                         minor_unit=2,
                         value=124.56,
                     ),
                     search_control_console_channel_id=shared.SearchControlConsoleChannelID(
-                        scc_type='multimedia Pop',
                         value='2',
                     ),
                     stay_dates=shared.DateOrDateWindows(
                         duration='P1D',
-                        duration_unit=shared.DurationUnitEnum.HOURS,
                         end=dateutil.parser.parse('2023-03-03').date(),
                         specific=dateutil.parser.parse('2023-03-03').date(),
                         start=dateutil.parser.parse('2023-03-03').date(),
                     ),
-                    max_response_wait_time=37199,
-                    requested_currency='ROI',
-                    verbose_response_ind=False,
                 ),
             ],
         ),
     ),
-    trace_id='Folk Washington female',
-    xauth_travelport_accessgroup='phooey poorly male',
 )
 
 res = s.hotel_availability.create_hotel_availability(req)
