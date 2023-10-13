@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import nextstepmethodenum as shared_nextstepmethodenum
+from ..errors import nextstepmethodenum as errors_nextstepmethodenum
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
@@ -15,7 +15,7 @@ class NextStep(Exception):
     r"""A URL that describes a step that can be applied to the resource containing the next step structure."""
     action: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('action') }})
     r"""The action this next step is intended to achieve"""
-    method: shared_nextstepmethodenum.NextStepMethodEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('method') }})
+    method: errors_nextstepmethodenum.NextStepMethodEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('method') }})
     r"""Describes the set of potential methods that can be taken after an operation."""
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
     r"""Additional clarification for the next step"""

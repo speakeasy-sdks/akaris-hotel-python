@@ -110,6 +110,7 @@ res = s.hotel_availability.create_hotel_availability(req)
 
 if res.catalog_offerings_hospitality_response_wrapper is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -167,6 +168,7 @@ res = s.hotel_availability.hotel_availability_from_properties(req)
 
 if res.catalog_offerings_hospitality_response_wrapper is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

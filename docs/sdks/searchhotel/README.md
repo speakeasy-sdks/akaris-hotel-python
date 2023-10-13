@@ -83,6 +83,7 @@ res = s.search_hotel.create(req)
 
 if res.properties_response_wrapper is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -122,6 +123,7 @@ res = s.search_hotel.get_properties_detail(req)
 
 if res.properties_response_wrapper is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -161,6 +163,7 @@ res = s.search_hotel.get_properties_page(req)
 
 if res.properties_response_wrapper is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -253,6 +256,7 @@ res = s.search_hotel.search_properties(req)
 
 if res.properties_response_wrapper is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

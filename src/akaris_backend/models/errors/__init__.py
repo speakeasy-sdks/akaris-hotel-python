@@ -8,9 +8,11 @@ from .error import *
 from .identifier import *
 from .namevaluepair import *
 from .nextstep import *
+from .nextstepmethodenum import *
 from .nextsteps import *
 from .referencelist import *
 from .result import *
+from .resultstatusenum import *
 from .warning import *
 from .sdkerror import SDKError
-__all__ = ["BaseResponse","ConversionRate","CurrencyCode","CurrencyRateConversion","Error","Identifier","NameValuePair","NextStep","NextSteps","ReferenceList","Result","WarningT","SDKError"]
+__all__ = ["BaseResponse","ConversionRate","CurrencyCode","CurrencyRateConversion","Error","Identifier","NameValuePair","NextStep","NextStepMethodEnum","NextSteps","ReferenceList","Result","ResultStatusEnum","WarningT","SDKError"]
