@@ -7,16 +7,15 @@ from ..shared import catalogoffering as shared_catalogoffering
 from ..shared import identifier as shared_identifier
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CatalogOfferings:
     at_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type') }})
-    catalog_offering: list[shared_catalogoffering.CatalogOffering] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('CatalogOffering') }})
-    ancillary_offering: Optional[list[shared_ancillaryofferingid.AncillaryOfferingID]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('AncillaryOffering'), 'exclude': lambda f: f is None }})
+    catalog_offering: List[shared_catalogoffering.CatalogOffering] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('CatalogOffering') }})
+    ancillary_offering: Optional[List[shared_ancillaryofferingid.AncillaryOfferingID]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('AncillaryOffering'), 'exclude': lambda f: f is None }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     r"""Local indentifier within a given message for this object."""
     identifier: Optional[shared_identifier.Identifier] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Identifier'), 'exclude': lambda f: f is None }})

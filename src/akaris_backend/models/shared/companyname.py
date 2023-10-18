@@ -4,11 +4,10 @@ from __future__ import annotations
 import dataclasses
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CompanyName:
     r"""Identifies a company by name."""
@@ -24,7 +23,7 @@ class CompanyName:
     r"""Use this id to internally identify this company in NextSteps"""
     short_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('shortName'), 'exclude': lambda f: f is None }})
     r"""Used to provide the company common name"""
-    system_of_record: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('systemOfRecord'), 'exclude': lambda f: f is None }})
+    system_of_record: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('systemOfRecord'), 'exclude': lambda f: f is None }})
     r"""The system(s) that maintain the data"""
     value: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value'), 'exclude': lambda f: f is None }})
     

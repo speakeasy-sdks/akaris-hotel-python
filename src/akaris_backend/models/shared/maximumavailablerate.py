@@ -8,7 +8,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class MaximumAvailableRate:
     r"""Maximum Available Rate for this Property, including the authority who provided the rate if it is different from the PropertyInfo authority."""

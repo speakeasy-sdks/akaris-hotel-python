@@ -5,12 +5,12 @@ import dataclasses
 from ..shared import roomstaycandidate as shared_roomstaycandidate
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
+from typing import List
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class RoomStayCandidates:
-    room_stay_candidate: list[shared_roomstaycandidate.RoomStayCandidate] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('RoomStayCandidate') }})
+    room_stay_candidate: List[shared_roomstaycandidate.RoomStayCandidate] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('RoomStayCandidate') }})
     
 

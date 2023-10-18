@@ -9,11 +9,10 @@ from ..shared import enum_addressrole as shared_enum_addressrole
 from ..shared import stateprov as shared_stateprov
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class Address:
     at_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type') }})
@@ -21,7 +20,7 @@ class Address:
     r"""City (e.g., Dublin), town, or postal station (i.e., a postal service territory, often used in a military address)."""
     addressee: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Addressee'), 'exclude': lambda f: f is None }})
     r"""The name of the company or person to be addressed"""
-    address_line: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('AddressLine'), 'exclude': lambda f: f is None }})
+    address_line: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('AddressLine'), 'exclude': lambda f: f is None }})
     r"""Additional address line details"""
     bldg_room: Optional[shared_addressbldgroom.AddressBldgRoom] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('BldgRoom'), 'exclude': lambda f: f is None }})
     r"""Address with building and room number"""

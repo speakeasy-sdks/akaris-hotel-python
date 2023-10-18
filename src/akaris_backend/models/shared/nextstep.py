@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class NextStep:
     r"""A URL that describes a step that can be applied to the resource containing the next step structure."""

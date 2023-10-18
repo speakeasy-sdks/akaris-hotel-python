@@ -5,17 +5,16 @@ import dataclasses
 from ..shared import namevaluepair as shared_namevaluepair
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class WarningT:
     at_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type') }})
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Message'), 'exclude': lambda f: f is None }})
     r"""The Travelport standardized error or warning message"""
-    name_value_pair: Optional[list[shared_namevaluepair.NameValuePair]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('NameValuePair'), 'exclude': lambda f: f is None }})
+    name_value_pair: Optional[List[shared_namevaluepair.NameValuePair]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('NameValuePair'), 'exclude': lambda f: f is None }})
     status_code: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('StatusCode'), 'exclude': lambda f: f is None }})
     r"""Http standard response code"""
     

@@ -37,7 +37,7 @@ req = operations.CreateHotelAvailabilityRequest(
                                 at_type='PropertyRequest',
                                 property_key=shared.PropertyKey(
                                     chain_code='HL',
-                                    property_code='Philippines North',
+                                    property_code='female',
                                 ),
                             ),
                         ],
@@ -69,7 +69,7 @@ req = operations.CreateHotelAvailabilityRequest(
                                     room_amenity=[
                                         shared.RoomAmenity(
                                             inclusion=[
-                                                'yowza',
+                                                'South',
                                             ],
                                             name='24 hour Room Service',
                                             description='WiFi',

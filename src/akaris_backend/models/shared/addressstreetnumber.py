@@ -8,7 +8,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class AddressStreetNumber:
     r"""The street number alone is the numerical number that precedes the street name in the address"""

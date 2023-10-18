@@ -15,24 +15,23 @@ from ..shared import travelagency as shared_travelagency
 from ..shared import travelerid as shared_travelerid
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ReservationBuild:
     at_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type') }})
-    traveler: list[shared_travelerid.TravelerID] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Traveler') }})
+    traveler: List[shared_travelerid.TravelerID] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Traveler') }})
     accounting: Optional[shared_accountingid.AccountingID] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Accounting'), 'exclude': lambda f: f is None }})
-    document_overrides: Optional[list[shared_documentoverridesid.DocumentOverridesID]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('DocumentOverrides'), 'exclude': lambda f: f is None }})
-    form_of_payment: Optional[list[shared_formofpaymentid.FormOfPaymentID]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('FormOfPayment'), 'exclude': lambda f: f is None }})
-    payment: Optional[list[shared_paymentid.PaymentID]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Payment'), 'exclude': lambda f: f is None }})
-    preference: Optional[list[shared_preferenceid.PreferenceID]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Preference'), 'exclude': lambda f: f is None }})
-    primary_contact: Optional[list[shared_primarycontactid.PrimaryContactID]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PrimaryContact'), 'exclude': lambda f: f is None }})
+    document_overrides: Optional[List[shared_documentoverridesid.DocumentOverridesID]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('DocumentOverrides'), 'exclude': lambda f: f is None }})
+    form_of_payment: Optional[List[shared_formofpaymentid.FormOfPaymentID]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('FormOfPayment'), 'exclude': lambda f: f is None }})
+    payment: Optional[List[shared_paymentid.PaymentID]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Payment'), 'exclude': lambda f: f is None }})
+    preference: Optional[List[shared_preferenceid.PreferenceID]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Preference'), 'exclude': lambda f: f is None }})
+    primary_contact: Optional[List[shared_primarycontactid.PrimaryContactID]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PrimaryContact'), 'exclude': lambda f: f is None }})
     receipt_confirmation: Optional[shared_receiptconfirmation.ReceiptConfirmation] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ReceiptConfirmation'), 'exclude': lambda f: f is None }})
-    reservation_comment: Optional[list[shared_reservationcommentid.ReservationCommentID]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ReservationComment'), 'exclude': lambda f: f is None }})
-    special_service: Optional[list[shared_specialserviceid.SpecialServiceID]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('SpecialService'), 'exclude': lambda f: f is None }})
+    reservation_comment: Optional[List[shared_reservationcommentid.ReservationCommentID]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ReservationComment'), 'exclude': lambda f: f is None }})
+    special_service: Optional[List[shared_specialserviceid.SpecialServiceID]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('SpecialService'), 'exclude': lambda f: f is None }})
     travel_agency: Optional[shared_travelagency.TravelAgency] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TravelAgency'), 'exclude': lambda f: f is None }})
     
 

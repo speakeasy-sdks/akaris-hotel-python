@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ReservationDetailWrapper:
     reservation_detail: Optional[shared_reservationdetail.ReservationDetail] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ReservationDetail'), 'exclude': lambda f: f is None }})

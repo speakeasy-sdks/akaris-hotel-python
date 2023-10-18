@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PropertyRequest:
     property_key: shared_propertykey.PropertyKey = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PropertyKey') }})

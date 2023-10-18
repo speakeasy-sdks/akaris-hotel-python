@@ -22,47 +22,46 @@ from ..shared import virtualtour as shared_virtualtour
 from ..shared import yesnounknownenum as shared_yesnounknownenum
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PropertyDetail:
     at_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type') }})
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""The property name"""
     property_key: shared_propertykey.PropertyKey = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PropertyKey') }})
-    accessibility_feature: Optional[list[shared_ota_codewithdescription.OTACodeWithDescription]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('AccessibilityFeature'), 'exclude': lambda f: f is None }})
+    accessibility_feature: Optional[List[shared_ota_codewithdescription.OTACodeWithDescription]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('AccessibilityFeature'), 'exclude': lambda f: f is None }})
     address: Optional[shared_address.Address] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Address'), 'exclude': lambda f: f is None }})
-    attraction: Optional[list[shared_attraction.Attraction]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Attraction'), 'exclude': lambda f: f is None }})
-    business_service: Optional[list[shared_service.Service]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('BusinessService'), 'exclude': lambda f: f is None }})
+    attraction: Optional[List[shared_attraction.Attraction]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Attraction'), 'exclude': lambda f: f is None }})
+    business_service: Optional[List[shared_service.Service]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('BusinessService'), 'exclude': lambda f: f is None }})
     check_in_out_policy: Optional[shared_checkinoutpolicy.CheckInOutPolicy] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('CheckInOutPolicy'), 'exclude': lambda f: f is None }})
     class_type_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('classTypeCode'), 'exclude': lambda f: f is None }})
     r"""The OTA code of the property detail"""
     complimentary_parking: Optional[shared_yesnounknownenum.YesNoUnknownEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('complimentaryParking'), 'exclude': lambda f: f is None }})
     r"""Yes , No , Unknown"""
-    description: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Description'), 'exclude': lambda f: f is None }})
+    description: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Description'), 'exclude': lambda f: f is None }})
     driving_directions: Optional[shared_textfree.TextFree] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('DrivingDirections'), 'exclude': lambda f: f is None }})
     r"""Textual information to provide descriptions and\/or additional information."""
     geo_location: Optional[shared_geolocation.GeoLocation] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('GeoLocation'), 'exclude': lambda f: f is None }})
     r"""Used to specify the geographic coordinates of a location"""
-    guest_room_info: Optional[list[shared_guestroominfo.GuestRoomInfo]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('GuestRoomInfo'), 'exclude': lambda f: f is None }})
+    guest_room_info: Optional[List[shared_guestroominfo.GuestRoomInfo]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('GuestRoomInfo'), 'exclude': lambda f: f is None }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     r"""Local reference id."""
     identifier: Optional[shared_identifier.Identifier] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Identifier'), 'exclude': lambda f: f is None }})
     r"""Identifier provides the ability to create a globally unique identifier. For the identifier to be globally unique it must have a system provided identifier and the system must be identified using a global naming authority. System identification uses the domain naming system (DNS) to assure they are globally unique and should be an URL. The system provided ID will typically be a primary or surrogate key in a database."""
-    image: Optional[list[shared_image.Image]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Image'), 'exclude': lambda f: f is None }})
+    image: Optional[List[shared_image.Image]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Image'), 'exclude': lambda f: f is None }})
     location_catagory_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('locationCatagoryCode'), 'exclude': lambda f: f is None }})
     r"""Location category code"""
     meeting_rooms: Optional[shared_meetingrooms.MeetingRooms] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('MeetingRooms'), 'exclude': lambda f: f is None }})
     pet_policy: Optional[shared_petpolicy.PetPolicy] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PetPolicy'), 'exclude': lambda f: f is None }})
-    property_amenity: Optional[list[shared_propertyamenity.PropertyAmenity]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PropertyAmenity'), 'exclude': lambda f: f is None }})
-    rating: Optional[list[shared_rating.Rating]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Rating'), 'exclude': lambda f: f is None }})
-    restaurant: Optional[list[shared_restaurant.Restaurant]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Restaurant'), 'exclude': lambda f: f is None }})
+    property_amenity: Optional[List[shared_propertyamenity.PropertyAmenity]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PropertyAmenity'), 'exclude': lambda f: f is None }})
+    rating: Optional[List[shared_rating.Rating]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Rating'), 'exclude': lambda f: f is None }})
+    restaurant: Optional[List[shared_restaurant.Restaurant]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Restaurant'), 'exclude': lambda f: f is None }})
     segment_catagory_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('segmentCatagoryCode'), 'exclude': lambda f: f is None }})
     r"""Segment category code"""
-    telephone: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Telephone'), 'exclude': lambda f: f is None }})
+    telephone: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Telephone'), 'exclude': lambda f: f is None }})
     virtual_tour: Optional[shared_virtualtour.VirtualTour] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('VirtualTour'), 'exclude': lambda f: f is None }})
     
 

@@ -8,7 +8,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class StateProv:
     r"""The standard code or abbreviation for the state, province, or region with optional name"""

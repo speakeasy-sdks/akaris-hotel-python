@@ -201,7 +201,7 @@ s = akaris_backend.AkarisBackend(
 )
 
 req = operations.CancelHotelOfferRequest(
-    reservation_identifier='mature',
+    reservation_identifier='Southwest',
 )
 
 res = s.reservation_hotel.cancel_hotel_offer(req)
@@ -397,8 +397,8 @@ req = operations.CreateHotelReservationRequest(
                     ],
                     ticket_designators=[
                         shared.TicketDesignators(
-                            at_type='Northwest Northwest Rubber',
-                            ticket_designator='Directives Courts THX',
+                            at_type='boring',
+                            ticket_designator='Direct',
                             traveler_identifier_ref=[
                                 shared.TravelerIdentifierRef(
                                     passenger_type_code='ADT',
@@ -491,7 +491,7 @@ req = operations.CreateHotelReservationRequest(
                                 at_type='TaxesDetail',
                                 tax_info=[
                                     shared.TaxInfo(
-                                        amount=6525.12,
+                                        amount=6001.97,
                                         currency_code=shared.CurrencyCode(
                                             code_authority='ISO 4217',
                                             decimal_authority='ISO 4217',
@@ -655,7 +655,7 @@ req = operations.CreateHotelReservationRequest(
                         at_type='TaxesDetail',
                         tax_info=[
                             shared.TaxInfo(
-                                amount=2197.32,
+                                amount=2445.01,
                                 currency_code=shared.CurrencyCode(
                                     code_authority='ISO 4217',
                                     decimal_authority='ISO 4217',
@@ -738,7 +738,7 @@ req = operations.CreateHotelReservationRequest(
                     ),
                     contact_information_refused_ind=True,
                     share_with_supplier=[
-                        'Avon',
+                        'project',
                     ],
                 ),
             ],
@@ -750,7 +750,7 @@ req = operations.CreateHotelReservationRequest(
                         value='A0656EFF-FAF4-456F-B061-0161008D7C4E',
                     ),
                     offer_ref=[
-                        'Diesel',
+                        'Directives',
                     ],
                     receipt_ref='6773 2389 2239 2832',
                     id='3493289238',
@@ -773,14 +773,14 @@ req = operations.CreateHotelReservationRequest(
                         ),
                     ],
                     share_with_supplier=[
-                        'lift',
+                        'Courts',
                     ],
                 ),
             ],
             reservation_display_sequence=shared.ReservationDisplaySequence(
                 display_sequence=[
                     shared.DisplaySequence(
-                        offer_ref='Aloha Southwest',
+                        offer_ref='THX',
                         sequence=1,
                         display_sequence='1',
                     ),
@@ -953,7 +953,7 @@ req = operations.CreateHotelReservationRequest(
                     ],
                 ),
                 profile_name=[
-                    'whiteboard',
+                    'Dynamic',
                 ],
                 travel_organization_ref='TravelAgency_1',
                 id='2',
@@ -1275,7 +1275,7 @@ s = akaris_backend.AkarisBackend(
 )
 
 req = operations.RetrieveHotelReservationRequest(
-    identifier='Markets Folding',
+    identifier='Qatari',
     identifier_type=shared.IdentifierTypeENUM.LOCATOR,
 )
 
@@ -1316,7 +1316,7 @@ s = akaris_backend.AkarisBackend(
 )
 
 req = operations.UpdateHotelReservationRequest(
-    identifier='repurpose blanditiis Hip',
+    identifier='female',
     reservation_detail_wrapper=shared.ReservationDetailWrapper(
         reservation_detail=shared.ReservationDetail(
             at_type='Reservation',
@@ -1409,7 +1409,7 @@ req = operations.UpdateHotelReservationRequest(
                     destination_purpose=[
                         shared.DestinationPurpose(
                             at_type='DestinationPurpose',
-                            destination=shared.DestinationEnum.MEXICO_CENTRAL_AMERICA_CANAL_ZONE_COSTA_RICA,
+                            destination=shared.DestinationEnum.ASIA,
                             purpose=shared.PurposeEnum.PLEASURE,
                         ),
                     ],
@@ -1450,7 +1450,7 @@ req = operations.UpdateHotelReservationRequest(
                         shared.Restrictions(
                             document_type=shared.DocumentTypeEnum.TICKET,
                             restriction=[
-                                'quantify',
+                                'generating',
                             ],
                             traveler_identifier_ref=[
                                 shared.TravelerIdentifierRef(
@@ -1473,8 +1473,8 @@ req = operations.UpdateHotelReservationRequest(
                     ],
                     ticket_designators=[
                         shared.TicketDesignators(
-                            at_type='Bedfordshire',
-                            ticket_designator='courageously weber deposit',
+                            at_type='Pop',
+                            ticket_designator='Massachusetts',
                             traveler_identifier_ref=[
                                 shared.TravelerIdentifierRef(
                                     passenger_type_code='ADT',
@@ -1567,7 +1567,7 @@ req = operations.UpdateHotelReservationRequest(
                                 at_type='TaxesDetail',
                                 tax_info=[
                                     shared.TaxInfo(
-                                        amount=403.26,
+                                        amount=5520.92,
                                         currency_code=shared.CurrencyCode(
                                             code_authority='ISO 4217',
                                             decimal_authority='ISO 4217',
@@ -1731,7 +1731,7 @@ req = operations.UpdateHotelReservationRequest(
                         at_type='TaxesDetail',
                         tax_info=[
                             shared.TaxInfo(
-                                amount=5934.54,
+                                amount=5589.32,
                                 currency_code=shared.CurrencyCode(
                                     code_authority='ISO 4217',
                                     decimal_authority='ISO 4217',
@@ -1814,7 +1814,7 @@ req = operations.UpdateHotelReservationRequest(
                     ),
                     contact_information_refused_ind=True,
                     share_with_supplier=[
-                        'Accounts',
+                        'Wells',
                     ],
                 ),
             ],
@@ -1826,7 +1826,7 @@ req = operations.UpdateHotelReservationRequest(
                         value='A0656EFF-FAF4-456F-B061-0161008D7C4E',
                     ),
                     offer_ref=[
-                        'attitude',
+                        'Pennsylvania',
                     ],
                     receipt_ref='6773 2389 2239 2832',
                     id='3493289238',
@@ -1849,14 +1849,14 @@ req = operations.UpdateHotelReservationRequest(
                         ),
                     ],
                     share_with_supplier=[
-                        'deposit',
+                        'jaded',
                     ],
                 ),
             ],
             reservation_display_sequence=shared.ReservationDisplaySequence(
                 display_sequence=[
                     shared.DisplaySequence(
-                        offer_ref='bypassing Dysprosium',
+                        offer_ref='Arizona',
                         sequence=1,
                         display_sequence='1',
                     ),
@@ -2029,7 +2029,7 @@ req = operations.UpdateHotelReservationRequest(
                     ],
                 ),
                 profile_name=[
-                    'Missouri',
+                    'Classical',
                 ],
                 travel_organization_ref='TravelAgency_1',
                 id='2',
@@ -2276,7 +2276,7 @@ req = operations.UpdateHotelReservationRequest(
                     travel_document=[
                         shared.TravelDocument(
                             at_type='TravelDocumentDetail',
-                            gender=shared.GenderEnum.FEMALE,
+                            gender=shared.GenderEnum.UNDISCLOSED,
                             nationality='BR',
                             person_name=shared.PersonName(
                                 at_type='PersonNameDetail',

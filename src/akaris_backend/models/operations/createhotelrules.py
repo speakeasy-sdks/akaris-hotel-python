@@ -8,7 +8,6 @@ from ..shared import offerqueryhospitalityrequestwrapper as shared_offerqueryhos
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class CreateHotelRulesRequest:
     offer_query_hospitality_request_wrapper: shared_offerqueryhospitalityrequestwrapper.OfferQueryHospitalityRequestWrapper = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
@@ -17,7 +16,6 @@ class CreateHotelRulesRequest:
     xauth_travelport_accessgroup: Optional[str] = dataclasses.field(default=None, metadata={'header': { 'field_name': 'XAUTH_TRAVELPORT_ACCESSGROUP', 'style': 'simple', 'explode': False }})
     r"""Identifies the Travelport access group with which the caller is associated"""
     
-
 
 
 

@@ -31,7 +31,7 @@ req = operations.CreatePrecisionRequest(
             property_key=[
                 shared.PropertyKey(
                     chain_code='HL',
-                    property_code='City',
+                    property_code='ivory',
                 ),
             ],
             rate_candidates=shared.RateCandidates(
@@ -62,7 +62,7 @@ req = operations.CreatePrecisionRequest(
                         room_amenity=[
                             shared.RoomAmenity(
                                 inclusion=[
-                                    'Music',
+                                    'Clifton',
                                 ],
                                 name='24 hour Room Service',
                                 description='WiFi',
@@ -71,9 +71,9 @@ req = operations.CreatePrecisionRequest(
                     ),
                 ],
             ),
-            checkin_date=dateutil.parser.parse('2021-07-05').date(),
-            checkout_date=dateutil.parser.parse('2023-01-31').date(),
-            number_of_guests=598172,
+            checkin_date=dateutil.parser.parse('2023-01-31').date(),
+            checkout_date=dateutil.parser.parse('2022-10-17').date(),
+            number_of_guests=247276,
         ),
     ),
 )

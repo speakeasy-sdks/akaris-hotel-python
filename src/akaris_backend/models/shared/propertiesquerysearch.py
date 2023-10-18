@@ -10,11 +10,10 @@ from ..shared import searchby as shared_searchby
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from datetime import date
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PropertiesQuerySearch:
     at_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type') }})
@@ -23,19 +22,19 @@ class PropertiesQuerySearch:
     check_out_date: date = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('CheckOutDate'), 'encoder': utils.dateisoformat(False), 'decoder': utils.datefromisoformat }})
     r"""Check Out Date"""
     search_by: shared_searchby.SearchBy = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('SearchBy') }})
-    chain_codes: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ChainCodes'), 'exclude': lambda f: f is None }})
+    chain_codes: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ChainCodes'), 'exclude': lambda f: f is None }})
     r"""The permitted property chain code(s) to be returned for this request"""
     hotel_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('HotelName'), 'exclude': lambda f: f is None }})
     r"""The preferred name of the property"""
     image_size: Optional[shared_imagesizeenum.ImageSizeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ImageSize'), 'exclude': lambda f: f is None }})
     r"""Indicates the size of the image. Hospitality APIs no longer support thumbnail"""
-    property_amenity_code: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PropertyAmenityCode'), 'exclude': lambda f: f is None }})
+    property_amenity_code: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PropertyAmenityCode'), 'exclude': lambda f: f is None }})
     rate_candidates: Optional[shared_ratecandidates.RateCandidates] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('RateCandidates'), 'exclude': lambda f: f is None }})
     requested_currency: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('RequestedCurrency'), 'exclude': lambda f: f is None }})
     r"""You can use requested currency to request conversion rate information. The response will return the currencyRateConversion object which will contain conversion rate of the requested currency."""
     return_all_images_ind: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('returnAllImagesInd'), 'exclude': lambda f: f is None }})
     r"""If true, all property images of the size requested will be returned. If blank or false the best single property image will be returned."""
-    room_stay_candidate: Optional[list[shared_roomstaycandidate.RoomStayCandidate]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('RoomStayCandidate'), 'exclude': lambda f: f is None }})
+    room_stay_candidate: Optional[List[shared_roomstaycandidate.RoomStayCandidate]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('RoomStayCandidate'), 'exclude': lambda f: f is None }})
     sort_order: Optional[shared_hotelsortorderenum.HotelSortOrderEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('SortOrder'), 'exclude': lambda f: f is None }})
     r"""The method to be used in sorting hotel properties"""
     

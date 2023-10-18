@@ -9,11 +9,10 @@ from ..shared import roomstaycandidates as shared_roomstaycandidates
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from datetime import date
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PropertiesQuerySpecificPropertyList:
     at_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type') }})
@@ -23,7 +22,7 @@ class PropertiesQuerySpecificPropertyList:
     r"""Checkout date"""
     number_of_guests: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('numberOfGuests') }})
     r"""Number of travelers. Must be a numeric value between 1 and 9."""
-    property_key: list[shared_propertykey.PropertyKey] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PropertyKey') }})
+    property_key: List[shared_propertykey.PropertyKey] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PropertyKey') }})
     image_size: Optional[shared_imagesizeenum.ImageSizeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('imageSize'), 'exclude': lambda f: f is None }})
     r"""Indicates the size of the image. Hospitality APIs no longer support thumbnail"""
     maximum_rate: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maximumRate'), 'exclude': lambda f: f is None }})

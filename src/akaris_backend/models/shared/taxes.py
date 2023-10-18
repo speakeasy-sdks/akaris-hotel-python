@@ -5,15 +5,14 @@ import dataclasses
 from ..shared import taxinfo as shared_taxinfo
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class Taxes:
     at_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type') }})
-    tax_info: Optional[list[shared_taxinfo.TaxInfo]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TaxInfo'), 'exclude': lambda f: f is None }})
+    tax_info: Optional[List[shared_taxinfo.TaxInfo]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TaxInfo'), 'exclude': lambda f: f is None }})
     total_taxes: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TotalTaxes'), 'exclude': lambda f: f is None }})
     r"""A monetary amount, up to 4 decimal places. Decimal place needs to be included."""
     

@@ -6,17 +6,16 @@ from ..shared import documenttypeenum as shared_documenttypeenum
 from ..shared import traveleridentifierref as shared_traveleridentifierref
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class Restrictions:
-    restriction: list[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Restriction') }})
+    restriction: List[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Restriction') }})
     at_type: Optional[str] = dataclasses.field(default='Restrictions', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
     document_type: Optional[shared_documenttypeenum.DocumentTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('DocumentType'), 'exclude': lambda f: f is None }})
     r"""Document type like EMD, MCO"""
-    traveler_identifier_ref: Optional[list[shared_traveleridentifierref.TravelerIdentifierRef]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TravelerIdentifierRef'), 'exclude': lambda f: f is None }})
+    traveler_identifier_ref: Optional[List[shared_traveleridentifierref.TravelerIdentifierRef]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TravelerIdentifierRef'), 'exclude': lambda f: f is None }})
     
 

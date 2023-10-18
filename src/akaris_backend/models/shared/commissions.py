@@ -7,16 +7,15 @@ from ..shared import commissionapplyenum as shared_commissionapplyenum
 from ..shared import traveleridentifierref as shared_traveleridentifierref
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class Commissions:
     commission: shared_commission.Commission = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Commission') }})
     at_type: Optional[str] = dataclasses.field(default='Commissions', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
     apply_to: Optional[shared_commissionapplyenum.CommissionApplyEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ApplyTo'), 'exclude': lambda f: f is None }})
-    traveler_identifier_ref: Optional[list[shared_traveleridentifierref.TravelerIdentifierRef]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TravelerIdentifierRef'), 'exclude': lambda f: f is None }})
+    traveler_identifier_ref: Optional[List[shared_traveleridentifierref.TravelerIdentifierRef]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TravelerIdentifierRef'), 'exclude': lambda f: f is None }})
     
 

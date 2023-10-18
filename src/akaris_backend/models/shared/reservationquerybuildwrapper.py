@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ReservationQueryBuildWrapper:
     reservation_query_build: Optional[shared_reservationquerybuild.ReservationQueryBuild] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ReservationQueryBuild'), 'exclude': lambda f: f is None }})

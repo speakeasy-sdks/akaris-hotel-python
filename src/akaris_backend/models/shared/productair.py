@@ -7,16 +7,15 @@ from ..shared import identifier as shared_identifier
 from ..shared import passengerflight as shared_passengerflight
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ProductAir:
     at_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type') }})
-    flight_segment: list[shared_flightsegment.FlightSegment] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('FlightSegment') }})
-    passenger_flight: list[shared_passengerflight.PassengerFlight] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PassengerFlight') }})
+    flight_segment: List[shared_flightsegment.FlightSegment] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('FlightSegment') }})
+    passenger_flight: List[shared_passengerflight.PassengerFlight] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PassengerFlight') }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     r"""Local indentifier within a given message for this object."""
     identifier: Optional[shared_identifier.Identifier] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Identifier'), 'exclude': lambda f: f is None }})

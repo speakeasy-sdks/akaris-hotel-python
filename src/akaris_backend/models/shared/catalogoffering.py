@@ -8,16 +8,15 @@ from ..shared import productoptions as shared_productoptions
 from ..shared import termsandconditions as shared_termsandconditions
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CatalogOffering:
     at_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type') }})
     price: shared_pricedetail.PriceDetail = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Price') }})
-    product_options: list[shared_productoptions.ProductOptions] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ProductOptions') }})
+    product_options: List[shared_productoptions.ProductOptions] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ProductOptions') }})
     catalog_offering_ref: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('CatalogOfferingRef'), 'exclude': lambda f: f is None }})
     r"""Used to reference another instance of this object in the same message"""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})

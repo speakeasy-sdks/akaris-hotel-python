@@ -171,7 +171,7 @@ req = operations.CreateHotelRulesRequest(
             at_type='OfferQueryHospitalityRequest',
             property_key=shared.PropertyKey(
                 chain_code='HL',
-                property_code='Islands harness programming',
+                property_code='yowza',
             ),
             rate_candidate=shared.RateCandidate(
                 at_type='RateCandidate',
@@ -196,7 +196,7 @@ req = operations.CreateHotelRulesRequest(
                         room_amenity=[
                             shared.RoomAmenity(
                                 inclusion=[
-                                    'joyously',
+                                    'firewall',
                                 ],
                                 name='24 hour Room Service',
                                 description='WiFi',
@@ -205,9 +205,9 @@ req = operations.CreateHotelRulesRequest(
                     ),
                 ],
             ),
-            checkin_date=dateutil.parser.parse('2023-05-22').date(),
-            checkout_date=dateutil.parser.parse('2023-09-14').date(),
-            number_of_guests=105598,
+            checkin_date=dateutil.parser.parse('2022-03-24').date(),
+            checkout_date=dateutil.parser.parse('2023-09-01').date(),
+            number_of_guests=309240,
         ),
     ),
 )

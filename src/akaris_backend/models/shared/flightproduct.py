@@ -11,14 +11,13 @@ from ..shared import faretypeenum as shared_faretypeenum
 from ..shared import yesnounknownenum as shared_yesnounknownenum
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class FlightProduct:
-    segment_sequence: list[int] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('segmentSequence') }})
+    segment_sequence: List[int] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('segmentSequence') }})
     r"""The Segment sequence"""
     at_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
     brand: Optional[shared_brandid.BrandID] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Brand'), 'exclude': lambda f: f is None }})
@@ -28,8 +27,8 @@ class FlightProduct:
     r"""The car code"""
     class_of_service: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('classOfService'), 'exclude': lambda f: f is None }})
     r"""The class of service"""
-    class_of_service_availability: Optional[list[shared_classofserviceavailability.ClassOfServiceAvailability]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ClassOfServiceAvailability'), 'exclude': lambda f: f is None }})
-    customer_loyalty_credit: Optional[list[shared_customerloyaltycredit.CustomerLoyaltyCredit]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('CustomerLoyaltyCredit'), 'exclude': lambda f: f is None }})
+    class_of_service_availability: Optional[List[shared_classofserviceavailability.ClassOfServiceAvailability]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ClassOfServiceAvailability'), 'exclude': lambda f: f is None }})
+    customer_loyalty_credit: Optional[List[shared_customerloyaltycredit.CustomerLoyaltyCredit]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('CustomerLoyaltyCredit'), 'exclude': lambda f: f is None }})
     fare_basis_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fareBasisCode'), 'exclude': lambda f: f is None }})
     r"""Fare basis code"""
     fare_qualifier: Optional[shared_farequalifierenum.FareQualifierENUM] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('FareQualifier'), 'exclude': lambda f: f is None }})

@@ -15,7 +15,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PropertyInfo:
     distance: shared_distance.Distance = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Distance') }})

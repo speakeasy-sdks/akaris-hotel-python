@@ -24,20 +24,19 @@ from ..shared import travelerproduct as shared_travelerproduct
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from datetime import date
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ReservationDetail:
     at_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type') }})
     accounting: Optional[shared_accounting.Accounting] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Accounting'), 'exclude': lambda f: f is None }})
-    agency_service_fee: Optional[list[shared_agencyservicefee.AgencyServiceFee]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('AgencyServiceFee'), 'exclude': lambda f: f is None }})
+    agency_service_fee: Optional[List[shared_agencyservicefee.AgencyServiceFee]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('AgencyServiceFee'), 'exclude': lambda f: f is None }})
     auto_delete_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('autoDeleteDate'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is None }})
     r"""The auto delete date represents the date that the Reservation will be kept active. Also known as retention segment or retention date."""
-    document_overrides: Optional[list[shared_documentoverrides.DocumentOverrides]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('DocumentOverrides'), 'exclude': lambda f: f is None }})
-    form_of_payment: Optional[list[shared_formofpaymentid.FormOfPaymentID]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('FormOfPayment'), 'exclude': lambda f: f is None }})
+    document_overrides: Optional[List[shared_documentoverrides.DocumentOverrides]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('DocumentOverrides'), 'exclude': lambda f: f is None }})
+    form_of_payment: Optional[List[shared_formofpaymentid.FormOfPaymentID]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('FormOfPayment'), 'exclude': lambda f: f is None }})
     group_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('GroupName'), 'exclude': lambda f: f is None }})
     r"""A name assigned to a Reservation containing an offer with Passengerflight/Flight Quantity equal to or greater than 10"""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
@@ -46,19 +45,19 @@ class ReservationDetail:
     r"""Identifier provides the ability to create a globally unique identifier. For the identifier to be globally unique it must have a system provided identifier and the system must be identified using a global naming authority. System identification uses the domain naming system (DNS) to assure they are globally unique and should be an URL. The system provided ID will typically be a primary or surrogate key in a database."""
     notification_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('notificationDate'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is None }})
     r"""The notification date represents the date that the Reservation should be reviewed. Also known as ticket time limit date."""
-    offer: Optional[list[shared_offer.Offer]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Offer'), 'exclude': lambda f: f is None }})
-    offer_link: Optional[list[shared_offerlink.OfferLink]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('OfferLink'), 'exclude': lambda f: f is None }})
-    organization_loyalty_program: Optional[list[shared_organizationloyaltyprogram.OrganizationLoyaltyProgram]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('OrganizationLoyaltyProgram'), 'exclude': lambda f: f is None }})
-    payment: Optional[list[shared_payment.Payment]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Payment'), 'exclude': lambda f: f is None }})
+    offer: Optional[List[shared_offer.Offer]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Offer'), 'exclude': lambda f: f is None }})
+    offer_link: Optional[List[shared_offerlink.OfferLink]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('OfferLink'), 'exclude': lambda f: f is None }})
+    organization_loyalty_program: Optional[List[shared_organizationloyaltyprogram.OrganizationLoyaltyProgram]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('OrganizationLoyaltyProgram'), 'exclude': lambda f: f is None }})
+    payment: Optional[List[shared_payment.Payment]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Payment'), 'exclude': lambda f: f is None }})
     preference: Optional[shared_preference.Preference] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Preference'), 'exclude': lambda f: f is None }})
-    primary_contact: Optional[list[shared_primarycontact.PrimaryContact]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PrimaryContact'), 'exclude': lambda f: f is None }})
-    receipt: Optional[list[shared_receipt.Receipt]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Receipt'), 'exclude': lambda f: f is None }})
-    reservation_comment: Optional[list[shared_reservationcomment.ReservationComment]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ReservationComment'), 'exclude': lambda f: f is None }})
+    primary_contact: Optional[List[shared_primarycontact.PrimaryContact]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PrimaryContact'), 'exclude': lambda f: f is None }})
+    receipt: Optional[List[shared_receipt.Receipt]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Receipt'), 'exclude': lambda f: f is None }})
+    reservation_comment: Optional[List[shared_reservationcomment.ReservationComment]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ReservationComment'), 'exclude': lambda f: f is None }})
     reservation_display_sequence: Optional[shared_reservationdisplaysequence.ReservationDisplaySequence] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ReservationDisplaySequence'), 'exclude': lambda f: f is None }})
     shopping_cart: Optional[shared_shoppingcart.ShoppingCart] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ShoppingCart'), 'exclude': lambda f: f is None }})
-    special_service: Optional[list[shared_specialservice.SpecialService]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('SpecialService'), 'exclude': lambda f: f is None }})
+    special_service: Optional[List[shared_specialservice.SpecialService]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('SpecialService'), 'exclude': lambda f: f is None }})
     travel_agency: Optional[shared_travelagency.TravelAgency] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TravelAgency'), 'exclude': lambda f: f is None }})
-    traveler: Optional[list[shared_traveler.Traveler]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Traveler'), 'exclude': lambda f: f is None }})
-    traveler_product: Optional[list[shared_travelerproduct.TravelerProduct]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TravelerProduct'), 'exclude': lambda f: f is None }})
+    traveler: Optional[List[shared_traveler.Traveler]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Traveler'), 'exclude': lambda f: f is None }})
+    traveler_product: Optional[List[shared_travelerproduct.TravelerProduct]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TravelerProduct'), 'exclude': lambda f: f is None }})
     
 

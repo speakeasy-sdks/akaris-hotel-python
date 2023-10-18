@@ -5,17 +5,16 @@ import dataclasses
 from ..shared import distance as shared_distance
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class Restaurant:
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""The name of the restaurant"""
     at_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
-    cuisine_codes: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cuisineCodes'), 'exclude': lambda f: f is None }})
+    cuisine_codes: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cuisineCodes'), 'exclude': lambda f: f is None }})
     r"""An OTA code to define the cuisine type"""
     distance: Optional[shared_distance.Distance] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Distance'), 'exclude': lambda f: f is None }})
     r"""A search radius"""

@@ -8,7 +8,6 @@ from ..shared import offerquerybuildfromcatalogofferingshospitalitywrapper as sh
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class BuildFromCatalogOfferingsRequest:
     offer_query_build_from_catalog_offerings_hospitality_wrapper: shared_offerquerybuildfromcatalogofferingshospitalitywrapper.OfferQueryBuildFromCatalogOfferingsHospitalityWrapper = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
@@ -19,7 +18,6 @@ class BuildFromCatalogOfferingsRequest:
     xauth_travelport_accessgroup: Optional[str] = dataclasses.field(default=None, metadata={'header': { 'field_name': 'XAUTH_TRAVELPORT_ACCESSGROUP', 'style': 'simple', 'explode': False }})
     r"""Identifies the Travelport access group with which the caller is associated"""
     
-
 
 
 

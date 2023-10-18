@@ -32,7 +32,7 @@ req = operations.CreateRequest(
             property_key=[
                 shared.PropertyKey(
                     chain_code='HL',
-                    property_code='Electric pirouette',
+                    property_code='neural',
                 ),
             ],
             rate_candidates=shared.RateCandidates(
@@ -63,7 +63,7 @@ req = operations.CreateRequest(
                         room_amenity=[
                             shared.RoomAmenity(
                                 inclusion=[
-                                    'conglomeration',
+                                    'Tasty',
                                 ],
                                 name='24 hour Room Service',
                                 description='WiFi',
@@ -115,8 +115,8 @@ s = akaris_backend.AkarisBackend(
 )
 
 req = operations.GetPropertiesDetailRequest(
-    chain_code='Road haptic',
-    property_code='Vineland array',
+    chain_code='application',
+    property_code='Barium',
 )
 
 res = s.search_hotel.get_properties_detail(req)
@@ -155,8 +155,8 @@ s = akaris_backend.AkarisBackend(
 )
 
 req = operations.GetPropertiesPageRequest(
-    identifier='toothbrush',
-    page_number='Cambridgeshire',
+    identifier='Wauwatosa',
+    page_number='inasmuch',
 )
 
 res = s.search_hotel.get_properties_page(req)

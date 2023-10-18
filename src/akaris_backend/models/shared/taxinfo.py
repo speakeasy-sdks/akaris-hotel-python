@@ -6,16 +6,15 @@ from ..shared import currencycode as shared_currencycode
 from ..shared import taxbreakdown as shared_taxbreakdown
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class TaxInfo:
     amount: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Amount') }})
     r"""The amount of the tax applied"""
-    tax_breakdown: list[shared_taxbreakdown.TaxBreakdown] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TaxBreakdown') }})
+    tax_breakdown: List[shared_taxbreakdown.TaxBreakdown] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TaxBreakdown') }})
     r"""The breakdown of the tax for this tax code"""
     tax_code: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TaxCode') }})
     r"""The tax code"""

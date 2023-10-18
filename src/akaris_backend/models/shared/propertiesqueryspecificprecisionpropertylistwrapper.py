@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PropertiesQuerySpecificPrecisionPropertyListWrapper:
     properties_query_specific_precision_property_list: Optional[shared_propertiesqueryspecificprecisionpropertylist.PropertiesQuerySpecificPrecisionPropertyList] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PropertiesQuerySpecificPrecisionPropertyList'), 'exclude': lambda f: f is None }})

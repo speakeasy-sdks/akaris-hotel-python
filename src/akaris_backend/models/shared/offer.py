@@ -8,17 +8,16 @@ from ..shared import productid as shared_productid
 from ..shared import termsandconditionsfull as shared_termsandconditionsfull
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class Offer:
     at_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type') }})
     price: shared_price.Price = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Price') }})
-    product: list[shared_productid.ProductID] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Product') }})
-    terms_and_conditions_full: list[shared_termsandconditionsfull.TermsAndConditionsFull] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TermsAndConditionsFull') }})
+    product: List[shared_productid.ProductID] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Product') }})
+    terms_and_conditions_full: List[shared_termsandconditionsfull.TermsAndConditionsFull] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TermsAndConditionsFull') }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     r"""Local indentifier within a given message for this object."""
     identifier: Optional[shared_identifier.Identifier] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Identifier'), 'exclude': lambda f: f is None }})

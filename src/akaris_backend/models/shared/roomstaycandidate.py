@@ -6,14 +6,13 @@ from ..shared import guestcounts as shared_guestcounts
 from ..shared import roomamenity as shared_roomamenity
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class RoomStayCandidate:
     guest_counts: shared_guestcounts.GuestCounts = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('GuestCounts') }})
-    room_amenity: Optional[list[shared_roomamenity.RoomAmenity]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('RoomAmenity'), 'exclude': lambda f: f is None }})
+    room_amenity: Optional[List[shared_roomamenity.RoomAmenity]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('RoomAmenity'), 'exclude': lambda f: f is None }})
     
 

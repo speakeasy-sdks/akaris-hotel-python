@@ -4,11 +4,10 @@ from __future__ import annotations
 import dataclasses
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CustomerLoyalty:
     r"""Specifies the ID for the membership program."""
@@ -22,7 +21,7 @@ class CustomerLoyalty:
     r"""Specifies an identifier to indicate the company owner of the loyalty program"""
     program_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('programName'), 'exclude': lambda f: f is None }})
     r"""Supplier's loyalty program name such as Frontier-EarlyReturns"""
-    share_with_supplier: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('shareWithSupplier'), 'exclude': lambda f: f is None }})
+    share_with_supplier: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('shareWithSupplier'), 'exclude': lambda f: f is None }})
     r"""The list of suppliers that the CustomerLoyalty number is shared."""
     supplier: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('supplier'), 'exclude': lambda f: f is None }})
     r"""Supplier of a loyalty program"""

@@ -8,11 +8,10 @@ from ..shared import telephone as shared_telephone
 from ..shared import traveleridentifier as shared_traveleridentifier
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PrimaryContact:
     at_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type') }})
@@ -23,7 +22,7 @@ class PrimaryContact:
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     share_with: Optional[shared_sharewithenum.ShareWithEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('shareWith'), 'exclude': lambda f: f is None }})
     r"""Share with like Supplier,agency etc"""
-    share_with_supplier: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('shareWithSupplier'), 'exclude': lambda f: f is None }})
+    share_with_supplier: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('shareWithSupplier'), 'exclude': lambda f: f is None }})
     r"""Primary contact shared with supplier"""
     telephone: Optional[shared_telephone.Telephone] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Telephone'), 'exclude': lambda f: f is None }})
     traveler_identifier: Optional[shared_traveleridentifier.TravelerIdentifier] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TravelerIdentifier'), 'exclude': lambda f: f is None }})

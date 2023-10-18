@@ -8,15 +8,14 @@ from ..shared import identifier as shared_identifier
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class TermsAndConditions:
     at_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type') }})
-    customer_loyalty: Optional[list[shared_customerloyalty.CustomerLoyalty]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('CustomerLoyalty'), 'exclude': lambda f: f is None }})
+    customer_loyalty: Optional[List[shared_customerloyalty.CustomerLoyalty]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('CustomerLoyalty'), 'exclude': lambda f: f is None }})
     expiry_date: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ExpiryDate'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     r"""The data and time the offer will expire"""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})

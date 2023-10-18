@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CustomerLoyaltyCredit:
     customer_loyalty: shared_customerloyalty.CustomerLoyalty = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('CustomerLoyalty') }})

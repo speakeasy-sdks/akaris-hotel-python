@@ -8,7 +8,6 @@ from ..shared import propertiesresponsewrapper as shared_propertiesresponsewrapp
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class PrecisionSearchPropertiesRequest:
     properties_query_precision_search_wrapper: shared_propertiesqueryprecisionsearchwrapper.PropertiesQueryPrecisionSearchWrapper = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
@@ -17,7 +16,6 @@ class PrecisionSearchPropertiesRequest:
     xauth_travelport_accessgroup: Optional[str] = dataclasses.field(default=None, metadata={'header': { 'field_name': 'XAUTH_TRAVELPORT_ACCESSGROUP', 'style': 'simple', 'explode': False }})
     r"""Identifies the Travelport access group with which the caller is associated"""
     
-
 
 
 

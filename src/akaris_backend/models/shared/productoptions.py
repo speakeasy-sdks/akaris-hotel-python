@@ -6,14 +6,13 @@ from ..shared import identifier as shared_identifier
 from ..shared import productid as shared_productid
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ProductOptions:
-    product: list[shared_productid.ProductID] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Product') }})
+    product: List[shared_productid.ProductID] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Product') }})
     at_type: Optional[str] = dataclasses.field(default='ProductOptions', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     r"""Local indentifier within a given message for this object."""

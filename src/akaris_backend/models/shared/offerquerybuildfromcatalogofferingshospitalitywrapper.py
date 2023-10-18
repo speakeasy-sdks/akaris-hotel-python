@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class OfferQueryBuildFromCatalogOfferingsHospitalityWrapper:
     offer_query_build_from_catalog_offerings_hospitality: Optional[shared_offerquerybuildfromcatalogofferingshospitality.OfferQueryBuildFromCatalogOfferingsHospitality] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('OfferQueryBuildFromCatalogOfferingsHospitality'), 'exclude': lambda f: f is None }})

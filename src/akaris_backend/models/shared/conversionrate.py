@@ -10,7 +10,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ConversionRate:
     r"""A conversion metric from standard to another with the contextual authority such as IATA, OAG, ISO, etc."""

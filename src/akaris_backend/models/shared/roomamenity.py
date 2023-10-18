@@ -4,11 +4,10 @@ from __future__ import annotations
 import dataclasses
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class RoomAmenity:
     at_type: Optional[str] = dataclasses.field(default='RoomAmenity', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
@@ -18,7 +17,7 @@ class RoomAmenity:
     r"""description of the room amenity"""
     included_ind: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('includedInd'), 'exclude': lambda f: f is None }})
     r"""To represent if the Amenity is included in the rate"""
-    inclusion: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Inclusion'), 'exclude': lambda f: f is None }})
+    inclusion: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Inclusion'), 'exclude': lambda f: f is None }})
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Name'), 'exclude': lambda f: f is None }})
     r"""Room Amenity Name"""
     quantity: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('quantity'), 'exclude': lambda f: f is None }})

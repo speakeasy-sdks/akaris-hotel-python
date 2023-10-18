@@ -7,11 +7,10 @@ from ..shared import pricebreakdown as shared_pricebreakdown
 from ..shared import vendorcurrencytotal as shared_vendorcurrencytotal
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PriceDetail:
     at_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type') }})
@@ -21,7 +20,7 @@ class PriceDetail:
     r"""Currency codes are the three-letter alphabetic codes that represent the various currencies used throughout the world."""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     r"""Internally referenced id"""
-    price_breakdown: Optional[list[shared_pricebreakdown.PriceBreakdown]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PriceBreakdown'), 'exclude': lambda f: f is None }})
+    price_breakdown: Optional[List[shared_pricebreakdown.PriceBreakdown]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PriceBreakdown'), 'exclude': lambda f: f is None }})
     total_fees: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TotalFees'), 'exclude': lambda f: f is None }})
     r"""The total of the fees included in the total price"""
     total_price: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TotalPrice'), 'exclude': lambda f: f is None }})

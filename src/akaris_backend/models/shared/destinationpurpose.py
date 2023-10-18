@@ -10,7 +10,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DestinationPurpose:
     destination: shared_destinationenum.DestinationEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('destination') }})

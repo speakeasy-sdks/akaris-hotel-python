@@ -9,11 +9,10 @@ from ..shared import tax as shared_tax
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class AgencyServiceFee:
     at_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type') }})
@@ -28,7 +27,7 @@ class AgencyServiceFee:
     offer_ref: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('OfferRef'), 'exclude': lambda f: f is None }})
     r"""Reference to an Offer within the Reservation that this service fee applies to"""
     related_document_number: Optional[shared_documentnumber.DocumentNumber] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('RelatedDocumentNumber'), 'exclude': lambda f: f is None }})
-    tax: Optional[list[shared_tax.Tax]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Tax'), 'exclude': lambda f: f is None }})
+    tax: Optional[List[shared_tax.Tax]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Tax'), 'exclude': lambda f: f is None }})
     traveler_ref: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TravelerRef'), 'exclude': lambda f: f is None }})
     r"""Reference to a Traveler within the Reservation that this service fee applies to"""
     

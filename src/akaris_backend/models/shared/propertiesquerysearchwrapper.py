@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PropertiesQuerySearchWrapper:
     properties_query_search: Optional[shared_propertiesquerysearch.PropertiesQuerySearch] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PropertiesQuerySearch'), 'exclude': lambda f: f is None }})

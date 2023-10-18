@@ -8,7 +8,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CurrencyCode:
     r"""Currency codes are the three-letter alphabetic codes that represent the various currencies used throughout the world."""

@@ -16,23 +16,22 @@ from ..shared import traveldocument as shared_traveldocument
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from datetime import date
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class Traveler:
     at_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type') }})
     person_name: shared_personname.PersonName = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PersonName') }})
     accompanied_by_infant_ind: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accompaniedByInfantInd'), 'exclude': lambda f: f is None }})
-    address: Optional[list[shared_address.Address]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Address'), 'exclude': lambda f: f is None }})
-    alternate_contact: Optional[list[shared_alternatecontact.AlternateContact]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('AlternateContact'), 'exclude': lambda f: f is None }})
+    address: Optional[List[shared_address.Address]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Address'), 'exclude': lambda f: f is None }})
+    alternate_contact: Optional[List[shared_alternatecontact.AlternateContact]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('AlternateContact'), 'exclude': lambda f: f is None }})
     birth_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('birthDate'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is None }})
     r"""Date of Birth YYYY-MM-DD"""
     comments: Optional[shared_comments.Comments] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Comments'), 'exclude': lambda f: f is None }})
-    customer_loyalty: Optional[list[shared_customerloyalty.CustomerLoyalty]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('CustomerLoyalty'), 'exclude': lambda f: f is None }})
-    email: Optional[list[shared_email.Email]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Email'), 'exclude': lambda f: f is None }})
+    customer_loyalty: Optional[List[shared_customerloyalty.CustomerLoyalty]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('CustomerLoyalty'), 'exclude': lambda f: f is None }})
+    email: Optional[List[shared_email.Email]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Email'), 'exclude': lambda f: f is None }})
     gender: Optional[shared_genderenum.GenderEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('gender'), 'exclude': lambda f: f is None }})
     r"""Gender Type Male, Female etc. This field is not used by Hotel APIs and will be ignored"""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
@@ -42,9 +41,9 @@ class Traveler:
     r"""Nationality on country code ISO"""
     passenger_type_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('passengerTypeCode'), 'exclude': lambda f: f is None }})
     r"""Passenger type code"""
-    rail_discount_card: Optional[list[shared_raildiscountcard.RailDiscountCard]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('RailDiscountCard'), 'exclude': lambda f: f is None }})
-    telephone: Optional[list[shared_telephone.Telephone]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Telephone'), 'exclude': lambda f: f is None }})
-    travel_document: Optional[list[shared_traveldocument.TravelDocument]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TravelDocument'), 'exclude': lambda f: f is None }})
+    rail_discount_card: Optional[List[shared_raildiscountcard.RailDiscountCard]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('RailDiscountCard'), 'exclude': lambda f: f is None }})
+    telephone: Optional[List[shared_telephone.Telephone]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Telephone'), 'exclude': lambda f: f is None }})
+    travel_document: Optional[List[shared_traveldocument.TravelDocument]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TravelDocument'), 'exclude': lambda f: f is None }})
     traveler_ref: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TravelerRef'), 'exclude': lambda f: f is None }})
     
 

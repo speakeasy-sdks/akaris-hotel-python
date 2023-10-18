@@ -4,15 +4,14 @@ from __future__ import annotations
 import dataclasses
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class TextTitleAndDescription:
     r"""Descriptive text"""
-    languages: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('languages'), 'exclude': lambda f: f is None }})
+    languages: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('languages'), 'exclude': lambda f: f is None }})
     r"""Language of the text"""
     title: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('title'), 'exclude': lambda f: f is None }})
     r"""Title of the Text"""

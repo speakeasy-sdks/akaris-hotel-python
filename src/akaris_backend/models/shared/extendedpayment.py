@@ -8,7 +8,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ExtendedPayment:
     r"""Note this field is deprecated in Payment schema and should be passed in FormOfPaymentPaymentCardExtendPayment schema"""

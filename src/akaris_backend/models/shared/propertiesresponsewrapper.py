@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PropertiesResponseWrapper:
     properties_response: Optional[shared_propertiesresponse.PropertiesResponse] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PropertiesResponse'), 'exclude': lambda f: f is None }})

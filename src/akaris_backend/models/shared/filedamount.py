@@ -8,7 +8,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class FiledAmount:
     r"""The base amount of a ticket price or net price that is filed in local currency"""

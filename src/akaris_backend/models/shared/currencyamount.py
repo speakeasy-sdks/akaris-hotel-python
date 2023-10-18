@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CurrencyAmount:
     r"""A monetary amount, up to 4 decimal places. Decimal place needs to be included."""

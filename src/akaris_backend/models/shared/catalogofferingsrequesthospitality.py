@@ -12,7 +12,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CatalogOfferingsRequestHospitality:
     stay_dates: shared_dateordatewindows.DateOrDateWindows = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('StayDates') }})

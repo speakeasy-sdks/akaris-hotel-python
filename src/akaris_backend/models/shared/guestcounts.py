@@ -5,14 +5,13 @@ import dataclasses
 from ..shared import guestcount as shared_guestcount
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GuestCounts:
-    guest_count: list[shared_guestcount.GuestCount] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('GuestCount') }})
+    guest_count: List[shared_guestcount.GuestCount] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('GuestCount') }})
     at_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
     
 
