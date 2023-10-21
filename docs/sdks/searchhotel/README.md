@@ -32,7 +32,7 @@ req = operations.CreateRequest(
             property_key=[
                 shared.PropertyKey(
                     chain_code='HL',
-                    property_code='neural',
+                    property_code='string',
                 ),
             ],
             rate_candidates=shared.RateCandidates(
@@ -63,7 +63,7 @@ req = operations.CreateRequest(
                         room_amenity=[
                             shared.RoomAmenity(
                                 inclusion=[
-                                    'Tasty',
+                                    'string',
                                 ],
                                 name='24 hour Room Service',
                                 description='WiFi',
@@ -72,9 +72,9 @@ req = operations.CreateRequest(
                     ),
                 ],
             ),
-            checkin_date=dateutil.parser.parse('2023-10-30').date(),
-            checkout_date=dateutil.parser.parse('2022-06-05').date(),
-            number_of_guests=113158,
+            checkin_date=dateutil.parser.parse('2022-06-11').date(),
+            checkout_date=dateutil.parser.parse('2023-06-06').date(),
+            number_of_guests=264917,
         ),
     ),
 )
@@ -115,8 +115,8 @@ s = akaris_backend.AkarisBackend(
 )
 
 req = operations.GetPropertiesDetailRequest(
-    chain_code='application',
-    property_code='Barium',
+    chain_code='string',
+    property_code='string',
 )
 
 res = s.search_hotel.get_properties_detail(req)
@@ -155,8 +155,8 @@ s = akaris_backend.AkarisBackend(
 )
 
 req = operations.GetPropertiesPageRequest(
-    identifier='Wauwatosa',
-    page_number='inasmuch',
+    identifier='string',
+    page_number='string',
 )
 
 res = s.search_hotel.get_properties_page(req)
@@ -200,12 +200,12 @@ req = operations.SearchPropertiesRequest(
         properties_query_search=shared.PropertiesQuerySearch(
             at_type='PropertiesQuerySearch',
             chain_codes=[
-                'Communications',
+                'string',
             ],
-            check_in_date=dateutil.parser.parse('2022-01-14').date(),
-            check_out_date=dateutil.parser.parse('2022-11-04').date(),
+            check_in_date=dateutil.parser.parse('2022-11-19').date(),
+            check_out_date=dateutil.parser.parse('2022-10-26').date(),
             property_amenity_code=[
-                'Diesel',
+                'string',
             ],
             rate_candidates=shared.RateCandidates(
                 at_type='RateCandidates',
@@ -234,7 +234,7 @@ req = operations.SearchPropertiesRequest(
                     room_amenity=[
                         shared.RoomAmenity(
                             inclusion=[
-                                'Gasoline',
+                                'string',
                             ],
                             name='24 hour Room Service',
                             description='WiFi',

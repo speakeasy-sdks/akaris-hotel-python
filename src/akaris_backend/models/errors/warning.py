@@ -9,9 +9,8 @@ from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class WarningT(Exception):
+class WarningT:
     at_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type') }})
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Message'), 'exclude': lambda f: f is None }})
     r"""The Travelport standardized error or warning message"""
@@ -20,5 +19,3 @@ class WarningT(Exception):
     r"""Http standard response code"""
     
 
-    def __str__(self) -> str:
-        return utils.marshal_json(self)

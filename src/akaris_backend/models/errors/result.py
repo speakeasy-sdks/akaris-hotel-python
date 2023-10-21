@@ -11,9 +11,8 @@ from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class Result(Exception):
+class Result:
     at_type: Optional[str] = dataclasses.field(default='Result', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
     error: Optional[List[errors_error.Error]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Error'), 'exclude': lambda f: f is None }})
     status: Optional[errors_resultstatusenum.ResultStatusEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
@@ -21,5 +20,3 @@ class Result(Exception):
     warning: Optional[List[errors_warning.WarningT]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Warning'), 'exclude': lambda f: f is None }})
     
 
-    def __str__(self) -> str:
-        return utils.marshal_json(self)

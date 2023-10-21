@@ -171,7 +171,7 @@ req = operations.CreateHotelRulesRequest(
             at_type='OfferQueryHospitalityRequest',
             property_key=shared.PropertyKey(
                 chain_code='HL',
-                property_code='yowza',
+                property_code='string',
             ),
             rate_candidate=shared.RateCandidate(
                 at_type='RateCandidate',
@@ -196,7 +196,7 @@ req = operations.CreateHotelRulesRequest(
                         room_amenity=[
                             shared.RoomAmenity(
                                 inclusion=[
-                                    'firewall',
+                                    'string',
                                 ],
                                 name='24 hour Room Service',
                                 description='WiFi',
@@ -205,9 +205,9 @@ req = operations.CreateHotelRulesRequest(
                     ),
                 ],
             ),
-            checkin_date=dateutil.parser.parse('2022-03-24').date(),
-            checkout_date=dateutil.parser.parse('2023-09-01').date(),
-            number_of_guests=309240,
+            checkin_date=dateutil.parser.parse('2023-10-05').date(),
+            checkout_date=dateutil.parser.parse('2021-06-10').date(),
+            number_of_guests=524055,
         ),
     ),
 )

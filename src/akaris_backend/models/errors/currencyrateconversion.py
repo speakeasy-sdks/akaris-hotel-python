@@ -10,9 +10,8 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class CurrencyRateConversion(Exception):
+class CurrencyRateConversion:
     conversion_rate: errors_conversionrate.ConversionRate = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ConversionRate') }})
     r"""A conversion metric from standard to another with the contextual authority such as IATA, OAG, ISO, etc."""
     source_currency: errors_currencycode.CurrencyCode = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('SourceCurrency') }})
@@ -22,5 +21,3 @@ class CurrencyRateConversion(Exception):
     at_type: Optional[str] = dataclasses.field(default='CurrencyRateConversion', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
     
 
-    def __str__(self) -> str:
-        return utils.marshal_json(self)

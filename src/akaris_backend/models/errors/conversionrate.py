@@ -10,9 +10,8 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class ConversionRate(Exception):
+class ConversionRate:
     r"""A conversion metric from standard to another with the contextual authority such as IATA, OAG, ISO, etc."""
     rate_as_of: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rateAsOf'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     r"""Rate as of"""
@@ -21,5 +20,3 @@ class ConversionRate(Exception):
     value: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value'), 'exclude': lambda f: f is None }})
     
 
-    def __str__(self) -> str:
-        return utils.marshal_json(self)

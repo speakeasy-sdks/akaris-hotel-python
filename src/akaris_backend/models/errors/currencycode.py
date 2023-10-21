@@ -8,9 +8,8 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class CurrencyCode(Exception):
+class CurrencyCode:
     r"""Currency codes are the three-letter alphabetic codes that represent the various currencies used throughout the world."""
     code_authority: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('codeAuthority'), 'exclude': lambda f: f is None }})
     r"""Currency code authority"""
@@ -21,5 +20,3 @@ class CurrencyCode(Exception):
     value: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value'), 'exclude': lambda f: f is None }})
     
 
-    def __str__(self) -> str:
-        return utils.marshal_json(self)

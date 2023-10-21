@@ -8,9 +8,8 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class NameValuePair(Exception):
+class NameValuePair:
     r"""Used for data stored in Name Value pairs"""
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""Key"""
@@ -19,5 +18,3 @@ class NameValuePair(Exception):
     value: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value'), 'exclude': lambda f: f is None }})
     
 
-    def __str__(self) -> str:
-        return utils.marshal_json(self)
