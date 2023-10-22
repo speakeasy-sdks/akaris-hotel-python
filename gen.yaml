@@ -9,7 +9,7 @@ generation:
     disableComments: false
     omitDescriptionIfSummaryPresent: false
   baseServerURL: ""
-  repoURL: https://github.com/speakeasy-sdks/akaris-hotel-python.git
+  repoURL: https://github.com/speakeasy-sdks/akaris-backend-ts.git
   sdkClassName: akaris-backend
   singleTagPerOp: false
   tagNamespacingDisabled: false
