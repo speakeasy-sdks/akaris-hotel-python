@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import comment as shared_comment
+from .comment import Comment
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import List, Optional
@@ -12,6 +12,6 @@ from typing import List, Optional
 @dataclasses.dataclass
 class Comments:
     at_type: Optional[str] = dataclasses.field(default='Comments', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
-    comment: Optional[List[shared_comment.Comment]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Comment'), 'exclude': lambda f: f is None }})
+    comment: Optional[List[Comment]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Comment'), 'exclude': lambda f: f is None }})
     
 

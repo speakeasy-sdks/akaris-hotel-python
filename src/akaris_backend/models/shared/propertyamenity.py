@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import operationtimes as shared_operationtimes
+from .operationtimes import OperationTimes
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import List, Optional
@@ -23,7 +23,7 @@ class PropertyAmenity:
     r"""Location of the property"""
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Name'), 'exclude': lambda f: f is None }})
     r"""Name of the property"""
-    operation_times: Optional[shared_operationtimes.OperationTimes] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('OperationTimes'), 'exclude': lambda f: f is None }})
+    operation_times: Optional[OperationTimes] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('OperationTimes'), 'exclude': lambda f: f is None }})
     surcharge_ind: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('surchargeInd'), 'exclude': lambda f: f is None }})
     r"""To represent if the Amenity attracts a surcharge"""
     

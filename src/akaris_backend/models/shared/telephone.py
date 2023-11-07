@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import enum_telephonerole as shared_enum_telephonerole
+from .enum_telephonerole import EnumTelephoneRole
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
@@ -24,6 +24,6 @@ class Telephone:
     r"""Telephone extension number"""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     r"""UOptional internally referenced id"""
-    role: Optional[shared_enum_telephonerole.EnumTelephoneRole] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('role'), 'exclude': lambda f: f is None }})
+    role: Optional[EnumTelephoneRole] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('role'), 'exclude': lambda f: f is None }})
     
 

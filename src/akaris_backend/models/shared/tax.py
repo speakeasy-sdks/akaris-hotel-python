@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import yesnounknownenum as shared_yesnounknownenum
+from .yesnounknownenum import YesNoUnknownEnum
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
@@ -23,7 +23,7 @@ class Tax:
     r"""additional information"""
     exempt_ind: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('exemptInd'), 'exclude': lambda f: f is None }})
     r"""If true, this tax is exempt"""
-    included_in_base: Optional[shared_yesnounknownenum.YesNoUnknownEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('includedInBase'), 'exclude': lambda f: f is None }})
+    included_in_base: Optional[YesNoUnknownEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('includedInBase'), 'exclude': lambda f: f is None }})
     r"""Yes , No , Unknown"""
     purpose: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('purpose'), 'exclude': lambda f: f is None }})
     r"""purpose"""

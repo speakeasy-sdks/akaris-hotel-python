@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import positionaccuracyenum as shared_positionaccuracyenum
-from ..shared import unitofdistanceenum as shared_unitofdistanceenum
+from .positionaccuracyenum import PositionAccuracyEnum
+from .unitofdistanceenum import UnitOfDistanceEnum
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
@@ -19,13 +19,13 @@ class GeoLocation:
     r"""The measure of the angular distance on a meridan east or west equator"""
     altitude: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('altitude'), 'exclude': lambda f: f is None }})
     r"""The height or an item, typically measured above sea level"""
-    altitude_unit_of_distance: Optional[shared_unitofdistanceenum.UnitOfDistanceEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('altitudeUnitOfDistance'), 'exclude': lambda f: f is None }})
+    altitude_unit_of_distance: Optional[UnitOfDistanceEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('altitudeUnitOfDistance'), 'exclude': lambda f: f is None }})
     r"""Miles, Kilometers, etc."""
     format_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('formatURL'), 'exclude': lambda f: f is None }})
     r"""The URL to the format for the latitude and longitude for this location."""
     map_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mapURL'), 'exclude': lambda f: f is None }})
     r"""link for embedded map showing location"""
-    position_accuracy: Optional[shared_positionaccuracyenum.PositionAccuracyEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('positionAccuracy'), 'exclude': lambda f: f is None }})
+    position_accuracy: Optional[PositionAccuracyEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('positionAccuracy'), 'exclude': lambda f: f is None }})
     r"""Specifies the level of accuracy for the position"""
     
 

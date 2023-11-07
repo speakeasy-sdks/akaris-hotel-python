@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import identifiertypeenum as shared_identifiertypeenum
-from ..shared import reservationresponsewrapper as shared_reservationresponsewrapper
+from ...models.shared import identifiertypeenum as shared_identifiertypeenum
+from ...models.shared import reservationresponsewrapper as shared_reservationresponsewrapper
 from typing import Optional
 
 

@@ -13,6 +13,7 @@ from .nextsteps import *
 from .referencelist import *
 from .result import *
 from .resultstatusenum import *
+from .sdkerror import *
 from .warning import *
-from .sdkerror import SDKError
-__all__ = ["BaseResponse","ConversionRate","CurrencyCode","CurrencyRateConversion","Error","Identifier","NameValuePair","NextStep","NextStepMethodEnum","NextSteps","ReferenceList","Result","ResultStatusEnum","WarningT","SDKError"]
+
+__all__ = ["BaseResponse","ConversionRate","CurrencyCode","CurrencyRateConversion","Error","Identifier","NameValuePair","NextStep","NextStepMethodEnum","NextSteps","ReferenceList","Result","ResultStatusEnum","SDKError","WarningT"]

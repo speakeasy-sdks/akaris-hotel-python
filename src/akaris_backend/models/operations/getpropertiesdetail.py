@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import imagesizeenum as shared_imagesizeenum
-from ..shared import propertiesresponsewrapper as shared_propertiesresponsewrapper
+from ...models.shared import imagesizeenum as shared_imagesizeenum
+from ...models.shared import propertiesresponsewrapper as shared_propertiesresponsewrapper
 from typing import Optional
 
 

@@ -1,5 +1,5 @@
 # ReservationHotel
-(*reservation_hotel*)
+(*.reservation_hotel*)
 
 ### Available Operations
 

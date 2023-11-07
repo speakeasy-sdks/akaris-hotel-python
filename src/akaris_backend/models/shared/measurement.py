@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import measurementtypeenum as shared_measurementtypeenum
-from ..shared import unitofmeasureenum as shared_unitofmeasureenum
+from .measurementtypeenum import MeasurementTypeEnum
+from .unitofmeasureenum import UnitOfMeasureEnum
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
@@ -13,9 +13,9 @@ from typing import Optional
 @dataclasses.dataclass
 class Measurement:
     r"""Used for dimensional units (width, height, depth) or weight"""
-    measurement_type: Optional[shared_measurementtypeenum.MeasurementTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('measurementType'), 'exclude': lambda f: f is None }})
+    measurement_type: Optional[MeasurementTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('measurementType'), 'exclude': lambda f: f is None }})
     r"""The type of measurement such as width, height, weight"""
-    unit: Optional[shared_unitofmeasureenum.UnitOfMeasureEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unit'), 'exclude': lambda f: f is None }})
+    unit: Optional[UnitOfMeasureEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unit'), 'exclude': lambda f: f is None }})
     r"""The unit of measure in a code format. Refer to OpenTravel Code List Unit of Measure Code (UOM)."""
     value: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value'), 'exclude': lambda f: f is None }})
     

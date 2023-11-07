@@ -1,5 +1,5 @@
 # HotelAvailability
-(*hotel_availability*)
+(*.hotel_availability*)
 
 ### Available Operations
 

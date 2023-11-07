@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import catalogofferingsrequesthospitality as shared_catalogofferingsrequesthospitality
+from .catalogofferingsrequesthospitality import CatalogOfferingsRequestHospitality
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import List
@@ -12,6 +12,6 @@ from typing import List
 @dataclasses.dataclass
 class CatalogOfferingsQueryRequest:
     at_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type') }})
-    catalog_offerings_request: List[shared_catalogofferingsrequesthospitality.CatalogOfferingsRequestHospitality] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('CatalogOfferingsRequest') }})
+    catalog_offerings_request: List[CatalogOfferingsRequestHospitality] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('CatalogOfferingsRequest') }})
     
 

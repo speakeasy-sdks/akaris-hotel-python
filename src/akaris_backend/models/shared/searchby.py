@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import distance as shared_distance
+from .distance import Distance
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
@@ -12,7 +12,7 @@ from typing import Optional
 @dataclasses.dataclass
 class SearchBy:
     at_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type') }})
-    search_radius: Optional[shared_distance.Distance] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('SearchRadius'), 'exclude': lambda f: f is None }})
+    search_radius: Optional[Distance] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('SearchRadius'), 'exclude': lambda f: f is None }})
     r"""A search radius"""
     
 

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import reservationquerybuild as shared_reservationquerybuild
+from .reservationquerybuild import ReservationQueryBuild
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
@@ -11,6 +11,6 @@ from typing import Optional
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class ReservationQueryBuildWrapper:
-    reservation_query_build: Optional[shared_reservationquerybuild.ReservationQueryBuild] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ReservationQueryBuild'), 'exclude': lambda f: f is None }})
+    reservation_query_build: Optional[ReservationQueryBuild] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ReservationQueryBuild'), 'exclude': lambda f: f is None }})
     
 

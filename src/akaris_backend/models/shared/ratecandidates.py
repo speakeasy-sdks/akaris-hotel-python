@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import ratecandidate as shared_ratecandidate
+from .ratecandidate import RateCandidate
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import List, Optional
@@ -12,7 +12,7 @@ from typing import List, Optional
 @dataclasses.dataclass
 class RateCandidates:
     at_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type') }})
-    rate_candidate: List[shared_ratecandidate.RateCandidate] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('RateCandidate') }})
+    rate_candidate: List[RateCandidate] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('RateCandidate') }})
     post_pay_rates_only_ind: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('postPayRatesOnlyInd'), 'exclude': lambda f: f is None }})
     r"""If true, only postpay rates will be returned"""
     pre_pay_rates_only_ind: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('prePayRatesOnlyInd'), 'exclude': lambda f: f is None }})

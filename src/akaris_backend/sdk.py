@@ -13,10 +13,10 @@ from typing import Dict
 
 class AkarisBackend:
     hotel_availability: HotelAvailability
-    hotel_rules: HotelRules
-    precision_search_hotel: PrecisionSearchHotel
     reservation_hotel: ReservationHotel
+    hotel_rules: HotelRules
     search_hotel: SearchHotel
+    precision_search_hotel: PrecisionSearchHotel
 
     sdk_configuration: SDKConfiguration
 
@@ -60,8 +60,8 @@ class AkarisBackend:
     
     def _init_sdks(self):
         self.hotel_availability = HotelAvailability(self.sdk_configuration)
-        self.hotel_rules = HotelRules(self.sdk_configuration)
-        self.precision_search_hotel = PrecisionSearchHotel(self.sdk_configuration)
         self.reservation_hotel = ReservationHotel(self.sdk_configuration)
+        self.hotel_rules = HotelRules(self.sdk_configuration)
         self.search_hotel = SearchHotel(self.sdk_configuration)
+        self.precision_search_hotel = PrecisionSearchHotel(self.sdk_configuration)
     

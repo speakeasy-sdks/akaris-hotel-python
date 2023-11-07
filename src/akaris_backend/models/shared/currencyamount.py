@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import currencysourceenum as shared_currencysourceenum
+from .currencysourceenum import CurrencySourceEnum
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
@@ -16,7 +16,7 @@ class CurrencyAmount:
     r"""True if the currency amount has been converted from the original amount"""
     code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code'), 'exclude': lambda f: f is None }})
     r"""An ISO 4217 alpha character code that specifies a money unit"""
-    currency_source: Optional[shared_currencysourceenum.CurrencySourceEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('currencySource'), 'exclude': lambda f: f is None }})
+    currency_source: Optional[CurrencySourceEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('currencySource'), 'exclude': lambda f: f is None }})
     r"""The system requesting or returning the currency code specified in the attribute"""
     minor_unit: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('minorUnit'), 'exclude': lambda f: f is None }})
     r"""Minor units are a mechanism for expressing the relationship between a major currency unit and its corresponding minor currency unit."""

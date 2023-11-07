@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import changefeemethodenum_base as shared_changefeemethodenum_base
+from .changefeemethodenum_base import ChangeFeeMethodEnumBase
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
@@ -11,6 +11,6 @@ from typing import Optional
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class ChangeFeeMethodEnum:
-    value: Optional[shared_changefeemethodenum_base.ChangeFeeMethodEnumBase] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value'), 'exclude': lambda f: f is None }})
+    value: Optional[ChangeFeeMethodEnumBase] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value'), 'exclude': lambda f: f is None }})
     
 

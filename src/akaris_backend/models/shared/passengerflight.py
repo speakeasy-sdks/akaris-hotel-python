@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import flightproduct as shared_flightproduct
+from .flightproduct import FlightProduct
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import List, Optional
@@ -12,7 +12,7 @@ from typing import List, Optional
 @dataclasses.dataclass
 class PassengerFlight:
     at_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
-    flight_product: Optional[List[shared_flightproduct.FlightProduct]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('FlightProduct'), 'exclude': lambda f: f is None }})
+    flight_product: Optional[List[FlightProduct]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('FlightProduct'), 'exclude': lambda f: f is None }})
     passenger_quantity: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('passengerQuantity'), 'exclude': lambda f: f is None }})
     r"""Number of passengers of the specified passenger type code"""
     passenger_type_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('passengerTypeCode'), 'exclude': lambda f: f is None }})

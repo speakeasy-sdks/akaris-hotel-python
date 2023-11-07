@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import propertyrequest as shared_propertyrequest
-from ..shared import ratecandidates as shared_ratecandidates
-from ..shared import roomstaycandidates as shared_roomstaycandidates
+from .propertyrequest import PropertyRequest
+from .ratecandidates import RateCandidates
+from .roomstaycandidates import RoomStayCandidates
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import List, Optional
@@ -13,11 +13,11 @@ from typing import List, Optional
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class HotelSearchCriterion:
-    property_request: List[shared_propertyrequest.PropertyRequest] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PropertyRequest') }})
+    property_request: List[PropertyRequest] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PropertyRequest') }})
     at_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
     number_of_rooms: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('numberOfRooms'), 'exclude': lambda f: f is None }})
     r"""Number of rooms requested"""
-    rate_candidates: Optional[shared_ratecandidates.RateCandidates] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('RateCandidates'), 'exclude': lambda f: f is None }})
-    room_stay_candidates: Optional[shared_roomstaycandidates.RoomStayCandidates] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('RoomStayCandidates'), 'exclude': lambda f: f is None }})
+    rate_candidates: Optional[RateCandidates] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('RateCandidates'), 'exclude': lambda f: f is None }})
+    room_stay_candidates: Optional[RoomStayCandidates] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('RoomStayCandidates'), 'exclude': lambda f: f is None }})
     
 

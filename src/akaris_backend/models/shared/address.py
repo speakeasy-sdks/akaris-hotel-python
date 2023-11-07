@@ -2,11 +2,11 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import addressbldgroom as shared_addressbldgroom
-from ..shared import addressstreetnumber as shared_addressstreetnumber
-from ..shared import country as shared_country
-from ..shared import enum_addressrole as shared_enum_addressrole
-from ..shared import stateprov as shared_stateprov
+from .addressbldgroom import AddressBldgRoom
+from .addressstreetnumber import AddressStreetNumber
+from .country import Country
+from .enum_addressrole import EnumAddressRole
+from .stateprov import StateProv
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import List, Optional
@@ -22,20 +22,20 @@ class Address:
     r"""The name of the company or person to be addressed"""
     address_line: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('AddressLine'), 'exclude': lambda f: f is None }})
     r"""Additional address line details"""
-    bldg_room: Optional[shared_addressbldgroom.AddressBldgRoom] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('BldgRoom'), 'exclude': lambda f: f is None }})
+    bldg_room: Optional[AddressBldgRoom] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('BldgRoom'), 'exclude': lambda f: f is None }})
     r"""Address with building and room number"""
-    country: Optional[shared_country.Country] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Country'), 'exclude': lambda f: f is None }})
+    country: Optional[Country] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Country'), 'exclude': lambda f: f is None }})
     r"""ISO 3166 code for a country with optional name"""
     county: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('County'), 'exclude': lambda f: f is None }})
     r"""County or Region Name (e.g., Fairfax)."""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     r"""Internally referenced id"""
-    number: Optional[shared_addressstreetnumber.AddressStreetNumber] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Number'), 'exclude': lambda f: f is None }})
+    number: Optional[AddressStreetNumber] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Number'), 'exclude': lambda f: f is None }})
     r"""The street number alone is the numerical number that precedes the street name in the address"""
     postal_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PostalCode'), 'exclude': lambda f: f is None }})
     r"""Post Office Code number."""
-    role: Optional[shared_enum_addressrole.EnumAddressRole] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('role'), 'exclude': lambda f: f is None }})
-    state_prov: Optional[shared_stateprov.StateProv] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('StateProv'), 'exclude': lambda f: f is None }})
+    role: Optional[EnumAddressRole] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('role'), 'exclude': lambda f: f is None }})
+    state_prov: Optional[StateProv] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('StateProv'), 'exclude': lambda f: f is None }})
     r"""The standard code or abbreviation for the state, province, or region with optional name"""
     street: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Street'), 'exclude': lambda f: f is None }})
     r"""May contain the street number when the Street number element is missing."""

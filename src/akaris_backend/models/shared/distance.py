@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import unitofdistanceenum as shared_unitofdistanceenum
+from .unitofdistanceenum import UnitOfDistanceEnum
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
@@ -12,7 +12,7 @@ from typing import Optional
 @dataclasses.dataclass
 class Distance:
     r"""A search radius"""
-    unit_of_distance: Optional[shared_unitofdistanceenum.UnitOfDistanceEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unitOfDistance'), 'exclude': lambda f: f is None }})
+    unit_of_distance: Optional[UnitOfDistanceEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unitOfDistance'), 'exclude': lambda f: f is None }})
     r"""Miles, Kilometers, etc."""
     value: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value'), 'exclude': lambda f: f is None }})
     r"""When using distance as a property search parameter, the maximum distance is 25 regardless of unit of distance"""

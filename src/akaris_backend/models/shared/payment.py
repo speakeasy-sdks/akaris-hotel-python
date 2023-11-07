@@ -2,15 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import agencyservicefeeidentifier as shared_agencyservicefeeidentifier
-from ..shared import currencyamount as shared_currencyamount
-from ..shared import extendedpayment as shared_extendedpayment
-from ..shared import fees as shared_fees
-from ..shared import formofpaymentidentifier as shared_formofpaymentidentifier
-from ..shared import identifier as shared_identifier
-from ..shared import offeridentifier as shared_offeridentifier
-from ..shared import taxes as shared_taxes
-from ..shared import traveleridentifierref as shared_traveleridentifierref
+from .agencyservicefeeidentifier import AgencyServiceFeeIdentifier
+from .currencyamount import CurrencyAmount
+from .extendedpayment import ExtendedPayment
+from .fees import Fees
+from .formofpaymentidentifier import FormOfPaymentIdentifier
+from .identifier import Identifier
+from .offeridentifier import OfferIdentifier
+from .taxes import Taxes
+from .traveleridentifierref import TravelerIdentifierRef
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import List, Optional
@@ -19,26 +19,26 @@ from typing import List, Optional
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class Payment:
-    amount: shared_currencyamount.CurrencyAmount = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Amount') }})
+    amount: CurrencyAmount = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Amount') }})
     r"""A monetary amount, up to 4 decimal places. Decimal place needs to be included."""
     at_type: Optional[str] = dataclasses.field(default='Payment', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
-    agency_service_fee_identifier: Optional[List[shared_agencyservicefeeidentifier.AgencyServiceFeeIdentifier]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('AgencyServiceFeeIdentifier'), 'exclude': lambda f: f is None }})
-    base_amount: Optional[shared_currencyamount.CurrencyAmount] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('BaseAmount'), 'exclude': lambda f: f is None }})
+    agency_service_fee_identifier: Optional[List[AgencyServiceFeeIdentifier]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('AgencyServiceFeeIdentifier'), 'exclude': lambda f: f is None }})
+    base_amount: Optional[CurrencyAmount] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('BaseAmount'), 'exclude': lambda f: f is None }})
     r"""A monetary amount, up to 4 decimal places. Decimal place needs to be included."""
     deposit_ind: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('depositInd'), 'exclude': lambda f: f is None }})
     r"""If true, the payment is a deposit on the referenced Offer"""
-    extended_payment: Optional[shared_extendedpayment.ExtendedPayment] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ExtendedPayment'), 'exclude': lambda f: f is None }})
+    extended_payment: Optional[ExtendedPayment] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ExtendedPayment'), 'exclude': lambda f: f is None }})
     r"""Note this field is deprecated in Payment schema and should be passed in FormOfPaymentPaymentCardExtendPayment schema"""
-    fees: Optional[shared_fees.Fees] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Fees'), 'exclude': lambda f: f is None }})
-    form_of_payment_identifier: Optional[shared_formofpaymentidentifier.FormOfPaymentIdentifier] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('FormOfPaymentIdentifier'), 'exclude': lambda f: f is None }})
+    fees: Optional[Fees] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Fees'), 'exclude': lambda f: f is None }})
+    form_of_payment_identifier: Optional[FormOfPaymentIdentifier] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('FormOfPaymentIdentifier'), 'exclude': lambda f: f is None }})
     guarantee_ind: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('guaranteeInd'), 'exclude': lambda f: f is None }})
     r"""If true, the payment is a guarantee for the referenced Offer"""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
-    identifier: Optional[shared_identifier.Identifier] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Identifier'), 'exclude': lambda f: f is None }})
+    identifier: Optional[Identifier] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Identifier'), 'exclude': lambda f: f is None }})
     r"""Identifier provides the ability to create a globally unique identifier. For the identifier to be globally unique it must have a system provided identifier and the system must be identified using a global naming authority. System identification uses the domain naming system (DNS) to assure they are globally unique and should be an URL. The system provided ID will typically be a primary or surrogate key in a database."""
-    offer_identifier: Optional[List[shared_offeridentifier.OfferIdentifier]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('OfferIdentifier'), 'exclude': lambda f: f is None }})
+    offer_identifier: Optional[List[OfferIdentifier]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('OfferIdentifier'), 'exclude': lambda f: f is None }})
     payment_ref: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PaymentRef'), 'exclude': lambda f: f is None }})
-    taxes: Optional[shared_taxes.Taxes] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Taxes'), 'exclude': lambda f: f is None }})
-    traveler_identifier_ref: Optional[List[shared_traveleridentifierref.TravelerIdentifierRef]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TravelerIdentifierRef'), 'exclude': lambda f: f is None }})
+    taxes: Optional[Taxes] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Taxes'), 'exclude': lambda f: f is None }})
+    traveler_identifier_ref: Optional[List[TravelerIdentifierRef]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TravelerIdentifierRef'), 'exclude': lambda f: f is None }})
     
 

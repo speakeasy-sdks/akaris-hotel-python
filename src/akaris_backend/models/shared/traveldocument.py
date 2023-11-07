@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import doctypecodeenum as shared_doctypecodeenum
-from ..shared import genderenum as shared_genderenum
-from ..shared import personname as shared_personname
+from .doctypecodeenum import DocTypeCodeEnum
+from .genderenum import GenderEnum
+from .personname import PersonName
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from datetime import date
@@ -17,16 +17,16 @@ class TravelDocument:
     at_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type') }})
     doc_number: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('docNumber') }})
     r"""Document number value"""
-    gender: shared_genderenum.GenderEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Gender') }})
+    gender: GenderEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Gender') }})
     r"""Gender Type Male, Female etc. This field is not used by Hotel APIs and will be ignored"""
-    person_name: shared_personname.PersonName = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PersonName') }})
+    person_name: PersonName = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PersonName') }})
     birth_country: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('birthCountry'), 'exclude': lambda f: f is None }})
     r"""Birth country on Country Code ISO value"""
     birth_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('birthDate'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is None }})
     r"""The date of birth of the document holder"""
     birth_place: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('birthPlace'), 'exclude': lambda f: f is None }})
     r"""Birth place value"""
-    doc_type: Optional[shared_doctypecodeenum.DocTypeCodeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('docType'), 'exclude': lambda f: f is None }})
+    doc_type: Optional[DocTypeCodeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('docType'), 'exclude': lambda f: f is None }})
     r"""Codes from OTA DOC - Document Type"""
     expire_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expireDate'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is None }})
     r"""Date of expiration"""

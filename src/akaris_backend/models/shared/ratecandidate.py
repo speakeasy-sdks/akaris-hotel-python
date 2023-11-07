@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import ratecategoryenum as shared_ratecategoryenum
+from .ratecategoryenum import RateCategoryEnum
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
@@ -18,7 +18,7 @@ class RateCandidate:
     r"""rate candidate priority"""
     property_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('propertyCode'), 'exclude': lambda f: f is None }})
     r"""The hotel chain code"""
-    rate_category: Optional[shared_ratecategoryenum.RateCategoryEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rateCategory'), 'exclude': lambda f: f is None }})
+    rate_category: Optional[RateCategoryEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rateCategory'), 'exclude': lambda f: f is None }})
     r"""Rate Category"""
     rate_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rateCode'), 'exclude': lambda f: f is None }})
     r"""The rateCode to be applied to the request"""

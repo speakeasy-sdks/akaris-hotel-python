@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import propertiesqueryspecificprecisionpropertylist as shared_propertiesqueryspecificprecisionpropertylist
+from .propertiesqueryspecificprecisionpropertylist import PropertiesQuerySpecificPrecisionPropertyList
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
@@ -11,6 +11,6 @@ from typing import Optional
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class PropertiesQuerySpecificPrecisionPropertyListWrapper:
-    properties_query_specific_precision_property_list: Optional[shared_propertiesqueryspecificprecisionpropertylist.PropertiesQuerySpecificPrecisionPropertyList] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PropertiesQuerySpecificPrecisionPropertyList'), 'exclude': lambda f: f is None }})
+    properties_query_specific_precision_property_list: Optional[PropertiesQuerySpecificPrecisionPropertyList] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PropertiesQuerySpecificPrecisionPropertyList'), 'exclude': lambda f: f is None }})
     
 

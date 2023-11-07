@@ -2,13 +2,13 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import availabilitystatusenum as shared_availabilitystatusenum
-from ..shared import currencyamount as shared_currencyamount
-from ..shared import distance as shared_distance
-from ..shared import identifier as shared_identifier
-from ..shared import maximumavailablerate as shared_maximumavailablerate
-from ..shared import nextsteps as shared_nextsteps
-from ..shared import propertydetail as shared_propertydetail
+from .availabilitystatusenum import AvailabilityStatusEnum
+from .currencyamount import CurrencyAmount
+from .distance import Distance
+from .identifier import Identifier
+from .maximumavailablerate import MaximumAvailableRate
+from .nextsteps import NextSteps
+from .propertydetail import PropertyDetail
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
@@ -17,21 +17,21 @@ from typing import Optional
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class PropertyInfo:
-    distance: shared_distance.Distance = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Distance') }})
+    distance: Distance = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Distance') }})
     r"""A search radius"""
-    lowest_available_rate: shared_currencyamount.CurrencyAmount = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('LowestAvailableRate') }})
+    lowest_available_rate: CurrencyAmount = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('LowestAvailableRate') }})
     r"""A monetary amount, up to 4 decimal places. Decimal place needs to be included."""
-    property: shared_propertydetail.PropertyDetail = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Property') }})
+    property: PropertyDetail = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Property') }})
     at_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
-    availability: Optional[shared_availabilitystatusenum.AvailabilityStatusEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('availability'), 'exclude': lambda f: f is None }})
+    availability: Optional[AvailabilityStatusEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('availability'), 'exclude': lambda f: f is None }})
     r"""Identifies the availability status of an item."""
     featured_property_ind: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('featuredPropertyInd'), 'exclude': lambda f: f is None }})
     r"""If present and true then this property was added to the list based on criteria other than those in the request"""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
-    identifier: Optional[shared_identifier.Identifier] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Identifier'), 'exclude': lambda f: f is None }})
+    identifier: Optional[Identifier] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Identifier'), 'exclude': lambda f: f is None }})
     r"""Identifier provides the ability to create a globally unique identifier. For the identifier to be globally unique it must have a system provided identifier and the system must be identified using a global naming authority. System identification uses the domain naming system (DNS) to assure they are globally unique and should be an URL. The system provided ID will typically be a primary or surrogate key in a database."""
-    maximum_available_rate: Optional[shared_maximumavailablerate.MaximumAvailableRate] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('MaximumAvailableRate'), 'exclude': lambda f: f is None }})
+    maximum_available_rate: Optional[MaximumAvailableRate] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('MaximumAvailableRate'), 'exclude': lambda f: f is None }})
     r"""Maximum Available Rate for this Property, including the authority who provided the rate if it is different from the PropertyInfo authority."""
-    next_steps: Optional[shared_nextsteps.NextSteps] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('NextSteps'), 'exclude': lambda f: f is None }})
+    next_steps: Optional[NextSteps] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('NextSteps'), 'exclude': lambda f: f is None }})
     
 

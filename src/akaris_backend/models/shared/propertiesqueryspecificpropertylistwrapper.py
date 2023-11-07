@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import propertiesqueryspecificpropertylist as shared_propertiesqueryspecificpropertylist
+from .propertiesqueryspecificpropertylist import PropertiesQuerySpecificPropertyList
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
@@ -11,6 +11,6 @@ from typing import Optional
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class PropertiesQuerySpecificPropertyListWrapper:
-    properties_query_specific_property_list: Optional[shared_propertiesqueryspecificpropertylist.PropertiesQuerySpecificPropertyList] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PropertiesQuerySpecificPropertyList'), 'exclude': lambda f: f is None }})
+    properties_query_specific_property_list: Optional[PropertiesQuerySpecificPropertyList] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PropertiesQuerySpecificPropertyList'), 'exclude': lambda f: f is None }})
     
 

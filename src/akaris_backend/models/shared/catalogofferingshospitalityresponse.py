@@ -2,12 +2,12 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import catalogofferings as shared_catalogofferings
-from ..shared import currencyrateconversion as shared_currencyrateconversion
-from ..shared import identifier as shared_identifier
-from ..shared import nextsteps as shared_nextsteps
-from ..shared import referencelist as shared_referencelist
-from ..shared import result as shared_result
+from .catalogofferings import CatalogOfferings
+from .currencyrateconversion import CurrencyRateConversion
+from .identifier import Identifier
+from .nextsteps import NextSteps
+from .referencelist import ReferenceList
+from .result import Result
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import List, Optional
@@ -17,13 +17,13 @@ from typing import List, Optional
 @dataclasses.dataclass
 class CatalogOfferingsHospitalityResponse:
     at_type: Optional[str] = dataclasses.field(default='CatalogOfferingsHospitalityResponse', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
-    catalog_offerings: Optional[shared_catalogofferings.CatalogOfferings] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('CatalogOfferings'), 'exclude': lambda f: f is None }})
-    currency_rate_conversion: Optional[List[shared_currencyrateconversion.CurrencyRateConversion]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('CurrencyRateConversion'), 'exclude': lambda f: f is None }})
-    identifier: Optional[shared_identifier.Identifier] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Identifier'), 'exclude': lambda f: f is None }})
+    catalog_offerings: Optional[CatalogOfferings] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('CatalogOfferings'), 'exclude': lambda f: f is None }})
+    currency_rate_conversion: Optional[List[CurrencyRateConversion]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('CurrencyRateConversion'), 'exclude': lambda f: f is None }})
+    identifier: Optional[Identifier] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Identifier'), 'exclude': lambda f: f is None }})
     r"""Identifier provides the ability to create a globally unique identifier. For the identifier to be globally unique it must have a system provided identifier and the system must be identified using a global naming authority. System identification uses the domain naming system (DNS) to assure they are globally unique and should be an URL. The system provided ID will typically be a primary or surrogate key in a database."""
-    next_steps: Optional[shared_nextsteps.NextSteps] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('NextSteps'), 'exclude': lambda f: f is None }})
-    reference_list: Optional[List[shared_referencelist.ReferenceList]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ReferenceList'), 'exclude': lambda f: f is None }})
-    result: Optional[shared_result.Result] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Result'), 'exclude': lambda f: f is None }})
+    next_steps: Optional[NextSteps] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('NextSteps'), 'exclude': lambda f: f is None }})
+    reference_list: Optional[List[ReferenceList]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ReferenceList'), 'exclude': lambda f: f is None }})
+    result: Optional[Result] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Result'), 'exclude': lambda f: f is None }})
     trace_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('traceId'), 'exclude': lambda f: f is None }})
     r"""Optional ID for internal child transactions created for processing a single request (single transaction). Should be a 128 bit GUID format. Also known as ChildTrackingId."""
     transaction_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transactionId'), 'exclude': lambda f: f is None }})

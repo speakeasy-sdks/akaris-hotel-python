@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import propertiesqueryspecificprecisionpropertylistwrapper as shared_propertiesqueryspecificprecisionpropertylistwrapper
-from ..shared import propertiesresponsewrapper as shared_propertiesresponsewrapper
+from ...models.shared import propertiesqueryspecificprecisionpropertylistwrapper as shared_propertiesqueryspecificprecisionpropertylistwrapper
+from ...models.shared import propertiesresponsewrapper as shared_propertiesresponsewrapper
 from typing import Optional
 
 

@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import offerhospitalityresponsewrapper as shared_offerhospitalityresponsewrapper
-from ..shared import offerquerybuildfromcatalogofferingwrapper as shared_offerquerybuildfromcatalogofferingwrapper
+from ...models.shared import offerhospitalityresponsewrapper as shared_offerhospitalityresponsewrapper
+from ...models.shared import offerquerybuildfromcatalogofferingwrapper as shared_offerquerybuildfromcatalogofferingwrapper
 from typing import Optional
 
 

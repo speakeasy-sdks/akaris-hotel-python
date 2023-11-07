@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import imagesizeenum as shared_imagesizeenum
-from ..shared import pictureofenum as shared_pictureofenum
+from .imagesizeenum import ImageSizeEnum
+from .pictureofenum import PictureofEnum
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
@@ -19,11 +19,11 @@ class Image:
     r"""Deprecated and replaced by Image Size"""
     height: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('height'), 'exclude': lambda f: f is None }})
     r"""Height"""
-    image_size: Optional[shared_imagesizeenum.ImageSizeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('imageSize'), 'exclude': lambda f: f is None }})
+    image_size: Optional[ImageSizeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('imageSize'), 'exclude': lambda f: f is None }})
     r"""Indicates the size of the image. Hospitality APIs no longer support thumbnail"""
     picture_category: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pictureCategory'), 'exclude': lambda f: f is None }})
     r"""deprecated and replaced by pictureOf"""
-    picture_of: Optional[shared_pictureofenum.PictureofEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pictureOf'), 'exclude': lambda f: f is None }})
+    picture_of: Optional[PictureofEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pictureOf'), 'exclude': lambda f: f is None }})
     value: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value'), 'exclude': lambda f: f is None }})
     width: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('width'), 'exclude': lambda f: f is None }})
     r"""Width of image"""

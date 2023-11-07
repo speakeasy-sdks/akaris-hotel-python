@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import unitofsize as shared_unitofsize
+from .unitofsize import UnitOfSize
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import List, Optional
@@ -18,7 +18,7 @@ class MeetingRoom:
     codes: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('codes'), 'exclude': lambda f: f is None }})
     r"""OTA code for this room type."""
     size: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('size'), 'exclude': lambda f: f is None }})
-    unit_of_size: Optional[shared_unitofsize.UnitOfSize] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unitOfSize'), 'exclude': lambda f: f is None }})
+    unit_of_size: Optional[UnitOfSize] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unitOfSize'), 'exclude': lambda f: f is None }})
     r"""List of units of size i.e Square Feet, Square Meters"""
     
 

@@ -1,5 +1,5 @@
 # SearchHotel
-(*search_hotel*)
+(*.search_hotel*)
 
 ### Available Operations
 

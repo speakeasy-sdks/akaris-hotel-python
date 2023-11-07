@@ -3,9 +3,9 @@
 from __future__ import annotations
 import dataclasses
 import dateutil.parser
-from ..shared import currencyamount as shared_currencyamount
-from ..shared import documentnumber as shared_documentnumber
-from ..shared import tax as shared_tax
+from .currencyamount import CurrencyAmount
+from .documentnumber import DocumentNumber
+from .tax import Tax
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
@@ -16,7 +16,7 @@ from typing import List, Optional
 @dataclasses.dataclass
 class AgencyServiceFee:
     at_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type') }})
-    amount: shared_currencyamount.CurrencyAmount = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Amount') }})
+    amount: CurrencyAmount = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Amount') }})
     r"""A monetary amount, up to 4 decimal places. Decimal place needs to be included."""
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Description'), 'exclude': lambda f: f is None }})
     r"""The description of the service fee"""
@@ -26,8 +26,8 @@ class AgencyServiceFee:
     r"""Unique id for this object within a message"""
     offer_ref: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('OfferRef'), 'exclude': lambda f: f is None }})
     r"""Reference to an Offer within the Reservation that this service fee applies to"""
-    related_document_number: Optional[shared_documentnumber.DocumentNumber] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('RelatedDocumentNumber'), 'exclude': lambda f: f is None }})
-    tax: Optional[List[shared_tax.Tax]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Tax'), 'exclude': lambda f: f is None }})
+    related_document_number: Optional[DocumentNumber] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('RelatedDocumentNumber'), 'exclude': lambda f: f is None }})
+    tax: Optional[List[Tax]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Tax'), 'exclude': lambda f: f is None }})
     traveler_ref: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TravelerRef'), 'exclude': lambda f: f is None }})
     r"""Reference to a Traveler within the Reservation that this service fee applies to"""
     

@@ -1,5 +1,5 @@
 # HotelRules
-(*hotel_rules*)
+(*.hotel_rules*)
 
 ### Available Operations
 

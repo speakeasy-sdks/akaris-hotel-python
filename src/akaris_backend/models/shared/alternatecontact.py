@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import address as shared_address
-from ..shared import email as shared_email
-from ..shared import personname as shared_personname
-from ..shared import telephone as shared_telephone
+from .address import Address
+from .email import Email
+from .personname import PersonName
+from .telephone import Telephone
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import List, Optional
@@ -14,19 +14,19 @@ from typing import List, Optional
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class AlternateContact:
-    person_name: shared_personname.PersonName = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PersonName') }})
+    person_name: PersonName = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PersonName') }})
     at_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
-    address: Optional[List[shared_address.Address]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Address'), 'exclude': lambda f: f is None }})
+    address: Optional[List[Address]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Address'), 'exclude': lambda f: f is None }})
     contact_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contactType'), 'exclude': lambda f: f is None }})
     r"""Contact type value"""
     default_ind: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('defaultInd'), 'exclude': lambda f: f is None }})
     r"""This is the default contact"""
-    email: Optional[List[shared_email.Email]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Email'), 'exclude': lambda f: f is None }})
+    email: Optional[List[Email]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Email'), 'exclude': lambda f: f is None }})
     emergency_ind: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('emergencyInd'), 'exclude': lambda f: f is None }})
     r"""This is the contact in case of an emergency"""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     relation: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relation'), 'exclude': lambda f: f is None }})
     r"""Relation value"""
-    telephone: Optional[List[shared_telephone.Telephone]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Telephone'), 'exclude': lambda f: f is None }})
+    telephone: Optional[List[Telephone]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Telephone'), 'exclude': lambda f: f is None }})
     
 

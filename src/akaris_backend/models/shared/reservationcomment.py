@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import appliesto as shared_appliesto
-from ..shared import comment as shared_comment
-from ..shared import commentsourceenum as shared_commentsourceenum
-from ..shared import sharewithenum as shared_sharewithenum
+from .appliesto import AppliesTo
+from .comment import Comment
+from .commentsourceenum import CommentSourceEnum
+from .sharewithenum import ShareWithEnum
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import List, Optional
@@ -15,12 +15,12 @@ from typing import List, Optional
 @dataclasses.dataclass
 class ReservationComment:
     at_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type') }})
-    applies_to: Optional[List[shared_appliesto.AppliesTo]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('AppliesTo'), 'exclude': lambda f: f is None }})
-    comment: Optional[List[shared_comment.Comment]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Comment'), 'exclude': lambda f: f is None }})
-    comment_source: Optional[shared_commentsourceenum.CommentSourceEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('commentSource'), 'exclude': lambda f: f is None }})
+    applies_to: Optional[List[AppliesTo]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('AppliesTo'), 'exclude': lambda f: f is None }})
+    comment: Optional[List[Comment]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Comment'), 'exclude': lambda f: f is None }})
+    comment_source: Optional[CommentSourceEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('commentSource'), 'exclude': lambda f: f is None }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     r"""Local indentifier within a given message for this object."""
-    share_with: Optional[shared_sharewithenum.ShareWithEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('shareWith'), 'exclude': lambda f: f is None }})
+    share_with: Optional[ShareWithEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('shareWith'), 'exclude': lambda f: f is None }})
     r"""Share with like Supplier,agency etc"""
     share_with_supplier: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('shareWithSupplier'), 'exclude': lambda f: f is None }})
     r"""Reservation comment shared with supplier"""

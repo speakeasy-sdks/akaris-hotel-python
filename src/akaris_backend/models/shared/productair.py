@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import flightsegment as shared_flightsegment
-from ..shared import identifier as shared_identifier
-from ..shared import passengerflight as shared_passengerflight
+from .flightsegment import FlightSegment
+from .identifier import Identifier
+from .passengerflight import PassengerFlight
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import List, Optional
@@ -14,11 +14,11 @@ from typing import List, Optional
 @dataclasses.dataclass
 class ProductAir:
     at_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type') }})
-    flight_segment: List[shared_flightsegment.FlightSegment] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('FlightSegment') }})
-    passenger_flight: List[shared_passengerflight.PassengerFlight] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PassengerFlight') }})
+    flight_segment: List[FlightSegment] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('FlightSegment') }})
+    passenger_flight: List[PassengerFlight] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PassengerFlight') }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     r"""Local indentifier within a given message for this object."""
-    identifier: Optional[shared_identifier.Identifier] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Identifier'), 'exclude': lambda f: f is None }})
+    identifier: Optional[Identifier] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Identifier'), 'exclude': lambda f: f is None }})
     r"""Identifier provides the ability to create a globally unique identifier. For the identifier to be globally unique it must have a system provided identifier and the system must be identified using a global naming authority. System identification uses the domain naming system (DNS) to assure they are globally unique and should be an URL. The system provided ID will typically be a primary or surrogate key in a database."""
     product_ref: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('productRef'), 'exclude': lambda f: f is None }})
     r"""Used to reference another instance of this object in the same message"""

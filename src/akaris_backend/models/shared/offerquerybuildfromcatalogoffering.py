@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import buildfromcatalogofferinghospitality as shared_buildfromcatalogofferinghospitality
+from .buildfromcatalogofferinghospitality import BuildFromCatalogOfferingHospitality
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
@@ -12,6 +12,6 @@ from typing import Optional
 @dataclasses.dataclass
 class OfferQueryBuildFromCatalogOffering:
     at_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type') }})
-    build_from_catalog_offering_hospitality: Optional[shared_buildfromcatalogofferinghospitality.BuildFromCatalogOfferingHospitality] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('BuildFromCatalogOfferingHospitality'), 'exclude': lambda f: f is None }})
+    build_from_catalog_offering_hospitality: Optional[BuildFromCatalogOfferingHospitality] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('BuildFromCatalogOfferingHospitality'), 'exclude': lambda f: f is None }})
     
 

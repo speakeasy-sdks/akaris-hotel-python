@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import offerquerybuildfromcatalogoffering as shared_offerquerybuildfromcatalogoffering
+from .offerquerybuildfromcatalogoffering import OfferQueryBuildFromCatalogOffering
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
@@ -11,6 +11,6 @@ from typing import Optional
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class OfferQueryBuildFromCatalogOfferingWrapper:
-    offer_query_build_from_catalog_offering: Optional[shared_offerquerybuildfromcatalogoffering.OfferQueryBuildFromCatalogOffering] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('OfferQueryBuildFromCatalogOffering'), 'exclude': lambda f: f is None }})
+    offer_query_build_from_catalog_offering: Optional[OfferQueryBuildFromCatalogOffering] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('OfferQueryBuildFromCatalogOffering'), 'exclude': lambda f: f is None }})
     
 

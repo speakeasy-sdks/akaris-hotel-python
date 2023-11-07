@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import ancillaryofferingidentifier as shared_ancillaryofferingidentifier
-from ..shared import catalogofferingidentifier as shared_catalogofferingidentifier
-from ..shared import catalogofferingsidentifier as shared_catalogofferingsidentifier
-from ..shared import productidentifier as shared_productidentifier
+from .ancillaryofferingidentifier import AncillaryOfferingIdentifier
+from .catalogofferingidentifier import CatalogOfferingIdentifier
+from .catalogofferingsidentifier import CatalogOfferingsIdentifier
+from .productidentifier import ProductIdentifier
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import List, Optional
@@ -15,9 +15,9 @@ from typing import List, Optional
 @dataclasses.dataclass
 class BuildFromCatalogOfferingsRequest:
     at_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type') }})
-    catalog_offering_identifier: shared_catalogofferingidentifier.CatalogOfferingIdentifier = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('CatalogOfferingIdentifier') }})
-    catalog_offerings_identifier: shared_catalogofferingsidentifier.CatalogOfferingsIdentifier = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('CatalogOfferingsIdentifier') }})
-    product_identifier: List[shared_productidentifier.ProductIdentifier] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ProductIdentifier') }})
-    ancillary_offering_identifier: Optional[List[shared_ancillaryofferingidentifier.AncillaryOfferingIdentifier]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('AncillaryOfferingIdentifier'), 'exclude': lambda f: f is None }})
+    catalog_offering_identifier: CatalogOfferingIdentifier = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('CatalogOfferingIdentifier') }})
+    catalog_offerings_identifier: CatalogOfferingsIdentifier = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('CatalogOfferingsIdentifier') }})
+    product_identifier: List[ProductIdentifier] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ProductIdentifier') }})
+    ancillary_offering_identifier: Optional[List[AncillaryOfferingIdentifier]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('AncillaryOfferingIdentifier'), 'exclude': lambda f: f is None }})
     
 

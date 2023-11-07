@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import changefeemethodenum as shared_changefeemethodenum
+from .changefeemethodenum import ChangeFeeMethodEnum
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
@@ -21,6 +21,6 @@ class ChangeFeeCollectionMethod:
     r"""The subcode value"""
     tax_included_in_base_amount_ind: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('taxIncludedInBaseAmountInd'), 'exclude': lambda f: f is None }})
     r"""If true, the tax  on the fee will be included in the base fee amount and sent as a single value to the supplier for fulfilment"""
-    value: Optional[shared_changefeemethodenum.ChangeFeeMethodEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value'), 'exclude': lambda f: f is None }})
+    value: Optional[ChangeFeeMethodEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value'), 'exclude': lambda f: f is None }})
     
 

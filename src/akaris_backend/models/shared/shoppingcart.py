@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import productair as shared_productair
+from .productair import ProductAir
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import List, Optional
@@ -12,6 +12,6 @@ from typing import List, Optional
 @dataclasses.dataclass
 class ShoppingCart:
     at_type: Optional[str] = dataclasses.field(default='ShoppingCart', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
-    product: Optional[List[shared_productair.ProductAir]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Product'), 'exclude': lambda f: f is None }})
+    product: Optional[List[ProductAir]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Product'), 'exclude': lambda f: f is None }})
     
 

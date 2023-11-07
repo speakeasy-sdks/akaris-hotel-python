@@ -1,5 +1,5 @@
 # PrecisionSearchHotel
-(*precision_search_hotel*)
+(*.precision_search_hotel*)
 
 ### Available Operations
 

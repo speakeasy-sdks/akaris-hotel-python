@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import reservationquerybuildwrapper as shared_reservationquerybuildwrapper
-from ..shared import reservationresponsewrapper as shared_reservationresponsewrapper
+from ...models.shared import reservationquerybuildwrapper as shared_reservationquerybuildwrapper
+from ...models.shared import reservationresponsewrapper as shared_reservationresponsewrapper
 from typing import Optional
 
 

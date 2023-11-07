@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import reservationresponse as shared_reservationresponse
+from .reservationresponse import ReservationResponse
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
@@ -11,6 +11,6 @@ from typing import Optional
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class ReservationResponseWrapper:
-    reservation_response: Optional[shared_reservationresponse.ReservationResponse] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ReservationResponse'), 'exclude': lambda f: f is None }})
+    reservation_response: Optional[ReservationResponse] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ReservationResponse'), 'exclude': lambda f: f is None }})
     
 

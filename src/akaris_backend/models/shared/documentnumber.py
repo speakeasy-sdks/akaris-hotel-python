@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import documenttypeenum as shared_documenttypeenum
+from .documenttypeenum import DocumentTypeEnum
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
@@ -13,7 +13,7 @@ from typing import Optional
 class DocumentNumber:
     document_issuer: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('documentIssuer'), 'exclude': lambda f: f is None }})
     r"""Document issuer"""
-    document_type: Optional[shared_documenttypeenum.DocumentTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('documentType'), 'exclude': lambda f: f is None }})
+    document_type: Optional[DocumentTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('documentType'), 'exclude': lambda f: f is None }})
     r"""Document type like EMD, MCO"""
     value: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value'), 'exclude': lambda f: f is None }})
     

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import customerloyalty as shared_customerloyalty
+from .customerloyalty import CustomerLoyalty
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
@@ -11,7 +11,7 @@ from typing import Optional
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class CustomerLoyaltyCredit:
-    customer_loyalty: shared_customerloyalty.CustomerLoyalty = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('CustomerLoyalty') }})
+    customer_loyalty: CustomerLoyalty = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('CustomerLoyalty') }})
     r"""Specifies the ID for the membership program."""
     earned: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Earned') }})
     r"""Represents the amount of award credit awarded for this offer\/offering. Award credit can be used for purchasing goods and services through a customer loyalty program"""

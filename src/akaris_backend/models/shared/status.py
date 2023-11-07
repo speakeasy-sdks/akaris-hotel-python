@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import confirmationstatusenum as shared_confirmationstatusenum
+from .confirmationstatusenum import ConfirmationStatusEnum
 from akaris_backend import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
@@ -13,7 +13,7 @@ from typing import Optional
 class Status:
     supplier_text: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('supplierText'), 'exclude': lambda f: f is None }})
     r"""Supplier status text"""
-    value: Optional[shared_confirmationstatusenum.ConfirmationStatusEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value'), 'exclude': lambda f: f is None }})
+    value: Optional[ConfirmationStatusEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value'), 'exclude': lambda f: f is None }})
     r"""Status returned in a response for a two or more phase commitment process"""
     
 
