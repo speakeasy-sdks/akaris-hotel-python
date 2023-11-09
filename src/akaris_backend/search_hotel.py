@@ -12,6 +12,7 @@ class SearchHotel:
         self.sdk_configuration = sdk_config
         
     
+    
     def create(self, request: operations.CreateRequest) -> operations.CreateResponse:
         r"""Search hotels by property ID
         The Hotel Search by ID request searches for hotels by search by one or more property IDs. The response returns a list of properties based on the ID/s sent, and is the same as the Hotel Search by Location response.
@@ -28,7 +29,10 @@ class SearchHotel:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -54,6 +58,7 @@ class SearchHotel:
         return res
 
     
+    
     def get_properties_detail(self, request: operations.GetPropertiesDetailRequest) -> operations.GetPropertiesDetailResponse:
         r"""Request hotel details
         The optional Hotel Details request retrieves for one specified property a detailed description and additional images after a hotel search.
@@ -66,7 +71,10 @@ class SearchHotel:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -92,6 +100,7 @@ class SearchHotel:
         return res
 
     
+    
     def get_properties_page(self, request: operations.GetPropertiesPageRequest) -> operations.GetPropertiesPageResponse:
         r"""Return additional search results (pagination)
         Hotel Search uses pagination by default. The initial search response returns 25 properties, notes the total number of properties found, and includes an identifier to be used for retrieving additional pages. Call the GET pagination endpoint to retrieve each additional page of 25 properties until the end of the list is reached.The identifier used for paging is saved for 30 minutes. A new hotel search request must be performed after it expires.
@@ -104,7 +113,10 @@ class SearchHotel:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -130,6 +142,7 @@ class SearchHotel:
         return res
 
     
+    
     def search_properties(self, request: operations.SearchPropertiesRequest) -> operations.SearchPropertiesResponse:
         r"""Search hotels by location
         The Hotel Search by Location request searches for hotels by (a) geographic coordinate information (b) city or state/province, and country or (c) IATA airport or city code.The response returns a list of properties using the same structure as the Hotel Search by ID response.
@@ -146,7 +159,10 @@ class SearchHotel:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

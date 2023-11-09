@@ -1,5 +1,5 @@
 # HotelRules
-(*.hotel_rules*)
+(*hotel_rules*)
 
 ### Available Operations
 
@@ -95,7 +95,12 @@ if res.offer_hospitality_response_wrapper is not None:
 ### Response
 
 **[operations.BuildFromCatalogOfferingsResponse](../../models/operations/buildfromcatalogofferingsresponse.md)**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |
 
 ## build_hotel_rules_from_catalog_offering
 
@@ -146,7 +151,12 @@ if res.offer_hospitality_response_wrapper is not None:
 ### Response
 
 **[operations.BuildHotelRulesFromCatalogOfferingResponse](../../models/operations/buildhotelrulesfromcatalogofferingresponse.md)**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |
 
 ## create_hotel_rules
 
@@ -229,4 +239,9 @@ if res.offer_hospitality_response_wrapper is not None:
 ### Response
 
 **[operations.CreateHotelRulesResponse](../../models/operations/createhotelrulesresponse.md)**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |

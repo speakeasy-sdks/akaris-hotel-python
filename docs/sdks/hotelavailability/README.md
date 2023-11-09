@@ -1,5 +1,5 @@
 # HotelAvailability
-(*.hotel_availability*)
+(*hotel_availability*)
 
 ### Available Operations
 
@@ -123,7 +123,12 @@ if res.catalog_offerings_hospitality_response_wrapper is not None:
 ### Response
 
 **[operations.CreateHotelAvailabilityResponse](../../models/operations/createhotelavailabilityresponse.md)**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |
 
 ## hotel_availability_from_properties
 
@@ -181,4 +186,9 @@ if res.catalog_offerings_hospitality_response_wrapper is not None:
 ### Response
 
 **[operations.HotelAvailabilityFromPropertiesResponse](../../models/operations/hotelavailabilityfrompropertiesresponse.md)**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |

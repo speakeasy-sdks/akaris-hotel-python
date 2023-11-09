@@ -1,5 +1,5 @@
 # PrecisionSearchHotel
-(*.precision_search_hotel*)
+(*precision_search_hotel*)
 
 ### Available Operations
 
@@ -95,7 +95,12 @@ if res.properties_response_wrapper is not None:
 ### Response
 
 **[operations.CreatePrecisionResponse](../../models/operations/createprecisionresponse.md)**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |
 
 ## precision_search_properties
 
@@ -189,4 +194,9 @@ if res.properties_response_wrapper is not None:
 ### Response
 
 **[operations.PrecisionSearchPropertiesResponse](../../models/operations/precisionsearchpropertiesresponse.md)**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |

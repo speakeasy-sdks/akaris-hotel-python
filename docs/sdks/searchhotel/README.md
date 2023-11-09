@@ -1,5 +1,5 @@
 # SearchHotel
-(*.search_hotel*)
+(*search_hotel*)
 
 ### Available Operations
 
@@ -96,7 +96,12 @@ if res.properties_response_wrapper is not None:
 ### Response
 
 **[operations.CreateResponse](../../models/operations/createresponse.md)**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |
 
 ## get_properties_detail
 
@@ -136,7 +141,12 @@ if res.properties_response_wrapper is not None:
 ### Response
 
 **[operations.GetPropertiesDetailResponse](../../models/operations/getpropertiesdetailresponse.md)**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |
 
 ## get_properties_page
 
@@ -176,7 +186,12 @@ if res.properties_response_wrapper is not None:
 ### Response
 
 **[operations.GetPropertiesPageResponse](../../models/operations/getpropertiespageresponse.md)**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |
 
 ## search_properties
 
@@ -269,4 +284,9 @@ if res.properties_response_wrapper is not None:
 ### Response
 
 **[operations.SearchPropertiesResponse](../../models/operations/searchpropertiesresponse.md)**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |

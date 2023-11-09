@@ -12,6 +12,7 @@ class HotelAvailability:
         self.sdk_configuration = sdk_config
         
     
+    
     def create_hotel_availability(self, request: operations.CreateHotelAvailabilityRequest) -> operations.CreateHotelAvailabilityResponse:
         r"""Request hotel availability
         Hotel Availability returns room types and rates available at one or more specified properties on specified dates.
@@ -28,7 +29,10 @@ class HotelAvailability:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -54,6 +58,7 @@ class HotelAvailability:
         return res
 
     
+    
     def hotel_availability_from_properties(self, request: operations.HotelAvailabilityFromPropertiesRequest) -> operations.HotelAvailabilityFromPropertiesResponse:
         r"""Request hotel availability from precision search response
         Hotel Availability returns room types and rates available at one or more specified properties on specified dates.
@@ -70,7 +75,10 @@ class HotelAvailability:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

@@ -122,12 +122,12 @@ if res.catalog_offerings_hospitality_response_wrapper is not None:
 ## Available Resources and Operations
 
 
-### [.hotel_availability](docs/sdks/hotelavailability/README.md)
+### [hotel_availability](docs/sdks/hotelavailability/README.md)
 
 * [create_hotel_availability](docs/sdks/hotelavailability/README.md#create_hotel_availability) - Request hotel availability
 * [hotel_availability_from_properties](docs/sdks/hotelavailability/README.md#hotel_availability_from_properties) - Request hotel availability from precision search response
 
-### [.reservation_hotel](docs/sdks/reservationhotel/README.md)
+### [reservation_hotel](docs/sdks/reservationhotel/README.md)
 
 * [build_hotel_reservation](docs/sdks/reservationhotel/README.md#build_hotel_reservation) - Single payload booking request
 * [cancel_hotel_offer](docs/sdks/reservationhotel/README.md#cancel_hotel_offer) - Cancel an Offer within a Reservation
@@ -135,20 +135,20 @@ if res.catalog_offerings_hospitality_response_wrapper is not None:
 * [retrieve_hotel_reservation](docs/sdks/reservationhotel/README.md#retrieve_hotel_reservation) - Retrieve a Reservation
 * [update_hotel_reservation](docs/sdks/reservationhotel/README.md#update_hotel_reservation) - Update a reservation
 
-### [.hotel_rules](docs/sdks/hotelrules/README.md)
+### [hotel_rules](docs/sdks/hotelrules/README.md)
 
 * [build_from_catalog_offerings](docs/sdks/hotelrules/README.md#build_from_catalog_offerings) - To be deprecated and replaced with buildfromcatalogoffering
 * [build_hotel_rules_from_catalog_offering](docs/sdks/hotelrules/README.md#build_hotel_rules_from_catalog_offering) - Available January 2023. Build rules by referenceing availability response
 * [create_hotel_rules](docs/sdks/hotelrules/README.md#create_hotel_rules) - Full Payload hotel rules request
 
-### [.search_hotel](docs/sdks/searchhotel/README.md)
+### [search_hotel](docs/sdks/searchhotel/README.md)
 
 * [create](docs/sdks/searchhotel/README.md#create) - Search hotels by property ID
 * [get_properties_detail](docs/sdks/searchhotel/README.md#get_properties_detail) - Request hotel details
 * [get_properties_page](docs/sdks/searchhotel/README.md#get_properties_page) - Return additional search results (pagination)
 * [search_properties](docs/sdks/searchhotel/README.md#search_properties) - Search hotels by location
 
-### [.precision_search_hotel](docs/sdks/precisionsearchhotel/README.md)
+### [precision_search_hotel](docs/sdks/precisionsearchhotel/README.md)
 
 * [create_precision](docs/sdks/precisionsearchhotel/README.md#create_precision) - Precision Search hotels by property ID
 * [precision_search_properties](docs/sdks/precisionsearchhotel/README.md#precision_search_properties) - Search hotels by location
@@ -173,7 +173,12 @@ Here's an example of one such pagination call:
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |
 
 
 ## Example
@@ -275,8 +280,10 @@ req = operations.CreateHotelAvailabilityRequest(
 res = None
 try:
     res = s.hotel_availability.create_hotel_availability(req)
+except (errors.BaseResponse) as e:
+    print(e) # handle exception
 
-except (BaseResponse) as e:
+except (errors.SDKError) as e:
     print(e) # handle exception
 
 
@@ -520,7 +527,7 @@ if res.catalog_offerings_hospitality_response_wrapper is not None:
 The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
 
 
-For example, you could specify a header for every request that your sdk makes as follows:
+For example, you could specify a header for every request that this sdk makes as follows:
 
 ```python
 import akaris_backend
@@ -535,12 +542,11 @@ s = akaris_backend.AkarisBackend(client: http_client)
 
 
 <!-- Start Authentication -->
-
 # Authentication
 
 ## Per-Client Security Schemes
 
-Your SDK supports the following security scheme globally:
+This SDK supports the following security scheme globally:
 
 | Name         | Type         | Scheme       |
 | ------------ | ------------ | ------------ |

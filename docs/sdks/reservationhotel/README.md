@@ -1,5 +1,5 @@
 # ReservationHotel
-(*.reservation_hotel*)
+(*reservation_hotel*)
 
 ### Available Operations
 
@@ -182,7 +182,12 @@ if res.reservation_response_wrapper is not None:
 ### Response
 
 **[operations.BuildHotelReservationResponse](../../models/operations/buildhotelreservationresponse.md)**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |
 
 ## cancel_hotel_offer
 
@@ -221,7 +226,12 @@ if res.reservation_response_wrapper is not None:
 ### Response
 
 **[operations.CancelHotelOfferResponse](../../models/operations/cancelhotelofferresponse.md)**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |
 
 ## create_hotel_reservation
 
@@ -1256,7 +1266,12 @@ if res.reservation_response_wrapper is not None:
 ### Response
 
 **[operations.CreateHotelReservationResponse](../../models/operations/createhotelreservationresponse.md)**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |
 
 ## retrieve_hotel_reservation
 
@@ -1296,7 +1311,12 @@ if res.reservation_response_wrapper is not None:
 ### Response
 
 **[operations.RetrieveHotelReservationResponse](../../models/operations/retrievehotelreservationresponse.md)**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |
 
 ## update_hotel_reservation
 
@@ -2332,4 +2352,9 @@ if res.reservation_response_wrapper is not None:
 ### Response
 
 **[operations.UpdateHotelReservationResponse](../../models/operations/updatehotelreservationresponse.md)**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |

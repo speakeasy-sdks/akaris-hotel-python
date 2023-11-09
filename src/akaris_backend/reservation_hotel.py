@@ -12,6 +12,7 @@ class ReservationHotel:
         self.sdk_configuration = sdk_config
         
     
+    
     def build_hotel_reservation(self, request: operations.BuildHotelReservationRequest) -> operations.BuildHotelReservationResponse:
         r"""Single payload booking request
         This full payload book request allows your to reference a hotel availability response and build the Reservation in a single API call.
@@ -28,7 +29,10 @@ class ReservationHotel:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -54,6 +58,7 @@ class ReservationHotel:
         return res
 
     
+    
     def cancel_hotel_offer(self, request: operations.CancelHotelOfferRequest) -> operations.CancelHotelOfferResponse:
         r"""Cancel an Offer within a Reservation
         Cancel an Offer by modifying the Reservation
@@ -66,7 +71,10 @@ class ReservationHotel:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -92,6 +100,7 @@ class ReservationHotel:
         return res
 
     
+    
     def create_hotel_reservation(self, request: operations.CreateHotelReservationRequest) -> operations.CreateHotelReservationResponse:
         r"""Create a reservation
         Create a reservation on the core or with the vendor/provider.
@@ -108,7 +117,10 @@ class ReservationHotel:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -134,6 +146,7 @@ class ReservationHotel:
         return res
 
     
+    
     def retrieve_hotel_reservation(self, request: operations.RetrieveHotelReservationRequest) -> operations.RetrieveHotelReservationResponse:
         r"""Retrieve a Reservation
         Retrieve details about a held booking, or PNR. While a PNR refers to a held booking that has not been ticketed, the PNR code persists after ticketing to provide the booking records. Once a PNR has been ticketed, you can still use PNR Retrieve to return both booking and ticketing details. A Ticket Display request can also be used to retrieve any ticketed itinerary.
@@ -146,7 +159,10 @@ class ReservationHotel:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -172,6 +188,7 @@ class ReservationHotel:
         return res
 
     
+    
     def update_hotel_reservation(self, request: operations.UpdateHotelReservationRequest) -> operations.UpdateHotelReservationResponse:
         r"""Update a reservation
         The Modify Reservation request can modify an existing reservation by changing any of the following - dates, payment information, traveler first and/or last name. You can also add comments to an existing reservation. Hotel Modify can be used only for Travelport itineraries at this time. When changing dates Travelport recommends that you first send an availability request for the new dates and look for the same booking code that is on the existing reservation. An availability request is not mandatory, but a modify request will fail if the new dates are not available.
@@ -188,7 +205,10 @@ class ReservationHotel:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

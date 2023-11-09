@@ -12,6 +12,7 @@ class HotelRules:
         self.sdk_configuration = sdk_config
         
     
+    
     def build_from_catalog_offerings(self, request: operations.BuildFromCatalogOfferingsRequest) -> operations.BuildFromCatalogOfferingsResponse:
         r"""To be deprecated and replaced with buildfromcatalogoffering"""
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -26,7 +27,10 @@ class HotelRules:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -52,6 +56,7 @@ class HotelRules:
         return res
 
     
+    
     def build_hotel_rules_from_catalog_offering(self, request: operations.BuildHotelRulesFromCatalogOfferingRequest) -> operations.BuildHotelRulesFromCatalogOfferingResponse:
         r"""Available January 2023. Build rules by referenceing availability response"""
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -66,7 +71,10 @@ class HotelRules:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -92,6 +100,7 @@ class HotelRules:
         return res
 
     
+    
     def create_hotel_rules(self, request: operations.CreateHotelRulesRequest) -> operations.CreateHotelRulesResponse:
         r"""Full Payload hotel rules request"""
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -106,7 +115,10 @@ class HotelRules:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
