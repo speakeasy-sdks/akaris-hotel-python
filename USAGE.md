@@ -1,6 +1,4 @@
 <!-- Start SDK Example Usage -->
-
-
 ```python
 import akaris_backend
 import dateutil.parser
