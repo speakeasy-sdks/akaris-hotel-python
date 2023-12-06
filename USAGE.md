@@ -1,4 +1,4 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```python
 import akaris_backend
 import dateutil.parser
@@ -99,4 +99,4 @@ if res.catalog_offerings_hospitality_response_wrapper is not None:
     # handle response
     pass
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->

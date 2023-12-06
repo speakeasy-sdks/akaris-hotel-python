@@ -258,7 +258,6 @@ src/akaris_backend/models/__init__.py
 src/akaris_backend/models/errors/__init__.py
 src/akaris_backend/models/operations/__init__.py
 src/akaris_backend/models/shared/__init__.py
-USAGE.md
 docs/models/operations/createhotelavailabilityrequest.md
 docs/models/operations/createhotelavailabilityresponse.md
 docs/models/operations/hotelavailabilityfrompropertiesrequest.md
@@ -522,4 +521,5 @@ docs/sdks/reservationhotel/README.md
 docs/sdks/hotelrules/README.md
 docs/sdks/searchhotel/README.md
 docs/sdks/precisionsearchhotel/README.md
+USAGE.md
 .gitattributes
