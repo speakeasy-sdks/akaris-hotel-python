@@ -21,7 +21,7 @@ from akaris_backend.models import operations, shared
 
 s = akaris_backend.AkarisBackend(
     security=shared.Security(
-        o_auth2="",
+        o_auth2="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -115,7 +115,7 @@ from akaris_backend.models import operations, shared
 
 s = akaris_backend.AkarisBackend(
     security=shared.Security(
-        o_auth2="",
+        o_auth2="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -160,7 +160,7 @@ from akaris_backend.models import operations, shared
 
 s = akaris_backend.AkarisBackend(
     security=shared.Security(
-        o_auth2="",
+        o_auth2="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -206,7 +206,7 @@ from akaris_backend.models import operations, shared
 
 s = akaris_backend.AkarisBackend(
     security=shared.Security(
-        o_auth2="",
+        o_auth2="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 

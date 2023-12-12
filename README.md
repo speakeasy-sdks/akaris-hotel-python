@@ -26,7 +26,7 @@ from akaris_backend.models import operations, shared
 
 s = akaris_backend.AkarisBackend(
     security=shared.Security(
-        o_auth2="",
+        o_auth2="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -177,7 +177,7 @@ from akaris_backend.models import operations, shared
 
 s = akaris_backend.AkarisBackend(
     security=shared.Security(
-        o_auth2="",
+        o_auth2="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -304,7 +304,7 @@ from akaris_backend.models import operations, shared
 s = akaris_backend.AkarisBackend(
     server_idx=1,
     security=shared.Security(
-        o_auth2="",
+        o_auth2="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -410,7 +410,7 @@ from akaris_backend.models import operations, shared
 s = akaris_backend.AkarisBackend(
     server_url="https://api.pp.travelport.com/11/hotel",
     security=shared.Security(
-        o_auth2="",
+        o_auth2="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -544,7 +544,7 @@ from akaris_backend.models import operations, shared
 
 s = akaris_backend.AkarisBackend(
     security=shared.Security(
-        o_auth2="",
+        o_auth2="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 

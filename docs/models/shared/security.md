@@ -3,6 +3,6 @@
 
 ## Fields
 
-| Field              | Type               | Required           | Description        | Example            |
-| ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
-| `o_auth2`          | *str*              | :heavy_check_mark: | N/A                |                    |
+| Field              | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `o_auth2`          | *str*              | :heavy_check_mark: | N/A                |

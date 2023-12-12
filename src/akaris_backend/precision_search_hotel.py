@@ -21,7 +21,7 @@ class PrecisionSearchHotel:
         
         url = base_url + '/search/properties/precision'
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "properties_query_specific_precision_property_list_wrapper", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.CreatePrecisionRequest, "properties_query_specific_precision_property_list_wrapper", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -67,7 +67,7 @@ class PrecisionSearchHotel:
         
         url = base_url + '/search/properties/precision/location'
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "properties_query_precision_search_wrapper", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PrecisionSearchPropertiesRequest, "properties_query_precision_search_wrapper", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:

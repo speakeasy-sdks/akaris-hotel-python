@@ -22,7 +22,7 @@ from akaris_backend.models import operations, shared
 
 s = akaris_backend.AkarisBackend(
     security=shared.Security(
-        o_auth2="",
+        o_auth2="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -122,27 +122,7 @@ req = operations.BuildHotelReservationRequest(
                         id='2',
                         short_name='Aventure Inc',
                         system_of_record=[
-                            '[',
-                            '"',
-                            '1',
-                            'G',
-                            '"',
-                            ',',
-                            '"',
-                            '1',
-                            'V',
-                            '"',
-                            ',',
-                            '"',
-                            'M',
-                            'B',
-                            '"',
-                            ',',
-                            '"',
-                            'H',
-                            'Z',
-                            '"',
-                            ']',
+                            '["1G","1V","MB","HZ"]',
                         ],
                     ),
                     profile_name=[
@@ -201,7 +181,7 @@ from akaris_backend.models import operations, shared
 
 s = akaris_backend.AkarisBackend(
     security=shared.Security(
-        o_auth2="",
+        o_auth2="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -246,7 +226,7 @@ from akaris_backend.models import operations, shared
 
 s = akaris_backend.AkarisBackend(
     security=shared.Security(
-        o_auth2="",
+        o_auth2="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -325,16 +305,7 @@ req = operations.CreateHotelReservationRequest(
                                 shared.TravelerIdentifierRef(
                                     passenger_type_code='ADT',
                                     uris=[
-                                        'g',
-                                        'o',
-                                        'o',
-                                        'g',
-                                        'l',
-                                        'e',
-                                        '.',
-                                        'c',
-                                        'o',
-                                        'm',
+                                        'google.com',
                                     ],
                                 ),
                             ],
@@ -390,16 +361,7 @@ req = operations.CreateHotelReservationRequest(
                                 shared.TravelerIdentifierRef(
                                     passenger_type_code='ADT',
                                     uris=[
-                                        'g',
-                                        'o',
-                                        'o',
-                                        'g',
-                                        'l',
-                                        'e',
-                                        '.',
-                                        'c',
-                                        'o',
-                                        'm',
+                                        'google.com',
                                     ],
                                 ),
                             ],
@@ -413,16 +375,7 @@ req = operations.CreateHotelReservationRequest(
                                 shared.TravelerIdentifierRef(
                                     passenger_type_code='ADT',
                                     uris=[
-                                        'g',
-                                        'o',
-                                        'o',
-                                        'g',
-                                        'l',
-                                        'e',
-                                        '.',
-                                        'c',
-                                        'o',
-                                        'm',
+                                        'google.com',
                                     ],
                                 ),
                             ],
@@ -436,16 +389,7 @@ req = operations.CreateHotelReservationRequest(
                                 shared.TravelerIdentifierRef(
                                     passenger_type_code='ADT',
                                     uris=[
-                                        'g',
-                                        'o',
-                                        'o',
-                                        'g',
-                                        'l',
-                                        'e',
-                                        '.',
-                                        'c',
-                                        'o',
-                                        'm',
+                                        'google.com',
                                     ],
                                 ),
                             ],
@@ -551,14 +495,7 @@ req = operations.CreateHotelReservationRequest(
                                     program_id='United',
                                     program_name='Mileage Plus',
                                     share_with_supplier=[
-                                        'L',
-                                        'H',
-                                        ' ',
-                                        'N',
-                                        'H',
-                                        ' ',
-                                        'S',
-                                        'Q',
+                                        'LH NH SQ',
                                     ],
                                     supplier='UA',
                                     supplier_type='Airline',
@@ -692,16 +629,7 @@ req = operations.CreateHotelReservationRequest(
                         shared.TravelerIdentifierRef(
                             passenger_type_code='ADT',
                             uris=[
-                                'g',
-                                'o',
-                                'o',
-                                'g',
-                                'l',
-                                'e',
-                                '.',
-                                'c',
-                                'o',
-                                'm',
+                                'google.com',
                             ],
                         ),
                     ],
@@ -857,14 +785,7 @@ req = operations.CreateHotelReservationRequest(
                                                     program_id='United',
                                                     program_name='Mileage Plus',
                                                     share_with_supplier=[
-                                                        'L',
-                                                        'H',
-                                                        ' ',
-                                                        'N',
-                                                        'H',
-                                                        ' ',
-                                                        'S',
-                                                        'Q',
+                                                        'LH NH SQ',
                                                     ],
                                                     supplier='UA',
                                                     supplier_type='Airline',
@@ -939,27 +860,7 @@ req = operations.CreateHotelReservationRequest(
                     id='2',
                     short_name='Aventure Inc',
                     system_of_record=[
-                        '[',
-                        '"',
-                        '1',
-                        'G',
-                        '"',
-                        ',',
-                        '"',
-                        '1',
-                        'V',
-                        '"',
-                        ',',
-                        '"',
-                        'M',
-                        'B',
-                        '"',
-                        ',',
-                        '"',
-                        'H',
-                        'Z',
-                        '"',
-                        ']',
+                        '["1G","1V","MB","HZ"]',
                     ],
                 ),
                 profile_name=[
@@ -1151,14 +1052,7 @@ req = operations.CreateHotelReservationRequest(
                             program_id='United',
                             program_name='Mileage Plus',
                             share_with_supplier=[
-                                'L',
-                                'H',
-                                ' ',
-                                'N',
-                                'H',
-                                ' ',
-                                'S',
-                                'Q',
+                                'LH NH SQ',
                             ],
                             supplier='UA',
                             supplier_type='Airline',
@@ -1285,7 +1179,7 @@ from akaris_backend.models import operations, shared
 
 s = akaris_backend.AkarisBackend(
     security=shared.Security(
-        o_auth2="",
+        o_auth2="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -1331,7 +1225,7 @@ from akaris_backend.models import operations, shared
 
 s = akaris_backend.AkarisBackend(
     security=shared.Security(
-        o_auth2="",
+        o_auth2="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -1411,16 +1305,7 @@ req = operations.UpdateHotelReservationRequest(
                                 shared.TravelerIdentifierRef(
                                     passenger_type_code='ADT',
                                     uris=[
-                                        'g',
-                                        'o',
-                                        'o',
-                                        'g',
-                                        'l',
-                                        'e',
-                                        '.',
-                                        'c',
-                                        'o',
-                                        'm',
+                                        'google.com',
                                     ],
                                 ),
                             ],
@@ -1476,16 +1361,7 @@ req = operations.UpdateHotelReservationRequest(
                                 shared.TravelerIdentifierRef(
                                     passenger_type_code='ADT',
                                     uris=[
-                                        'g',
-                                        'o',
-                                        'o',
-                                        'g',
-                                        'l',
-                                        'e',
-                                        '.',
-                                        'c',
-                                        'o',
-                                        'm',
+                                        'google.com',
                                     ],
                                 ),
                             ],
@@ -1499,16 +1375,7 @@ req = operations.UpdateHotelReservationRequest(
                                 shared.TravelerIdentifierRef(
                                     passenger_type_code='ADT',
                                     uris=[
-                                        'g',
-                                        'o',
-                                        'o',
-                                        'g',
-                                        'l',
-                                        'e',
-                                        '.',
-                                        'c',
-                                        'o',
-                                        'm',
+                                        'google.com',
                                     ],
                                 ),
                             ],
@@ -1522,16 +1389,7 @@ req = operations.UpdateHotelReservationRequest(
                                 shared.TravelerIdentifierRef(
                                     passenger_type_code='ADT',
                                     uris=[
-                                        'g',
-                                        'o',
-                                        'o',
-                                        'g',
-                                        'l',
-                                        'e',
-                                        '.',
-                                        'c',
-                                        'o',
-                                        'm',
+                                        'google.com',
                                     ],
                                 ),
                             ],
@@ -1637,14 +1495,7 @@ req = operations.UpdateHotelReservationRequest(
                                     program_id='United',
                                     program_name='Mileage Plus',
                                     share_with_supplier=[
-                                        'L',
-                                        'H',
-                                        ' ',
-                                        'N',
-                                        'H',
-                                        ' ',
-                                        'S',
-                                        'Q',
+                                        'LH NH SQ',
                                     ],
                                     supplier='UA',
                                     supplier_type='Airline',
@@ -1778,16 +1629,7 @@ req = operations.UpdateHotelReservationRequest(
                         shared.TravelerIdentifierRef(
                             passenger_type_code='ADT',
                             uris=[
-                                'g',
-                                'o',
-                                'o',
-                                'g',
-                                'l',
-                                'e',
-                                '.',
-                                'c',
-                                'o',
-                                'm',
+                                'google.com',
                             ],
                         ),
                     ],
@@ -1943,14 +1785,7 @@ req = operations.UpdateHotelReservationRequest(
                                                     program_id='United',
                                                     program_name='Mileage Plus',
                                                     share_with_supplier=[
-                                                        'L',
-                                                        'H',
-                                                        ' ',
-                                                        'N',
-                                                        'H',
-                                                        ' ',
-                                                        'S',
-                                                        'Q',
+                                                        'LH NH SQ',
                                                     ],
                                                     supplier='UA',
                                                     supplier_type='Airline',
@@ -2025,27 +1860,7 @@ req = operations.UpdateHotelReservationRequest(
                     id='2',
                     short_name='Aventure Inc',
                     system_of_record=[
-                        '[',
-                        '"',
-                        '1',
-                        'G',
-                        '"',
-                        ',',
-                        '"',
-                        '1',
-                        'V',
-                        '"',
-                        ',',
-                        '"',
-                        'M',
-                        'B',
-                        '"',
-                        ',',
-                        '"',
-                        'H',
-                        'Z',
-                        '"',
-                        ']',
+                        '["1G","1V","MB","HZ"]',
                     ],
                 ),
                 profile_name=[
@@ -2237,14 +2052,7 @@ req = operations.UpdateHotelReservationRequest(
                             program_id='United',
                             program_name='Mileage Plus',
                             share_with_supplier=[
-                                'L',
-                                'H',
-                                ' ',
-                                'N',
-                                'H',
-                                ' ',
-                                'S',
-                                'Q',
+                                'LH NH SQ',
                             ],
                             supplier='UA',
                             supplier_type='Airline',

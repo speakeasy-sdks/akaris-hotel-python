@@ -21,7 +21,7 @@ class ReservationHotel:
         
         url = base_url + '/book/reservations/build'
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "reservation_query_build_wrapper", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.BuildHotelReservationRequest, "reservation_query_build_wrapper", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -109,7 +109,7 @@ class ReservationHotel:
         
         url = base_url + '/book/reservations'
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "reservation_detail_wrapper", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.CreateHotelReservationRequest, "reservation_detail_wrapper", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -197,7 +197,7 @@ class ReservationHotel:
         
         url = utils.generate_url(operations.UpdateHotelReservationRequest, base_url, '/book/reservations/{Identifier}', request)
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "reservation_detail_wrapper", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateHotelReservationRequest, "reservation_detail_wrapper", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:

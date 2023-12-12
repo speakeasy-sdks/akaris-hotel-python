@@ -19,7 +19,7 @@ class HotelRules:
         
         url = base_url + '/rules/offershospitality/buildfromcatalogofferings'
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "offer_query_build_from_catalog_offerings_hospitality_wrapper", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.BuildFromCatalogOfferingsRequest, "offer_query_build_from_catalog_offerings_hospitality_wrapper", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -63,7 +63,7 @@ class HotelRules:
         
         url = base_url + '/rules/offershospitality/buildfromcatalogoffering'
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "offer_query_build_from_catalog_offering_wrapper", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.BuildHotelRulesFromCatalogOfferingRequest, "offer_query_build_from_catalog_offering_wrapper", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -107,7 +107,7 @@ class HotelRules:
         
         url = base_url + '/rules/offershospitality/buildfromrequest'
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "offer_query_hospitality_request_wrapper", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.CreateHotelRulesRequest, "offer_query_hospitality_request_wrapper", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:

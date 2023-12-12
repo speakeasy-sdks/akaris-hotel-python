@@ -19,7 +19,7 @@ from akaris_backend.models import operations, shared
 
 s = akaris_backend.AkarisBackend(
     security=shared.Security(
-        o_auth2="",
+        o_auth2="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -142,7 +142,7 @@ from akaris_backend.models import operations, shared
 
 s = akaris_backend.AkarisBackend(
     security=shared.Security(
-        o_auth2="",
+        o_auth2="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -151,14 +151,7 @@ req = operations.HotelAvailabilityFromPropertiesRequest(
         catalog_offerings_query_build_from_properties=shared.CatalogOfferingsQueryBuildFromProperties(
             build_from_catalog_offering_hospitality=shared.BuildFromProperties(
                 propert_info_ids=[
-                    'O',
-                    'N',
-                    '-',
-                    '6',
-                    '0',
-                    '1',
-                    '0',
-                    '6',
+                    'ON-60106',
                 ],
                 properties_identifier=shared.Identifier(
                     authority='TVPT',

@@ -21,7 +21,7 @@ class SearchHotel:
         
         url = base_url + '/search/properties'
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "properties_query_specific_property_list_wrapper", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.CreateRequest, "properties_query_specific_property_list_wrapper", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -151,7 +151,7 @@ class SearchHotel:
         
         url = base_url + '/search/properties/search'
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "properties_query_search_wrapper", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.SearchPropertiesRequest, "properties_query_search_wrapper", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
