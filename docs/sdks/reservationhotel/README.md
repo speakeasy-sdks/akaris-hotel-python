@@ -167,7 +167,7 @@ if res.reservation_response_wrapper is not None:
 | Error Object            | Status Code             | Content Type            |
 | ----------------------- | ----------------------- | ----------------------- |
 | errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
-| errors.SDKError         | 400-600                 | */*                     |
+| errors.SDKError         | 4x-5xx                  | */*                     |
 
 ## cancel_hotel_offer
 
@@ -211,7 +211,7 @@ if res.reservation_response_wrapper is not None:
 | Error Object            | Status Code             | Content Type            |
 | ----------------------- | ----------------------- | ----------------------- |
 | errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
-| errors.SDKError         | 400-600                 | */*                     |
+| errors.SDKError         | 4x-5xx                  | */*                     |
 
 ## create_hotel_reservation
 
@@ -1165,7 +1165,7 @@ if res.reservation_response_wrapper is not None:
 | Error Object            | Status Code             | Content Type            |
 | ----------------------- | ----------------------- | ----------------------- |
 | errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
-| errors.SDKError         | 400-600                 | */*                     |
+| errors.SDKError         | 4x-5xx                  | */*                     |
 
 ## retrieve_hotel_reservation
 
@@ -1210,7 +1210,7 @@ if res.reservation_response_wrapper is not None:
 | Error Object            | Status Code             | Content Type            |
 | ----------------------- | ----------------------- | ----------------------- |
 | errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
-| errors.SDKError         | 400-600                 | */*                     |
+| errors.SDKError         | 4x-5xx                  | */*                     |
 
 ## update_hotel_reservation
 
@@ -2165,4 +2165,4 @@ if res.reservation_response_wrapper is not None:
 | Error Object            | Status Code             | Content Type            |
 | ----------------------- | ----------------------- | ----------------------- |
 | errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
-| errors.SDKError         | 400-600                 | */*                     |
+| errors.SDKError         | 4x-5xx                  | */*                     |

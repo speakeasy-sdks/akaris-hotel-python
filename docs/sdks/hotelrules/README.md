@@ -100,7 +100,7 @@ if res.offer_hospitality_response_wrapper is not None:
 | Error Object            | Status Code             | Content Type            |
 | ----------------------- | ----------------------- | ----------------------- |
 | errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
-| errors.SDKError         | 400-600                 | */*                     |
+| errors.SDKError         | 4x-5xx                  | */*                     |
 
 ## build_hotel_rules_from_catalog_offering
 
@@ -156,7 +156,7 @@ if res.offer_hospitality_response_wrapper is not None:
 | Error Object            | Status Code             | Content Type            |
 | ----------------------- | ----------------------- | ----------------------- |
 | errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
-| errors.SDKError         | 400-600                 | */*                     |
+| errors.SDKError         | 4x-5xx                  | */*                     |
 
 ## create_hotel_rules
 
@@ -244,4 +244,4 @@ if res.offer_hospitality_response_wrapper is not None:
 | Error Object            | Status Code             | Content Type            |
 | ----------------------- | ----------------------- | ----------------------- |
 | errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
-| errors.SDKError         | 400-600                 | */*                     |
+| errors.SDKError         | 4x-5xx                  | */*                     |

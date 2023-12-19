@@ -101,7 +101,7 @@ if res.properties_response_wrapper is not None:
 | Error Object            | Status Code             | Content Type            |
 | ----------------------- | ----------------------- | ----------------------- |
 | errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
-| errors.SDKError         | 400-600                 | */*                     |
+| errors.SDKError         | 4x-5xx                  | */*                     |
 
 ## get_properties_detail
 
@@ -146,7 +146,7 @@ if res.properties_response_wrapper is not None:
 | Error Object            | Status Code             | Content Type            |
 | ----------------------- | ----------------------- | ----------------------- |
 | errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
-| errors.SDKError         | 400-600                 | */*                     |
+| errors.SDKError         | 4x-5xx                  | */*                     |
 
 ## get_properties_page
 
@@ -191,7 +191,7 @@ if res.properties_response_wrapper is not None:
 | Error Object            | Status Code             | Content Type            |
 | ----------------------- | ----------------------- | ----------------------- |
 | errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
-| errors.SDKError         | 400-600                 | */*                     |
+| errors.SDKError         | 4x-5xx                  | */*                     |
 
 ## search_properties
 
@@ -289,4 +289,4 @@ if res.properties_response_wrapper is not None:
 | Error Object            | Status Code             | Content Type            |
 | ----------------------- | ----------------------- | ----------------------- |
 | errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
-| errors.SDKError         | 400-600                 | */*                     |
+| errors.SDKError         | 4x-5xx                  | */*                     |
