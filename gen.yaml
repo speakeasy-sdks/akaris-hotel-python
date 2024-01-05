@@ -1,22 +1,10 @@
-configVersion: 1.0.0
-management:
-  docChecksum: 998f6552c41b6b3b7ff66d3f2d784f6a
-  docVersion: 11.11.0
-  speakeasyVersion: 1.127.0
-  generationVersion: 2.220.0
+configVersion: 2.0.0
 generation:
-  comments: {}
   sdkClassName: akaris-backend
-  repoURL: https://github.com/speakeasy-sdks/akaris-hotel-python.git
   usageSnippets:
     optionalPropertyRendering: withExample
   fixes:
     nameResolutionDec2023: false
-features:
-  python:
-    core: 4.3.1
-    globalSecurity: 2.83.1
-    globalServerURLs: 2.82.1
 python:
   version: 0.7.1
   author: akaris-air
@@ -32,8 +20,6 @@ python:
       shared: models/shared
       webhooks: models/webhooks
   inputModelSuffix: input
-  installationURL: https://github.com/speakeasy-sdks/akaris-hotel-python.git
   maxMethodParams: 0
   outputModelSuffix: output
   packageName: akaris-backend
-  repoSubDirectory: .

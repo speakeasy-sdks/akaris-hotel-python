@@ -71,8 +71,8 @@ req = operations.CreatePrecisionRequest(
                     ),
                 ],
             ),
-            checkin_date=dateutil.parser.parse('2021-07-01').date(),
-            checkout_date=dateutil.parser.parse('2023-04-22').date(),
+            checkin_date=dateutil.parser.parse('2022-07-01').date(),
+            checkout_date=dateutil.parser.parse('2024-04-22').date(),
             number_of_guests=157281,
         ),
     ),
@@ -126,8 +126,8 @@ req = operations.PrecisionSearchPropertiesRequest(
             chain_codes=[
                 'string',
             ],
-            check_in_date=dateutil.parser.parse('2021-05-01').date(),
-            check_out_date=dateutil.parser.parse('2022-01-18').date(),
+            check_in_date=dateutil.parser.parse('2022-05-01').date(),
+            check_out_date=dateutil.parser.parse('2023-01-18').date(),
             meals_included=shared.MealsIncluded(),
             property_amenity_code=[
                 'string',

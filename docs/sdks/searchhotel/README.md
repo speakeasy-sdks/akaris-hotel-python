@@ -72,8 +72,8 @@ req = operations.CreateRequest(
                     ),
                 ],
             ),
-            checkin_date=dateutil.parser.parse('2022-06-11').date(),
-            checkout_date=dateutil.parser.parse('2023-06-06').date(),
+            checkin_date=dateutil.parser.parse('2023-06-12').date(),
+            checkout_date=dateutil.parser.parse('2024-06-06').date(),
             number_of_guests=264917,
         ),
     ),
@@ -217,8 +217,8 @@ req = operations.SearchPropertiesRequest(
             chain_codes=[
                 'string',
             ],
-            check_in_date=dateutil.parser.parse('2022-11-19').date(),
-            check_out_date=dateutil.parser.parse('2022-10-26').date(),
+            check_in_date=dateutil.parser.parse('2023-11-19').date(),
+            check_out_date=dateutil.parser.parse('2023-10-26').date(),
             property_amenity_code=[
                 'string',
             ],
