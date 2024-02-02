@@ -4,16 +4,16 @@ management:
   docChecksum: 998f6552c41b6b3b7ff66d3f2d784f6a
   docVersion: 11.11.0
   speakeasyVersion: internal
-  generationVersion: 2.245.1
-  releaseVersion: 0.7.4
-  configChecksum: 9029bac7513c190844e2523c838fc518
+  generationVersion: 2.248.1
+  releaseVersion: 0.8.0
+  configChecksum: 3911a038a491573d27f2d6d489c92b63
   repoURL: https://github.com/speakeasy-sdks/akaris-hotel-python.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/akaris-hotel-python.git
 features:
   python:
     constsAndDefaults: 0.1.2
-    core: 4.4.3
+    core: 4.4.4
     globalSecurity: 2.83.2
     globalServerURLs: 2.82.1
 generatedFiles:
