@@ -27,13 +27,16 @@ req = operations.CreatePrecisionRequest(
     properties_query_specific_precision_property_list_wrapper=shared.PropertiesQuerySpecificPrecisionPropertyListWrapper(
         properties_query_specific_precision_property_list=shared.PropertiesQuerySpecificPrecisionPropertyList(
             at_type='PropertiesQuerySpecificPropertyList',
-            meals_included=shared.MealsIncluded(),
             property_key=[
                 shared.PropertyKey(
                     chain_code='HL',
                     property_code='string',
                 ),
             ],
+            checkin_date=dateutil.parser.parse('2022-07-01').date(),
+            checkout_date=dateutil.parser.parse('2024-04-22').date(),
+            number_of_guests=157281,
+            meals_included=shared.MealsIncluded(),
             rate_candidates=shared.RateCandidates(
                 at_type='RateCandidates',
                 rate_candidate=[
@@ -49,7 +52,6 @@ req = operations.CreatePrecisionRequest(
                 room_stay_candidate=[
                     shared.RoomStayCandidate(
                         guest_counts=shared.GuestCounts(
-                            at_type='GuestCounts',
                             guest_count=[
                                 shared.GuestCount(
                                     at_type='GuestCount',
@@ -58,6 +60,7 @@ req = operations.CreatePrecisionRequest(
                                     count=2,
                                 ),
                             ],
+                            at_type='GuestCounts',
                         ),
                         room_amenity=[
                             shared.RoomAmenity(
@@ -71,9 +74,6 @@ req = operations.CreatePrecisionRequest(
                     ),
                 ],
             ),
-            checkin_date=dateutil.parser.parse('2022-07-01').date(),
-            checkout_date=dateutil.parser.parse('2024-04-22').date(),
-            number_of_guests=157281,
         ),
     ),
 )
@@ -123,11 +123,17 @@ req = operations.PrecisionSearchPropertiesRequest(
     properties_query_precision_search_wrapper=shared.PropertiesQueryPrecisionSearchWrapper(
         properties_query_search=shared.PropertiesQueryPrecisionSearch(
             at_type='PropertiesQuerySearch',
+            check_in_date=dateutil.parser.parse('2022-05-01').date(),
+            check_out_date=dateutil.parser.parse('2023-01-18').date(),
+            search_by=shared.SearchBy(
+                at_type='SearchBy',
+                search_radius=shared.Distance(
+                    value=25,
+                ),
+            ),
             chain_codes=[
                 'string',
             ],
-            check_in_date=dateutil.parser.parse('2022-05-01').date(),
-            check_out_date=dateutil.parser.parse('2023-01-18').date(),
             meals_included=shared.MealsIncluded(),
             property_amenity_code=[
                 'string',
@@ -146,7 +152,6 @@ req = operations.PrecisionSearchPropertiesRequest(
             room_stay_candidate=[
                 shared.RoomStayCandidate(
                     guest_counts=shared.GuestCounts(
-                        at_type='GuestCounts',
                         guest_count=[
                             shared.GuestCount(
                                 at_type='GuestCount',
@@ -155,6 +160,7 @@ req = operations.PrecisionSearchPropertiesRequest(
                                 count=2,
                             ),
                         ],
+                        at_type='GuestCounts',
                     ),
                     room_amenity=[
                         shared.RoomAmenity(
@@ -167,12 +173,6 @@ req = operations.PrecisionSearchPropertiesRequest(
                     ],
                 ),
             ],
-            search_by=shared.SearchBy(
-                at_type='SearchBy',
-                search_radius=shared.Distance(
-                    value=25,
-                ),
-            ),
         ),
     ),
 )

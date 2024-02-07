@@ -22,13 +22,13 @@ class AgencyServiceFee:
     r"""The description of the service fee"""
     expiry_date: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ExpiryDate'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     r"""The service fee expiry date. Once expiry date has been reached, the service fee information will only be stored in the ReservationReceipt"""
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
-    r"""Unique id for this object within a message"""
     offer_ref: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('OfferRef'), 'exclude': lambda f: f is None }})
     r"""Reference to an Offer within the Reservation that this service fee applies to"""
     related_document_number: Optional[DocumentNumber] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('RelatedDocumentNumber'), 'exclude': lambda f: f is None }})
     tax: Optional[List[Tax]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Tax'), 'exclude': lambda f: f is None }})
     traveler_ref: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TravelerRef'), 'exclude': lambda f: f is None }})
     r"""Reference to a Traveler within the Reservation that this service fee applies to"""
+    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
+    r"""Unique id for this object within a message"""
     
 

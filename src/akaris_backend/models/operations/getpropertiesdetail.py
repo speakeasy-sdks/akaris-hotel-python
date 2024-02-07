@@ -28,10 +28,10 @@ class GetPropertiesDetailRequest:
 class GetPropertiesDetailResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     properties_response_wrapper: Optional[shared_propertiesresponsewrapper.PropertiesResponseWrapper] = dataclasses.field(default=None)
     r"""OK - Successful Response - 200"""
     

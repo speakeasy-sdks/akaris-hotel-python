@@ -20,13 +20,13 @@ class CatalogOfferingsRequestHospitality:
     hotel_search_criterion: Optional[HotelSearchCriterion] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('HotelSearchCriterion'), 'exclude': lambda f: f is None }})
     maximum_amount: Optional[CurrencyAmount] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('MaximumAmount'), 'exclude': lambda f: f is None }})
     r"""A monetary amount, up to 4 decimal places. Decimal place needs to be included."""
-    max_response_wait_time: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxResponseWaitTime'), 'exclude': lambda f: f is None }})
-    r"""Maximum time (in milliseconds) to wait for provider responses before returning a response to the consumer of this service"""
     minimum_amount: Optional[CurrencyAmount] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('MinimumAmount'), 'exclude': lambda f: f is None }})
     r"""A monetary amount, up to 4 decimal places. Decimal place needs to be included."""
+    search_control_console_channel_id: Optional[SearchControlConsoleChannelID] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('SearchControlConsoleChannelID'), 'exclude': lambda f: f is None }})
+    max_response_wait_time: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxResponseWaitTime'), 'exclude': lambda f: f is None }})
+    r"""Maximum time (in milliseconds) to wait for provider responses before returning a response to the consumer of this service"""
     requested_currency: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requestedCurrency'), 'exclude': lambda f: f is None }})
     r"""You can use requested currency to request conversion rate information. The response will return the currencyRateConversion object which will contain conversion rate of the requested currency."""
-    search_control_console_channel_id: Optional[SearchControlConsoleChannelID] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('SearchControlConsoleChannelID'), 'exclude': lambda f: f is None }})
     verbose_response_ind: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('verboseResponseInd'), 'exclude': lambda f: f is None }})
     r"""Used to specify that a verbose response is to be returned.  Verbose responses repeat the Property information in each Product and do not return the reference list."""
     

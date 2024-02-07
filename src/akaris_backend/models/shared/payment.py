@@ -25,20 +25,20 @@ class Payment:
     agency_service_fee_identifier: Optional[List[AgencyServiceFeeIdentifier]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('AgencyServiceFeeIdentifier'), 'exclude': lambda f: f is None }})
     base_amount: Optional[CurrencyAmount] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('BaseAmount'), 'exclude': lambda f: f is None }})
     r"""A monetary amount, up to 4 decimal places. Decimal place needs to be included."""
-    deposit_ind: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('depositInd'), 'exclude': lambda f: f is None }})
-    r"""If true, the payment is a deposit on the referenced Offer"""
     extended_payment: Optional[ExtendedPayment] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ExtendedPayment'), 'exclude': lambda f: f is None }})
     r"""Note this field is deprecated in Payment schema and should be passed in FormOfPaymentPaymentCardExtendPayment schema"""
     fees: Optional[Fees] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Fees'), 'exclude': lambda f: f is None }})
     form_of_payment_identifier: Optional[FormOfPaymentIdentifier] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('FormOfPaymentIdentifier'), 'exclude': lambda f: f is None }})
-    guarantee_ind: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('guaranteeInd'), 'exclude': lambda f: f is None }})
-    r"""If true, the payment is a guarantee for the referenced Offer"""
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     identifier: Optional[Identifier] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Identifier'), 'exclude': lambda f: f is None }})
     r"""Identifier provides the ability to create a globally unique identifier. For the identifier to be globally unique it must have a system provided identifier and the system must be identified using a global naming authority. System identification uses the domain naming system (DNS) to assure they are globally unique and should be an URL. The system provided ID will typically be a primary or surrogate key in a database."""
     offer_identifier: Optional[List[OfferIdentifier]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('OfferIdentifier'), 'exclude': lambda f: f is None }})
     payment_ref: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PaymentRef'), 'exclude': lambda f: f is None }})
     taxes: Optional[Taxes] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Taxes'), 'exclude': lambda f: f is None }})
     traveler_identifier_ref: Optional[List[TravelerIdentifierRef]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TravelerIdentifierRef'), 'exclude': lambda f: f is None }})
+    deposit_ind: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('depositInd'), 'exclude': lambda f: f is None }})
+    r"""If true, the payment is a deposit on the referenced Offer"""
+    guarantee_ind: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('guaranteeInd'), 'exclude': lambda f: f is None }})
+    r"""If true, the payment is a guarantee for the referenced Offer"""
+    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     
 

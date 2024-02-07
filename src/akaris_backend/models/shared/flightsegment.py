@@ -17,14 +17,14 @@ class FlightSegment:
     sequence: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sequence') }})
     r"""Segment sequence"""
     at_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
-    bound_flights_ind: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('boundFlightsInd'), 'exclude': lambda f: f is None }})
-    r"""If present and true, the Segments in this Connection must be sold and cancelled together."""
     co2_actual: Optional[Measurement] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('CO2Actual'), 'exclude': lambda f: f is None }})
     r"""Used for dimensional units (width, height, depth) or weight"""
+    operational_status: Optional[OperationalStatusENUM] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('OperationalStatus'), 'exclude': lambda f: f is None }})
+    bound_flights_ind: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('boundFlightsInd'), 'exclude': lambda f: f is None }})
+    r"""If present and true, the Segments in this Connection must be sold and cancelled together."""
     connection_duration: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('connectionDuration'), 'exclude': lambda f: f is None }})
     r"""The actual duration (in minutes) between"""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     r"""Local indentifier within a given message for this object."""
-    operational_status: Optional[OperationalStatusENUM] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('OperationalStatus'), 'exclude': lambda f: f is None }})
     
 

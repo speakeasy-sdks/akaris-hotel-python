@@ -29,17 +29,6 @@ req = operations.BuildFromCatalogOfferingsRequest(
             at_type='OfferQueryBuildFromCatalogOfferingsHospitality',
             build_from_catalog_offerings_request=shared.BuildFromCatalogOfferingsRequest(
                 at_type='BuildFromCatalogOfferingsRequestAir',
-                ancillary_offering_identifier=[
-                    shared.AncillaryOfferingIdentifier(
-                        ancillary_offering_ref='AN1',
-                        catalog_offering_ref='CO1',
-                        identifier=shared.Identifier(
-                            authority='TVPT',
-                            value='A0656EFF-FAF4-456F-B061-0161008D7C4E',
-                        ),
-                        id='AN1',
-                    ),
-                ],
                 catalog_offering_identifier=shared.CatalogOfferingIdentifier(
                     catalog_offering_ref='co1',
                     identifier=shared.Identifier(
@@ -71,6 +60,17 @@ req = operations.BuildFromCatalogOfferingsRequest(
                         ),
                         id='product_1',
                         product_ref='product_1',
+                    ),
+                ],
+                ancillary_offering_identifier=[
+                    shared.AncillaryOfferingIdentifier(
+                        ancillary_offering_ref='AN1',
+                        catalog_offering_ref='CO1',
+                        identifier=shared.Identifier(
+                            authority='TVPT',
+                            value='A0656EFF-FAF4-456F-B061-0161008D7C4E',
+                        ),
+                        id='AN1',
                     ),
                 ],
             ),
@@ -183,6 +183,9 @@ req = operations.CreateHotelRulesRequest(
                 chain_code='HL',
                 property_code='string',
             ),
+            checkin_date=dateutil.parser.parse('2024-10-05').date(),
+            checkout_date=dateutil.parser.parse('2022-06-10').date(),
+            number_of_guests=524055,
             rate_candidate=shared.RateCandidate(
                 at_type='RateCandidate',
                 chain_code='HL',
@@ -193,7 +196,6 @@ req = operations.CreateHotelRulesRequest(
                 room_stay_candidate=[
                     shared.RoomStayCandidate(
                         guest_counts=shared.GuestCounts(
-                            at_type='GuestCounts',
                             guest_count=[
                                 shared.GuestCount(
                                     at_type='GuestCount',
@@ -202,6 +204,7 @@ req = operations.CreateHotelRulesRequest(
                                     count=2,
                                 ),
                             ],
+                            at_type='GuestCounts',
                         ),
                         room_amenity=[
                             shared.RoomAmenity(
@@ -215,9 +218,6 @@ req = operations.CreateHotelRulesRequest(
                     ),
                 ],
             ),
-            checkin_date=dateutil.parser.parse('2024-10-05').date(),
-            checkout_date=dateutil.parser.parse('2022-06-10').date(),
-            number_of_guests=524055,
         ),
     ),
 )

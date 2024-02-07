@@ -18,8 +18,6 @@ class PriceDetail:
     r"""The total amount not including taxes and\/or fees"""
     currency_code: Optional[CurrencyCode] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('CurrencyCode'), 'exclude': lambda f: f is None }})
     r"""Currency codes are the three-letter alphabetic codes that represent the various currencies used throughout the world."""
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
-    r"""Internally referenced id"""
     price_breakdown: Optional[List[PriceBreakdown]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PriceBreakdown'), 'exclude': lambda f: f is None }})
     total_fees: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TotalFees'), 'exclude': lambda f: f is None }})
     r"""The total of the fees included in the total price"""
@@ -28,5 +26,7 @@ class PriceDetail:
     total_taxes: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TotalTaxes'), 'exclude': lambda f: f is None }})
     r"""The total of the taxes included in the total price"""
     vendor_currency_total: Optional[VendorCurrencyTotal] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('VendorCurrencyTotal'), 'exclude': lambda f: f is None }})
+    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
+    r"""Internally referenced id"""
     
 

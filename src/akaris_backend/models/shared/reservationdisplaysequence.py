@@ -12,8 +12,8 @@ from typing import List, Optional
 @dataclasses.dataclass
 class ReservationDisplaySequence:
     at_type: Optional[str] = dataclasses.field(default='ReservationDisplaySequence', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
+    display_sequence: Optional[List[DisplaySequence]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('DisplaySequence'), 'exclude': lambda f: f is None }})
     auto_delete_date_sequence: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('autoDeleteDateSequence'), 'exclude': lambda f: f is None }})
     r"""The sequence of the autoDeleteDate (retention segment) within the Reservation"""
-    display_sequence: Optional[List[DisplaySequence]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('DisplaySequence'), 'exclude': lambda f: f is None }})
     
 

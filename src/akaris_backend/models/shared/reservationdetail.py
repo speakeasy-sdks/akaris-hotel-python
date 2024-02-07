@@ -33,18 +33,12 @@ class ReservationDetail:
     at_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type') }})
     accounting: Optional[Accounting] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Accounting'), 'exclude': lambda f: f is None }})
     agency_service_fee: Optional[List[AgencyServiceFee]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('AgencyServiceFee'), 'exclude': lambda f: f is None }})
-    auto_delete_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('autoDeleteDate'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is None }})
-    r"""The auto delete date represents the date that the Reservation will be kept active. Also known as retention segment or retention date."""
     document_overrides: Optional[List[DocumentOverrides]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('DocumentOverrides'), 'exclude': lambda f: f is None }})
     form_of_payment: Optional[List[FormOfPaymentID]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('FormOfPayment'), 'exclude': lambda f: f is None }})
     group_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('GroupName'), 'exclude': lambda f: f is None }})
     r"""A name assigned to a Reservation containing an offer with Passengerflight/Flight Quantity equal to or greater than 10"""
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
-    r"""Internal ID"""
     identifier: Optional[Identifier] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Identifier'), 'exclude': lambda f: f is None }})
     r"""Identifier provides the ability to create a globally unique identifier. For the identifier to be globally unique it must have a system provided identifier and the system must be identified using a global naming authority. System identification uses the domain naming system (DNS) to assure they are globally unique and should be an URL. The system provided ID will typically be a primary or surrogate key in a database."""
-    notification_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('notificationDate'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is None }})
-    r"""The notification date represents the date that the Reservation should be reviewed. Also known as ticket time limit date."""
     offer: Optional[List[Offer]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Offer'), 'exclude': lambda f: f is None }})
     offer_link: Optional[List[OfferLink]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('OfferLink'), 'exclude': lambda f: f is None }})
     organization_loyalty_program: Optional[List[OrganizationLoyaltyProgram]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('OrganizationLoyaltyProgram'), 'exclude': lambda f: f is None }})
@@ -59,5 +53,11 @@ class ReservationDetail:
     travel_agency: Optional[TravelAgency] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TravelAgency'), 'exclude': lambda f: f is None }})
     traveler: Optional[List[Traveler]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Traveler'), 'exclude': lambda f: f is None }})
     traveler_product: Optional[List[TravelerProduct]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TravelerProduct'), 'exclude': lambda f: f is None }})
+    auto_delete_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('autoDeleteDate'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is None }})
+    r"""The auto delete date represents the date that the Reservation will be kept active. Also known as retention segment or retention date."""
+    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
+    r"""Internal ID"""
+    notification_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('notificationDate'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is None }})
+    r"""The notification date represents the date that the Reservation should be reviewed. Also known as ticket time limit date."""
     
 

@@ -15,8 +15,8 @@ from typing import List, Optional
 class Result:
     at_type: Optional[str] = dataclasses.field(default='Result', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
     error: Optional[List[Error]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Error'), 'exclude': lambda f: f is None }})
+    warning: Optional[List[WarningT]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Warning'), 'exclude': lambda f: f is None }})
     status: Optional[ResultStatusEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     r"""The status of an error or warning"""
-    warning: Optional[List[WarningT]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Warning'), 'exclude': lambda f: f is None }})
     
 

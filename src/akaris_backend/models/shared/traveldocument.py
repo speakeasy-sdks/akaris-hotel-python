@@ -15,11 +15,13 @@ from typing import Optional
 @dataclasses.dataclass
 class TravelDocument:
     at_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type') }})
-    doc_number: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('docNumber') }})
-    r"""Document number value"""
     gender: GenderEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Gender') }})
     r"""Gender Type Male, Female etc. This field is not used by Hotel APIs and will be ignored"""
     person_name: PersonName = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PersonName') }})
+    doc_number: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('docNumber') }})
+    r"""Document number value"""
+    nationality: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Nationality'), 'exclude': lambda f: f is None }})
+    r"""Specifies a 2 character country code as defined in ISO3166."""
     birth_country: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('birthCountry'), 'exclude': lambda f: f is None }})
     r"""Birth country on Country Code ISO value"""
     birth_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('birthDate'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is None }})
@@ -36,8 +38,6 @@ class TravelDocument:
     r"""Issue country on Country Code ISO"""
     issue_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('issueDate'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is None }})
     r"""Date of Issue"""
-    nationality: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Nationality'), 'exclude': lambda f: f is None }})
-    r"""Specifies a 2 character country code as defined in ISO3166."""
     place_of_issue: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('placeOfIssue'), 'exclude': lambda f: f is None }})
     r"""Place of issue value"""
     residence: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('residence'), 'exclude': lambda f: f is None }})

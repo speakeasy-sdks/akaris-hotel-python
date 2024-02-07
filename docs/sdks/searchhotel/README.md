@@ -35,6 +35,9 @@ req = operations.CreateRequest(
                     property_code='string',
                 ),
             ],
+            checkin_date=dateutil.parser.parse('2023-06-12').date(),
+            checkout_date=dateutil.parser.parse('2024-06-06').date(),
+            number_of_guests=264917,
             rate_candidates=shared.RateCandidates(
                 at_type='RateCandidates',
                 rate_candidate=[
@@ -50,7 +53,6 @@ req = operations.CreateRequest(
                 room_stay_candidate=[
                     shared.RoomStayCandidate(
                         guest_counts=shared.GuestCounts(
-                            at_type='GuestCounts',
                             guest_count=[
                                 shared.GuestCount(
                                     at_type='GuestCount',
@@ -59,6 +61,7 @@ req = operations.CreateRequest(
                                     count=2,
                                 ),
                             ],
+                            at_type='GuestCounts',
                         ),
                         room_amenity=[
                             shared.RoomAmenity(
@@ -72,9 +75,6 @@ req = operations.CreateRequest(
                     ),
                 ],
             ),
-            checkin_date=dateutil.parser.parse('2023-06-12').date(),
-            checkout_date=dateutil.parser.parse('2024-06-06').date(),
-            number_of_guests=264917,
         ),
     ),
 )
@@ -214,11 +214,17 @@ req = operations.SearchPropertiesRequest(
     properties_query_search_wrapper=shared.PropertiesQuerySearchWrapper(
         properties_query_search=shared.PropertiesQuerySearch(
             at_type='PropertiesQuerySearch',
+            check_in_date=dateutil.parser.parse('2023-11-19').date(),
+            check_out_date=dateutil.parser.parse('2023-10-26').date(),
+            search_by=shared.SearchBy(
+                at_type='SearchBy',
+                search_radius=shared.Distance(
+                    value=25,
+                ),
+            ),
             chain_codes=[
                 'string',
             ],
-            check_in_date=dateutil.parser.parse('2023-11-19').date(),
-            check_out_date=dateutil.parser.parse('2023-10-26').date(),
             property_amenity_code=[
                 'string',
             ],
@@ -236,7 +242,6 @@ req = operations.SearchPropertiesRequest(
             room_stay_candidate=[
                 shared.RoomStayCandidate(
                     guest_counts=shared.GuestCounts(
-                        at_type='GuestCounts',
                         guest_count=[
                             shared.GuestCount(
                                 at_type='GuestCount',
@@ -245,6 +250,7 @@ req = operations.SearchPropertiesRequest(
                                 count=2,
                             ),
                         ],
+                        at_type='GuestCounts',
                     ),
                     room_amenity=[
                         shared.RoomAmenity(
@@ -257,12 +263,6 @@ req = operations.SearchPropertiesRequest(
                     ],
                 ),
             ],
-            search_by=shared.SearchBy(
-                at_type='SearchBy',
-                search_radius=shared.Distance(
-                    value=25,
-                ),
-            ),
         ),
     ),
 )

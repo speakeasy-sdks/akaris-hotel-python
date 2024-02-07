@@ -31,6 +31,15 @@ req = operations.BuildHotelReservationRequest(
         reservation_query_build=shared.ReservationQueryBuild(
             reservation_build=shared.ReservationBuild(
                 at_type='ReservationBuildFromCatalogOfferings',
+                traveler=[
+                    shared.TravelerID(
+                        at_type='TravelerDetail',
+                        identifier=shared.Identifier(
+                            authority='TVPT',
+                            value='A0656EFF-FAF4-456F-B061-0161008D7C4E',
+                        ),
+                    ),
+                ],
                 accounting=shared.AccountingID(
                     at_type='Accounting',
                     identifier=shared.Identifier(
@@ -109,11 +118,6 @@ req = operations.BuildHotelReservationRequest(
                 ],
                 travel_agency=shared.TravelAgency(
                     at_type='TravelAgencyDetail',
-                    corporate_code='Air Agency',
-                    identifier=shared.Identifier(
-                        authority='TVPT',
-                        value='A0656EFF-FAF4-456F-B061-0161008D7C4E',
-                    ),
                     organization_name=shared.CompanyName(
                         code='AI',
                         code_context='ISO',
@@ -125,21 +129,17 @@ req = operations.BuildHotelReservationRequest(
                             '["1G","1V","MB","HZ"]',
                         ],
                     ),
+                    corporate_code='Air Agency',
+                    identifier=shared.Identifier(
+                        authority='TVPT',
+                        value='A0656EFF-FAF4-456F-B061-0161008D7C4E',
+                    ),
                     profile_name=[
                         'string',
                     ],
                     travel_organization_ref='TravelAgency_1',
                     id='2',
                 ),
-                traveler=[
-                    shared.TravelerID(
-                        at_type='TravelerDetail',
-                        identifier=shared.Identifier(
-                            authority='TVPT',
-                            value='A0656EFF-FAF4-456F-B061-0161008D7C4E',
-                        ),
-                    ),
-                ],
             ),
         ),
     ),
@@ -242,8 +242,8 @@ req = operations.CreateHotelReservationRequest(
                 ),
                 name_value_pair=[
                     shared.NameValuePair(
-                        id='6',
                         name='Day1',
+                        id='6',
                         value='Sunday',
                     ),
                 ],
@@ -286,8 +286,8 @@ req = operations.CreateHotelReservationRequest(
                 shared.DocumentOverrides(
                     at_type='DocumentOverrides',
                     change_fee_collection_method=shared.ChangeFeeCollectionMethod(
-                        change_fee_issued_separately_ind=True,
                         code='f2142',
+                        change_fee_issued_separately_ind=True,
                         description='Change fee collection method',
                         sub_code='631b',
                         tax_included_in_base_amount_ind=True,
@@ -297,10 +297,10 @@ req = operations.CreateHotelReservationRequest(
                     ),
                     commissions=[
                         shared.Commissions(
-                            apply_to=shared.CommissionApplyEnum.BASE,
                             commission=shared.Commission(
                                 at_type='Commission',
                             ),
+                            apply_to=shared.CommissionApplyEnum.BASE,
                             traveler_identifier_ref=[
                                 shared.TravelerIdentifierRef(
                                     passenger_type_code='ADT',
@@ -313,9 +313,9 @@ req = operations.CreateHotelReservationRequest(
                     ],
                     destination_purpose=[
                         shared.DestinationPurpose(
-                            at_type='DestinationPurpose',
                             destination=shared.DestinationEnum.ISLANDS_AND_COUNTRIES_OF_THE_CARIBBEAN,
                             purpose=shared.PurposeEnum.BUSINESS,
+                            at_type='DestinationPurpose',
                         ),
                     ],
                     identifier=shared.Identifier(
@@ -328,9 +328,9 @@ req = operations.CreateHotelReservationRequest(
                         car_code='ACAR',
                         net_base_amount=shared.FiledAmount(
                             code_authority='Australian Dollar',
+                            decimal_place=3,
                             currency_code='USD',
                             decimal_authority='ISO 4217',
-                            decimal_place=3,
                             value=43.3422,
                         ),
                         value_code='D1000',
@@ -353,10 +353,10 @@ req = operations.CreateHotelReservationRequest(
                     ),
                     restrictions=[
                         shared.Restrictions(
-                            document_type=shared.DocumentTypeEnum.TICKET,
                             restriction=[
                                 'string',
                             ],
+                            document_type=shared.DocumentTypeEnum.TICKET,
                             traveler_identifier_ref=[
                                 shared.TravelerIdentifierRef(
                                     passenger_type_code='ADT',
@@ -383,8 +383,8 @@ req = operations.CreateHotelReservationRequest(
                     ],
                     tour_codes=[
                         shared.TourCodes(
-                            at_type='TourCodes',
                             tour_code=shared.TourCode(),
+                            at_type='TourCodes',
                             traveler_identifier_ref=[
                                 shared.TravelerIdentifierRef(
                                     passenger_type_code='ADT',
@@ -413,10 +413,6 @@ req = operations.CreateHotelReservationRequest(
             offer=[
                 shared.Offer(
                     at_type='Offer',
-                    identifier=shared.Identifier(
-                        authority='TVPT',
-                        value='A0656EFF-FAF4-456F-B061-0161008D7C4E',
-                    ),
                     price=shared.Price(
                         at_type='PriceDetail',
                         base=20.2,
@@ -446,12 +442,6 @@ req = operations.CreateHotelReservationRequest(
                                 tax_info=[
                                     shared.TaxInfo(
                                         amount=2234.1,
-                                        currency_code=shared.CurrencyCode(
-                                            code_authority='ISO 4217',
-                                            decimal_authority='ISO 4217',
-                                            decimal_place=4,
-                                            value='USD',
-                                        ),
                                         tax_breakdown=[
                                             shared.TaxBreakdown(
                                                 airport_code='MIA',
@@ -464,6 +454,12 @@ req = operations.CreateHotelReservationRequest(
                                             ),
                                         ],
                                         tax_code='XF',
+                                        currency_code=shared.CurrencyCode(
+                                            code_authority='ISO 4217',
+                                            decimal_authority='ISO 4217',
+                                            decimal_place=4,
+                                            value='USD',
+                                        ),
                                     ),
                                 ],
                                 total_taxes=330.1,
@@ -525,6 +521,10 @@ req = operations.CreateHotelReservationRequest(
                             terms_and_conditions_ref='TC_1',
                         ),
                     ],
+                    identifier=shared.Identifier(
+                        authority='TVPT',
+                        value='A0656EFF-FAF4-456F-B061-0161008D7C4E',
+                    ),
                     id='offer_1',
                     offer_ref='offer_1',
                     parent_offer_ref='offer_1',
@@ -542,26 +542,26 @@ req = operations.CreateHotelReservationRequest(
             organization_loyalty_program=[
                 shared.OrganizationLoyaltyProgram(
                     at_type='OrganizationLoyaltyProgramID',
+                    loyalty_identifier='LP029381',
+                    supplier='Air canada',
                     identifier=shared.Identifier(
                         authority='TVPT',
                         value='A0656EFF-FAF4-456F-B061-0161008D7C4E',
                     ),
-                    loyalty_identifier='LP029381',
-                    supplier='Air canada',
                 ),
             ],
             payment=[
                 shared.Payment(
-                    at_type='Payment',
-                    agency_service_fee_identifier=[
-                        shared.AgencyServiceFeeIdentifier(),
-                    ],
                     amount=shared.CurrencyAmount(
                         approximate_ind=True,
                         code='USD',
                         minor_unit=2,
                         value=124.56,
                     ),
+                    at_type='Payment',
+                    agency_service_fee_identifier=[
+                        shared.AgencyServiceFeeIdentifier(),
+                    ],
                     base_amount=shared.CurrencyAmount(
                         approximate_ind=True,
                         code='USD',
@@ -569,8 +569,8 @@ req = operations.CreateHotelReservationRequest(
                         value=124.56,
                     ),
                     extended_payment=shared.ExtendedPayment(
-                        first_installment=100,
                         number_of_installments=6,
+                        first_installment=100,
                         remaining_amount=50,
                     ),
                     fees=shared.Fees(
@@ -603,12 +603,6 @@ req = operations.CreateHotelReservationRequest(
                         tax_info=[
                             shared.TaxInfo(
                                 amount=2635.47,
-                                currency_code=shared.CurrencyCode(
-                                    code_authority='ISO 4217',
-                                    decimal_authority='ISO 4217',
-                                    decimal_place=4,
-                                    value='USD',
-                                ),
                                 tax_breakdown=[
                                     shared.TaxBreakdown(
                                         airport_code='MIA',
@@ -621,6 +615,12 @@ req = operations.CreateHotelReservationRequest(
                                     ),
                                 ],
                                 tax_code='XF',
+                                currency_code=shared.CurrencyCode(
+                                    code_authority='ISO 4217',
+                                    decimal_authority='ISO 4217',
+                                    decimal_place=4,
+                                    value='USD',
+                                ),
                             ),
                         ],
                         total_taxes=330.1,
@@ -660,12 +660,12 @@ req = operations.CreateHotelReservationRequest(
                     ),
                     telephone=shared.Telephone(
                         at_type='Telephone',
+                        phone_number='972-000-787',
                         area_city_code='972',
                         city_code='DEN',
                         country_access_code='1',
                         extension='234',
                         id='3',
-                        phone_number='972-000-787',
                         role=shared.EnumTelephoneRole.MOBILE,
                     ),
                     traveler_identifier=shared.TravelerIdentifier(
@@ -719,8 +719,8 @@ req = operations.CreateHotelReservationRequest(
                 display_sequence=[
                     shared.DisplaySequence(
                         offer_ref='string',
-                        sequence=1,
                         display_sequence='1',
+                        sequence=1,
                     ),
                 ],
             ),
@@ -730,10 +730,6 @@ req = operations.CreateHotelReservationRequest(
                         at_type='ProductAir',
                         flight_segment=[
                             shared.FlightSegment(
-                                at_type='FlightSegment',
-                                co2_actual=shared.Measurement(
-                                    value=2.22,
-                                ),
                                 flight=shared.FlightID(
                                     at_type='FlightDetail',
                                     flight_ref='pln0845',
@@ -743,24 +739,30 @@ req = operations.CreateHotelReservationRequest(
                                     ),
                                     id='126',
                                 ),
+                                sequence=65,
+                                at_type='FlightSegment',
+                                co2_actual=shared.Measurement(
+                                    value=2.22,
+                                ),
                                 operational_status=shared.OperationalStatusENUM(
                                     value=shared.OperationalStatusENUMBase.FLIGHT_BOARDING,
                                 ),
                                 bound_flights_ind=True,
                                 connection_duration='60',
                                 id='2304',
-                                sequence=65,
                             ),
                         ],
-                        identifier=shared.Identifier(
-                            authority='TVPT',
-                            value='A0656EFF-FAF4-456F-B061-0161008D7C4E',
-                        ),
                         passenger_flight=[
                             shared.PassengerFlight(
                                 at_type='PassengerFlight',
                                 flight_product=[
                                     shared.FlightProduct(
+                                        segment_sequence=[
+                                            23,
+                                            45,
+                                            67,
+                                            89,
+                                        ],
                                         at_type='FlightProduct',
                                         brand=shared.BrandID(
                                             at_type='BrandID',
@@ -777,7 +779,6 @@ req = operations.CreateHotelReservationRequest(
                                         ],
                                         customer_loyalty_credit=[
                                             shared.CustomerLoyaltyCredit(
-                                                at_type='CustomerLoyaltyCredit',
                                                 customer_loyalty=shared.CustomerLoyalty(
                                                     card_holder_name='John Smith',
                                                     id='Loyalty_1',
@@ -795,6 +796,7 @@ req = operations.CreateHotelReservationRequest(
                                                 ),
                                                 earned='500',
                                                 status='gold',
+                                                at_type='CustomerLoyaltyCredit',
                                             ),
                                         ],
                                         fare_qualifier=shared.FareQualifierENUM(),
@@ -803,12 +805,6 @@ req = operations.CreateHotelReservationRequest(
                                         class_of_service='F',
                                         fare_basis_code='HKG  SU  X/MOW  SU  KGD  598.78',
                                         fare_type_code='ERU',
-                                        segment_sequence=[
-                                            23,
-                                            45,
-                                            67,
-                                            89,
-                                        ],
                                         ticket_designator='BB5662Y',
                                         value_code='365',
                                     ),
@@ -817,6 +813,10 @@ req = operations.CreateHotelReservationRequest(
                                 passenger_type_code='ADT',
                             ),
                         ],
+                        identifier=shared.Identifier(
+                            authority='TVPT',
+                            value='A0656EFF-FAF4-456F-B061-0161008D7C4E',
+                        ),
                         quantity=2,
                         id='product_1',
                         product_ref='product_1',
@@ -847,11 +847,6 @@ req = operations.CreateHotelReservationRequest(
             ],
             travel_agency=shared.TravelAgency(
                 at_type='TravelAgencyDetail',
-                corporate_code='Air Agency',
-                identifier=shared.Identifier(
-                    authority='TVPT',
-                    value='A0656EFF-FAF4-456F-B061-0161008D7C4E',
-                ),
                 organization_name=shared.CompanyName(
                     code='AI',
                     code_context='ISO',
@@ -863,6 +858,11 @@ req = operations.CreateHotelReservationRequest(
                         '["1G","1V","MB","HZ"]',
                     ],
                 ),
+                corporate_code='Air Agency',
+                identifier=shared.Identifier(
+                    authority='TVPT',
+                    value='A0656EFF-FAF4-456F-B061-0161008D7C4E',
+                ),
                 profile_name=[
                     'string',
                 ],
@@ -872,9 +872,17 @@ req = operations.CreateHotelReservationRequest(
             traveler=[
                 shared.Traveler(
                     at_type='TravelerDetail',
+                    person_name=shared.PersonName(
+                        at_type='PersonNameDetail',
+                        surname='Smith',
+                        given='John',
+                        middle='Erick',
+                        prefix='Mr',
+                    ),
                     address=[
                         shared.Address(
                             at_type='AddressDetail',
+                            city='Windsor',
                             address_line=[
                                 'S',
                                 ' ',
@@ -906,7 +914,6 @@ req = operations.CreateHotelReservationRequest(
                                 bulding_ind=True,
                                 value='Moore House, Room 101, 23 ABC Street, Windsor, Berkshire, United Kingdom, SL6 51A',
                             ),
-                            city='Windsor',
                             country=shared.Country(
                                 code_context='IATA',
                                 id='23',
@@ -933,10 +940,18 @@ req = operations.CreateHotelReservationRequest(
                     ],
                     alternate_contact=[
                         shared.AlternateContact(
+                            person_name=shared.PersonName(
+                                at_type='PersonNameDetail',
+                                surname='Smith',
+                                given='John',
+                                middle='Erick',
+                                prefix='Mr',
+                            ),
                             at_type='AlternateContact',
                             address=[
                                 shared.Address(
                                     at_type='AddressDetail',
+                                    city='Windsor',
                                     address_line=[
                                         'S',
                                         ' ',
@@ -968,7 +983,6 @@ req = operations.CreateHotelReservationRequest(
                                         bulding_ind=True,
                                         value='Moore House, Room 101, 23 ABC Street, Windsor, Berkshire, United Kingdom, SL6 51A',
                                     ),
-                                    city='Windsor',
                                     country=shared.Country(
                                         code_context='IATA',
                                         id='23',
@@ -1003,22 +1017,15 @@ req = operations.CreateHotelReservationRequest(
                                     value='exampledomain@example.com',
                                 ),
                             ],
-                            person_name=shared.PersonName(
-                                at_type='PersonNameDetail',
-                                given='John',
-                                middle='Erick',
-                                prefix='Mr',
-                                surname='Smith',
-                            ),
                             telephone=[
                                 shared.Telephone(
                                     at_type='Telephone',
+                                    phone_number='972-000-787',
                                     area_city_code='972',
                                     city_code='DEN',
                                     country_access_code='1',
                                     extension='234',
                                     id='3',
-                                    phone_number='972-000-787',
                                     role=shared.EnumTelephoneRole.MOBILE,
                                 ),
                             ],
@@ -1075,29 +1082,22 @@ req = operations.CreateHotelReservationRequest(
                         authority='TVPT',
                         value='A0656EFF-FAF4-456F-B061-0161008D7C4E',
                     ),
-                    person_name=shared.PersonName(
-                        at_type='PersonNameDetail',
-                        given='John',
-                        middle='Erick',
-                        prefix='Mr',
-                        surname='Smith',
-                    ),
                     rail_discount_card=[
                         shared.RailDiscountCard(
-                            reference_number='134256',
                             supplier_code='Enco',
+                            reference_number='134256',
                             value='20 Perecnt',
                         ),
                     ],
                     telephone=[
                         shared.Telephone(
                             at_type='Telephone',
+                            phone_number='972-000-787',
                             area_city_code='972',
                             city_code='DEN',
                             country_access_code='1',
                             extension='234',
                             id='3',
-                            phone_number='972-000-787',
                             role=shared.EnumTelephoneRole.MOBILE,
                         ),
                     ],
@@ -1105,18 +1105,18 @@ req = operations.CreateHotelReservationRequest(
                         shared.TravelDocument(
                             at_type='TravelDocumentDetail',
                             gender=shared.GenderEnum.UNDISCLOSED,
-                            nationality='BR',
                             person_name=shared.PersonName(
                                 at_type='PersonNameDetail',
+                                surname='Smith',
                                 given='John',
                                 middle='Erick',
                                 prefix='Mr',
-                                surname='Smith',
                             ),
+                            doc_number='B37201',
+                            nationality='BR',
                             birth_country='AR',
                             birth_date=dateutil.parser.parse('1995-04-22').date(),
                             birth_place='Ontario',
-                            doc_number='B37201',
                             doc_type=shared.DocTypeCodeEnum.PASSPORT,
                             expire_date=dateutil.parser.parse('2002-11-13').date(),
                             id='34',
@@ -1242,8 +1242,8 @@ req = operations.UpdateHotelReservationRequest(
                 ),
                 name_value_pair=[
                     shared.NameValuePair(
-                        id='6',
                         name='Day1',
+                        id='6',
                         value='Sunday',
                     ),
                 ],
@@ -1286,8 +1286,8 @@ req = operations.UpdateHotelReservationRequest(
                 shared.DocumentOverrides(
                     at_type='DocumentOverrides',
                     change_fee_collection_method=shared.ChangeFeeCollectionMethod(
-                        change_fee_issued_separately_ind=True,
                         code='f2142',
+                        change_fee_issued_separately_ind=True,
                         description='Change fee collection method',
                         sub_code='631b',
                         tax_included_in_base_amount_ind=True,
@@ -1297,10 +1297,10 @@ req = operations.UpdateHotelReservationRequest(
                     ),
                     commissions=[
                         shared.Commissions(
-                            apply_to=shared.CommissionApplyEnum.BASE,
                             commission=shared.Commission(
                                 at_type='Commission',
                             ),
+                            apply_to=shared.CommissionApplyEnum.BASE,
                             traveler_identifier_ref=[
                                 shared.TravelerIdentifierRef(
                                     passenger_type_code='ADT',
@@ -1313,9 +1313,9 @@ req = operations.UpdateHotelReservationRequest(
                     ],
                     destination_purpose=[
                         shared.DestinationPurpose(
-                            at_type='DestinationPurpose',
                             destination=shared.DestinationEnum.ASIA,
                             purpose=shared.PurposeEnum.BUSINESS,
+                            at_type='DestinationPurpose',
                         ),
                     ],
                     identifier=shared.Identifier(
@@ -1328,9 +1328,9 @@ req = operations.UpdateHotelReservationRequest(
                         car_code='ACAR',
                         net_base_amount=shared.FiledAmount(
                             code_authority='Australian Dollar',
+                            decimal_place=3,
                             currency_code='USD',
                             decimal_authority='ISO 4217',
-                            decimal_place=3,
                             value=43.3422,
                         ),
                         value_code='D1000',
@@ -1353,10 +1353,10 @@ req = operations.UpdateHotelReservationRequest(
                     ),
                     restrictions=[
                         shared.Restrictions(
-                            document_type=shared.DocumentTypeEnum.TICKET,
                             restriction=[
                                 'string',
                             ],
+                            document_type=shared.DocumentTypeEnum.TICKET,
                             traveler_identifier_ref=[
                                 shared.TravelerIdentifierRef(
                                     passenger_type_code='ADT',
@@ -1383,8 +1383,8 @@ req = operations.UpdateHotelReservationRequest(
                     ],
                     tour_codes=[
                         shared.TourCodes(
-                            at_type='TourCodes',
                             tour_code=shared.TourCode(),
+                            at_type='TourCodes',
                             traveler_identifier_ref=[
                                 shared.TravelerIdentifierRef(
                                     passenger_type_code='ADT',
@@ -1413,10 +1413,6 @@ req = operations.UpdateHotelReservationRequest(
             offer=[
                 shared.Offer(
                     at_type='Offer',
-                    identifier=shared.Identifier(
-                        authority='TVPT',
-                        value='A0656EFF-FAF4-456F-B061-0161008D7C4E',
-                    ),
                     price=shared.Price(
                         at_type='PriceDetail',
                         base=20.2,
@@ -1446,12 +1442,6 @@ req = operations.UpdateHotelReservationRequest(
                                 tax_info=[
                                     shared.TaxInfo(
                                         amount=7022.39,
-                                        currency_code=shared.CurrencyCode(
-                                            code_authority='ISO 4217',
-                                            decimal_authority='ISO 4217',
-                                            decimal_place=4,
-                                            value='USD',
-                                        ),
                                         tax_breakdown=[
                                             shared.TaxBreakdown(
                                                 airport_code='MIA',
@@ -1464,6 +1454,12 @@ req = operations.UpdateHotelReservationRequest(
                                             ),
                                         ],
                                         tax_code='XF',
+                                        currency_code=shared.CurrencyCode(
+                                            code_authority='ISO 4217',
+                                            decimal_authority='ISO 4217',
+                                            decimal_place=4,
+                                            value='USD',
+                                        ),
                                     ),
                                 ],
                                 total_taxes=330.1,
@@ -1525,6 +1521,10 @@ req = operations.UpdateHotelReservationRequest(
                             terms_and_conditions_ref='TC_1',
                         ),
                     ],
+                    identifier=shared.Identifier(
+                        authority='TVPT',
+                        value='A0656EFF-FAF4-456F-B061-0161008D7C4E',
+                    ),
                     id='offer_1',
                     offer_ref='offer_1',
                     parent_offer_ref='offer_1',
@@ -1542,26 +1542,26 @@ req = operations.UpdateHotelReservationRequest(
             organization_loyalty_program=[
                 shared.OrganizationLoyaltyProgram(
                     at_type='OrganizationLoyaltyProgramID',
+                    loyalty_identifier='LP029381',
+                    supplier='Air canada',
                     identifier=shared.Identifier(
                         authority='TVPT',
                         value='A0656EFF-FAF4-456F-B061-0161008D7C4E',
                     ),
-                    loyalty_identifier='LP029381',
-                    supplier='Air canada',
                 ),
             ],
             payment=[
                 shared.Payment(
-                    at_type='Payment',
-                    agency_service_fee_identifier=[
-                        shared.AgencyServiceFeeIdentifier(),
-                    ],
                     amount=shared.CurrencyAmount(
                         approximate_ind=True,
                         code='USD',
                         minor_unit=2,
                         value=124.56,
                     ),
+                    at_type='Payment',
+                    agency_service_fee_identifier=[
+                        shared.AgencyServiceFeeIdentifier(),
+                    ],
                     base_amount=shared.CurrencyAmount(
                         approximate_ind=True,
                         code='USD',
@@ -1569,8 +1569,8 @@ req = operations.UpdateHotelReservationRequest(
                         value=124.56,
                     ),
                     extended_payment=shared.ExtendedPayment(
-                        first_installment=100,
                         number_of_installments=6,
+                        first_installment=100,
                         remaining_amount=50,
                     ),
                     fees=shared.Fees(
@@ -1603,12 +1603,6 @@ req = operations.UpdateHotelReservationRequest(
                         tax_info=[
                             shared.TaxInfo(
                                 amount=5625.77,
-                                currency_code=shared.CurrencyCode(
-                                    code_authority='ISO 4217',
-                                    decimal_authority='ISO 4217',
-                                    decimal_place=4,
-                                    value='USD',
-                                ),
                                 tax_breakdown=[
                                     shared.TaxBreakdown(
                                         airport_code='MIA',
@@ -1621,6 +1615,12 @@ req = operations.UpdateHotelReservationRequest(
                                     ),
                                 ],
                                 tax_code='XF',
+                                currency_code=shared.CurrencyCode(
+                                    code_authority='ISO 4217',
+                                    decimal_authority='ISO 4217',
+                                    decimal_place=4,
+                                    value='USD',
+                                ),
                             ),
                         ],
                         total_taxes=330.1,
@@ -1660,12 +1660,12 @@ req = operations.UpdateHotelReservationRequest(
                     ),
                     telephone=shared.Telephone(
                         at_type='Telephone',
+                        phone_number='972-000-787',
                         area_city_code='972',
                         city_code='DEN',
                         country_access_code='1',
                         extension='234',
                         id='3',
-                        phone_number='972-000-787',
                         role=shared.EnumTelephoneRole.MOBILE,
                     ),
                     traveler_identifier=shared.TravelerIdentifier(
@@ -1719,8 +1719,8 @@ req = operations.UpdateHotelReservationRequest(
                 display_sequence=[
                     shared.DisplaySequence(
                         offer_ref='string',
-                        sequence=1,
                         display_sequence='1',
+                        sequence=1,
                     ),
                 ],
             ),
@@ -1730,10 +1730,6 @@ req = operations.UpdateHotelReservationRequest(
                         at_type='ProductAir',
                         flight_segment=[
                             shared.FlightSegment(
-                                at_type='FlightSegment',
-                                co2_actual=shared.Measurement(
-                                    value=2.22,
-                                ),
                                 flight=shared.FlightID(
                                     at_type='FlightDetail',
                                     flight_ref='pln0845',
@@ -1743,24 +1739,30 @@ req = operations.UpdateHotelReservationRequest(
                                     ),
                                     id='126',
                                 ),
+                                sequence=65,
+                                at_type='FlightSegment',
+                                co2_actual=shared.Measurement(
+                                    value=2.22,
+                                ),
                                 operational_status=shared.OperationalStatusENUM(
                                     value=shared.OperationalStatusENUMBase.FLIGHT_BOARDING,
                                 ),
                                 bound_flights_ind=True,
                                 connection_duration='60',
                                 id='2304',
-                                sequence=65,
                             ),
                         ],
-                        identifier=shared.Identifier(
-                            authority='TVPT',
-                            value='A0656EFF-FAF4-456F-B061-0161008D7C4E',
-                        ),
                         passenger_flight=[
                             shared.PassengerFlight(
                                 at_type='PassengerFlight',
                                 flight_product=[
                                     shared.FlightProduct(
+                                        segment_sequence=[
+                                            23,
+                                            45,
+                                            67,
+                                            89,
+                                        ],
                                         at_type='FlightProduct',
                                         brand=shared.BrandID(
                                             at_type='BrandID',
@@ -1777,7 +1779,6 @@ req = operations.UpdateHotelReservationRequest(
                                         ],
                                         customer_loyalty_credit=[
                                             shared.CustomerLoyaltyCredit(
-                                                at_type='CustomerLoyaltyCredit',
                                                 customer_loyalty=shared.CustomerLoyalty(
                                                     card_holder_name='John Smith',
                                                     id='Loyalty_1',
@@ -1795,6 +1796,7 @@ req = operations.UpdateHotelReservationRequest(
                                                 ),
                                                 earned='500',
                                                 status='gold',
+                                                at_type='CustomerLoyaltyCredit',
                                             ),
                                         ],
                                         fare_qualifier=shared.FareQualifierENUM(),
@@ -1803,12 +1805,6 @@ req = operations.UpdateHotelReservationRequest(
                                         class_of_service='F',
                                         fare_basis_code='HKG  SU  X/MOW  SU  KGD  598.78',
                                         fare_type_code='ERU',
-                                        segment_sequence=[
-                                            23,
-                                            45,
-                                            67,
-                                            89,
-                                        ],
                                         ticket_designator='BB5662Y',
                                         value_code='365',
                                     ),
@@ -1817,6 +1813,10 @@ req = operations.UpdateHotelReservationRequest(
                                 passenger_type_code='ADT',
                             ),
                         ],
+                        identifier=shared.Identifier(
+                            authority='TVPT',
+                            value='A0656EFF-FAF4-456F-B061-0161008D7C4E',
+                        ),
                         quantity=2,
                         id='product_1',
                         product_ref='product_1',
@@ -1847,11 +1847,6 @@ req = operations.UpdateHotelReservationRequest(
             ],
             travel_agency=shared.TravelAgency(
                 at_type='TravelAgencyDetail',
-                corporate_code='Air Agency',
-                identifier=shared.Identifier(
-                    authority='TVPT',
-                    value='A0656EFF-FAF4-456F-B061-0161008D7C4E',
-                ),
                 organization_name=shared.CompanyName(
                     code='AI',
                     code_context='ISO',
@@ -1863,6 +1858,11 @@ req = operations.UpdateHotelReservationRequest(
                         '["1G","1V","MB","HZ"]',
                     ],
                 ),
+                corporate_code='Air Agency',
+                identifier=shared.Identifier(
+                    authority='TVPT',
+                    value='A0656EFF-FAF4-456F-B061-0161008D7C4E',
+                ),
                 profile_name=[
                     'string',
                 ],
@@ -1872,9 +1872,17 @@ req = operations.UpdateHotelReservationRequest(
             traveler=[
                 shared.Traveler(
                     at_type='TravelerDetail',
+                    person_name=shared.PersonName(
+                        at_type='PersonNameDetail',
+                        surname='Smith',
+                        given='John',
+                        middle='Erick',
+                        prefix='Mr',
+                    ),
                     address=[
                         shared.Address(
                             at_type='AddressDetail',
+                            city='Windsor',
                             address_line=[
                                 'S',
                                 ' ',
@@ -1906,7 +1914,6 @@ req = operations.UpdateHotelReservationRequest(
                                 bulding_ind=True,
                                 value='Moore House, Room 101, 23 ABC Street, Windsor, Berkshire, United Kingdom, SL6 51A',
                             ),
-                            city='Windsor',
                             country=shared.Country(
                                 code_context='IATA',
                                 id='23',
@@ -1933,10 +1940,18 @@ req = operations.UpdateHotelReservationRequest(
                     ],
                     alternate_contact=[
                         shared.AlternateContact(
+                            person_name=shared.PersonName(
+                                at_type='PersonNameDetail',
+                                surname='Smith',
+                                given='John',
+                                middle='Erick',
+                                prefix='Mr',
+                            ),
                             at_type='AlternateContact',
                             address=[
                                 shared.Address(
                                     at_type='AddressDetail',
+                                    city='Windsor',
                                     address_line=[
                                         'S',
                                         ' ',
@@ -1968,7 +1983,6 @@ req = operations.UpdateHotelReservationRequest(
                                         bulding_ind=True,
                                         value='Moore House, Room 101, 23 ABC Street, Windsor, Berkshire, United Kingdom, SL6 51A',
                                     ),
-                                    city='Windsor',
                                     country=shared.Country(
                                         code_context='IATA',
                                         id='23',
@@ -2003,22 +2017,15 @@ req = operations.UpdateHotelReservationRequest(
                                     value='exampledomain@example.com',
                                 ),
                             ],
-                            person_name=shared.PersonName(
-                                at_type='PersonNameDetail',
-                                given='John',
-                                middle='Erick',
-                                prefix='Mr',
-                                surname='Smith',
-                            ),
                             telephone=[
                                 shared.Telephone(
                                     at_type='Telephone',
+                                    phone_number='972-000-787',
                                     area_city_code='972',
                                     city_code='DEN',
                                     country_access_code='1',
                                     extension='234',
                                     id='3',
-                                    phone_number='972-000-787',
                                     role=shared.EnumTelephoneRole.MOBILE,
                                 ),
                             ],
@@ -2075,29 +2082,22 @@ req = operations.UpdateHotelReservationRequest(
                         authority='TVPT',
                         value='A0656EFF-FAF4-456F-B061-0161008D7C4E',
                     ),
-                    person_name=shared.PersonName(
-                        at_type='PersonNameDetail',
-                        given='John',
-                        middle='Erick',
-                        prefix='Mr',
-                        surname='Smith',
-                    ),
                     rail_discount_card=[
                         shared.RailDiscountCard(
-                            reference_number='134256',
                             supplier_code='Enco',
+                            reference_number='134256',
                             value='20 Perecnt',
                         ),
                     ],
                     telephone=[
                         shared.Telephone(
                             at_type='Telephone',
+                            phone_number='972-000-787',
                             area_city_code='972',
                             city_code='DEN',
                             country_access_code='1',
                             extension='234',
                             id='3',
-                            phone_number='972-000-787',
                             role=shared.EnumTelephoneRole.MOBILE,
                         ),
                     ],
@@ -2105,18 +2105,18 @@ req = operations.UpdateHotelReservationRequest(
                         shared.TravelDocument(
                             at_type='TravelDocumentDetail',
                             gender=shared.GenderEnum.UNKNOWN,
-                            nationality='BR',
                             person_name=shared.PersonName(
                                 at_type='PersonNameDetail',
+                                surname='Smith',
                                 given='John',
                                 middle='Erick',
                                 prefix='Mr',
-                                surname='Smith',
                             ),
+                            doc_number='B37201',
+                            nationality='BR',
                             birth_country='AR',
                             birth_date=dateutil.parser.parse('1995-04-22').date(),
                             birth_place='Ontario',
-                            doc_number='B37201',
                             doc_type=shared.DocTypeCodeEnum.PASSPORT,
                             expire_date=dateutil.parser.parse('2002-11-13').date(),
                             id='34',

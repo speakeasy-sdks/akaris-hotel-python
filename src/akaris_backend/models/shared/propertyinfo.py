@@ -23,15 +23,15 @@ class PropertyInfo:
     r"""A monetary amount, up to 4 decimal places. Decimal place needs to be included."""
     property: PropertyDetail = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Property') }})
     at_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
-    availability: Optional[AvailabilityStatusEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('availability'), 'exclude': lambda f: f is None }})
-    r"""Identifies the availability status of an item."""
-    featured_property_ind: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('featuredPropertyInd'), 'exclude': lambda f: f is None }})
-    r"""If present and true then this property was added to the list based on criteria other than those in the request"""
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     identifier: Optional[Identifier] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Identifier'), 'exclude': lambda f: f is None }})
     r"""Identifier provides the ability to create a globally unique identifier. For the identifier to be globally unique it must have a system provided identifier and the system must be identified using a global naming authority. System identification uses the domain naming system (DNS) to assure they are globally unique and should be an URL. The system provided ID will typically be a primary or surrogate key in a database."""
     maximum_available_rate: Optional[MaximumAvailableRate] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('MaximumAvailableRate'), 'exclude': lambda f: f is None }})
     r"""Maximum Available Rate for this Property, including the authority who provided the rate if it is different from the PropertyInfo authority."""
     next_steps: Optional[NextSteps] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('NextSteps'), 'exclude': lambda f: f is None }})
+    availability: Optional[AvailabilityStatusEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('availability'), 'exclude': lambda f: f is None }})
+    r"""Identifies the availability status of an item."""
+    featured_property_ind: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('featuredPropertyInd'), 'exclude': lambda f: f is None }})
+    r"""If present and true then this property was added to the list based on criteria other than those in the request"""
+    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     
 

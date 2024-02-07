@@ -24,26 +24,26 @@ from typing import List, Optional
 class Traveler:
     at_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type') }})
     person_name: PersonName = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PersonName') }})
-    accompanied_by_infant_ind: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accompaniedByInfantInd'), 'exclude': lambda f: f is None }})
     address: Optional[List[Address]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Address'), 'exclude': lambda f: f is None }})
     alternate_contact: Optional[List[AlternateContact]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('AlternateContact'), 'exclude': lambda f: f is None }})
-    birth_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('birthDate'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is None }})
-    r"""Date of Birth YYYY-MM-DD"""
     comments: Optional[Comments] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Comments'), 'exclude': lambda f: f is None }})
     customer_loyalty: Optional[List[CustomerLoyalty]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('CustomerLoyalty'), 'exclude': lambda f: f is None }})
     email: Optional[List[Email]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Email'), 'exclude': lambda f: f is None }})
-    gender: Optional[GenderEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('gender'), 'exclude': lambda f: f is None }})
-    r"""Gender Type Male, Female etc. This field is not used by Hotel APIs and will be ignored"""
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     identifier: Optional[Identifier] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Identifier'), 'exclude': lambda f: f is None }})
     r"""Identifier provides the ability to create a globally unique identifier. For the identifier to be globally unique it must have a system provided identifier and the system must be identified using a global naming authority. System identification uses the domain naming system (DNS) to assure they are globally unique and should be an URL. The system provided ID will typically be a primary or surrogate key in a database."""
-    nationality: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nationality'), 'exclude': lambda f: f is None }})
-    r"""Nationality on country code ISO"""
-    passenger_type_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('passengerTypeCode'), 'exclude': lambda f: f is None }})
-    r"""Passenger type code"""
     rail_discount_card: Optional[List[RailDiscountCard]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('RailDiscountCard'), 'exclude': lambda f: f is None }})
     telephone: Optional[List[Telephone]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Telephone'), 'exclude': lambda f: f is None }})
     travel_document: Optional[List[TravelDocument]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TravelDocument'), 'exclude': lambda f: f is None }})
     traveler_ref: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TravelerRef'), 'exclude': lambda f: f is None }})
+    accompanied_by_infant_ind: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accompaniedByInfantInd'), 'exclude': lambda f: f is None }})
+    birth_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('birthDate'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is None }})
+    r"""Date of Birth YYYY-MM-DD"""
+    gender: Optional[GenderEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('gender'), 'exclude': lambda f: f is None }})
+    r"""Gender Type Male, Female etc. This field is not used by Hotel APIs and will be ignored"""
+    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
+    nationality: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nationality'), 'exclude': lambda f: f is None }})
+    r"""Nationality on country code ISO"""
+    passenger_type_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('passengerTypeCode'), 'exclude': lambda f: f is None }})
+    r"""Passenger type code"""
     
 

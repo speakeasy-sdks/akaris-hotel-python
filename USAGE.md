@@ -16,18 +16,24 @@ req = operations.CreateHotelAvailabilityRequest(
             at_type='CatalogOfferingsRequestHospitality',
             catalog_offerings_request=[
                 shared.CatalogOfferingsRequestHospitality(
+                    stay_dates=shared.DateOrDateWindows(
+                        duration='P1D',
+                        end=dateutil.parser.parse('2023-03-03').date(),
+                        specific=dateutil.parser.parse('2023-03-03').date(),
+                        start=dateutil.parser.parse('2023-03-03').date(),
+                    ),
                     at_type='CatalogOfferingsRequestHospitality',
                     hotel_search_criterion=shared.HotelSearchCriterion(
-                        at_type='HotelSearchCriterion',
                         property_request=[
                             shared.PropertyRequest(
-                                at_type='PropertyRequest',
                                 property_key=shared.PropertyKey(
                                     chain_code='HL',
                                     property_code='string',
                                 ),
+                                at_type='PropertyRequest',
                             ),
                         ],
+                        at_type='HotelSearchCriterion',
                         rate_candidates=shared.RateCandidates(
                             at_type='RateCandidates',
                             rate_candidate=[
@@ -43,7 +49,6 @@ req = operations.CreateHotelAvailabilityRequest(
                             room_stay_candidate=[
                                 shared.RoomStayCandidate(
                                     guest_counts=shared.GuestCounts(
-                                        at_type='GuestCounts',
                                         guest_count=[
                                             shared.GuestCount(
                                                 at_type='GuestCount',
@@ -52,6 +57,7 @@ req = operations.CreateHotelAvailabilityRequest(
                                                 count=2,
                                             ),
                                         ],
+                                        at_type='GuestCounts',
                                     ),
                                     room_amenity=[
                                         shared.RoomAmenity(
@@ -80,12 +86,6 @@ req = operations.CreateHotelAvailabilityRequest(
                     ),
                     search_control_console_channel_id=shared.SearchControlConsoleChannelID(
                         value='2',
-                    ),
-                    stay_dates=shared.DateOrDateWindows(
-                        duration='P1D',
-                        end=dateutil.parser.parse('2023-03-03').date(),
-                        specific=dateutil.parser.parse('2023-03-03').date(),
-                        start=dateutil.parser.parse('2023-03-03').date(),
                     ),
                 ),
             ],

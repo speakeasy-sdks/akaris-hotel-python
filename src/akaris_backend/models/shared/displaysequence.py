@@ -10,10 +10,10 @@ from typing import Optional
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class DisplaySequence:
-    display_sequence: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('displaySequence') }})
-    r"""The sequence the products are to be displayed for sequential date ordering"""
     offer_ref: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('OfferRef') }})
     r"""Offer reference"""
+    display_sequence: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('displaySequence') }})
+    r"""The sequence the products are to be displayed for sequential date ordering"""
     at_type: Optional[str] = dataclasses.field(default='DisplaySequence', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
     product_ref: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ProductRef'), 'exclude': lambda f: f is None }})
     r"""Product reference. If blank, display sequence applies to all products within the Offer."""

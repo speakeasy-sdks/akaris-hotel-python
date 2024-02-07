@@ -15,9 +15,9 @@ from typing import List, Optional
 class HotelSearchCriterion:
     property_request: List[PropertyRequest] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PropertyRequest') }})
     at_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
-    number_of_rooms: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('numberOfRooms'), 'exclude': lambda f: f is None }})
-    r"""Number of rooms requested"""
     rate_candidates: Optional[RateCandidates] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('RateCandidates'), 'exclude': lambda f: f is None }})
     room_stay_candidates: Optional[RoomStayCandidates] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('RoomStayCandidates'), 'exclude': lambda f: f is None }})
+    number_of_rooms: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('numberOfRooms'), 'exclude': lambda f: f is None }})
+    r"""Number of rooms requested"""
     
 

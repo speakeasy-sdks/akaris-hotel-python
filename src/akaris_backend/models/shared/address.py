@@ -18,26 +18,26 @@ class Address:
     at_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type') }})
     city: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('City') }})
     r"""City (e.g., Dublin), town, or postal station (i.e., a postal service territory, often used in a military address)."""
-    addressee: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Addressee'), 'exclude': lambda f: f is None }})
-    r"""The name of the company or person to be addressed"""
     address_line: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('AddressLine'), 'exclude': lambda f: f is None }})
     r"""Additional address line details"""
+    addressee: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Addressee'), 'exclude': lambda f: f is None }})
+    r"""The name of the company or person to be addressed"""
     bldg_room: Optional[AddressBldgRoom] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('BldgRoom'), 'exclude': lambda f: f is None }})
     r"""Address with building and room number"""
     country: Optional[Country] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Country'), 'exclude': lambda f: f is None }})
     r"""ISO 3166 code for a country with optional name"""
     county: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('County'), 'exclude': lambda f: f is None }})
     r"""County or Region Name (e.g., Fairfax)."""
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
-    r"""Internally referenced id"""
     number: Optional[AddressStreetNumber] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Number'), 'exclude': lambda f: f is None }})
     r"""The street number alone is the numerical number that precedes the street name in the address"""
     postal_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PostalCode'), 'exclude': lambda f: f is None }})
     r"""Post Office Code number."""
-    role: Optional[EnumAddressRole] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('role'), 'exclude': lambda f: f is None }})
     state_prov: Optional[StateProv] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('StateProv'), 'exclude': lambda f: f is None }})
     r"""The standard code or abbreviation for the state, province, or region with optional name"""
     street: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Street'), 'exclude': lambda f: f is None }})
     r"""May contain the street number when the Street number element is missing."""
+    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
+    r"""Internally referenced id"""
+    role: Optional[EnumAddressRole] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('role'), 'exclude': lambda f: f is None }})
     
 

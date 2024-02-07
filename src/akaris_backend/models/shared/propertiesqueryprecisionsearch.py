@@ -39,12 +39,12 @@ class PropertiesQueryPrecisionSearch:
     r"""If true, return Properties with at least one refundable rate."""
     requested_currency: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('RequestedCurrency'), 'exclude': lambda f: f is None }})
     r"""You can use requested currency to request conversion rate information. The response will return the currencyRateConversion object which will contain conversion rate of the requested currency."""
-    return_all_images_ind: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('returnAllImagesInd'), 'exclude': lambda f: f is None }})
-    r"""If true, all property images of the size requested will be returned. If blank or false the best single property image will be returned."""
     room_stay_candidate: Optional[List[RoomStayCandidate]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('RoomStayCandidate'), 'exclude': lambda f: f is None }})
     smoking_ind: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('SmokingInd'), 'exclude': lambda f: f is None }})
     r"""If true, return Properties with at least one rate for a smoking room."""
     sort_order: Optional[HotelSortOrderEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('SortOrder'), 'exclude': lambda f: f is None }})
     r"""The method to be used in sorting hotel properties"""
+    return_all_images_ind: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('returnAllImagesInd'), 'exclude': lambda f: f is None }})
+    r"""If true, all property images of the size requested will be returned. If blank or false the best single property image will be returned."""
     
 

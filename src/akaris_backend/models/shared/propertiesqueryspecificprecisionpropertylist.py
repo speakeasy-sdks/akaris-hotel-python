@@ -17,34 +17,34 @@ from typing import List, Optional
 @dataclasses.dataclass
 class PropertiesQuerySpecificPrecisionPropertyList:
     at_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type') }})
+    property_key: List[PropertyKey] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PropertyKey') }})
     checkin_date: date = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('checkinDate'), 'encoder': utils.dateisoformat(False), 'decoder': utils.datefromisoformat }})
     r"""Checkin date"""
     checkout_date: date = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('checkoutDate'), 'encoder': utils.dateisoformat(False), 'decoder': utils.datefromisoformat }})
     r"""Checkout date"""
     number_of_guests: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('numberOfGuests') }})
     r"""Number of travelers. Must be a numeric value between 1 and 9."""
-    property_key: List[PropertyKey] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PropertyKey') }})
     commissionable_ind: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('CommissionableInd'), 'exclude': lambda f: f is None }})
     r"""If true, return Properties with at least one commissionable rate."""
+    meals_included: Optional[MealsIncluded] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('MealsIncluded'), 'exclude': lambda f: f is None }})
+    r"""Indicates if a meal is included"""
+    rate_candidates: Optional[RateCandidates] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('RateCandidates'), 'exclude': lambda f: f is None }})
+    refundable_ind: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('RefundableInd'), 'exclude': lambda f: f is None }})
+    r"""If true, return Properties with at least one refundable rate."""
+    room_stay_candidates: Optional[RoomStayCandidates] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('RoomStayCandidates'), 'exclude': lambda f: f is None }})
+    smoking_ind: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('SmokingInd'), 'exclude': lambda f: f is None }})
+    r"""If true, return Properties with at least one rate for a smoking room."""
     image_size: Optional[ImageSizeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('imageSize'), 'exclude': lambda f: f is None }})
     r"""Indicates the size of the image. Hospitality APIs no longer support thumbnail"""
     maximum_rate: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maximumRate'), 'exclude': lambda f: f is None }})
     r"""Maximum rate"""
-    meals_included: Optional[MealsIncluded] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('MealsIncluded'), 'exclude': lambda f: f is None }})
-    r"""Indicates if a meal is included"""
     minimum_rate: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('minimumRate'), 'exclude': lambda f: f is None }})
     r"""Minimum rate"""
     number_of_rooms: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('numberOfRooms'), 'exclude': lambda f: f is None }})
     r"""Number of rooms"""
-    rate_candidates: Optional[RateCandidates] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('RateCandidates'), 'exclude': lambda f: f is None }})
-    refundable_ind: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('RefundableInd'), 'exclude': lambda f: f is None }})
-    r"""If true, return Properties with at least one refundable rate."""
     requested_currency: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requestedCurrency'), 'exclude': lambda f: f is None }})
     r"""You can use requested currency to request conversion rate information. The response will return the currencyRateConversion object which will contain conversion rate of the requested currency."""
     return_all_images_ind: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('returnAllImagesInd'), 'exclude': lambda f: f is None }})
     r"""If true, all property images of the size requested will be returned. If blank or false the best single property image will be returned."""
-    room_stay_candidates: Optional[RoomStayCandidates] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('RoomStayCandidates'), 'exclude': lambda f: f is None }})
-    smoking_ind: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('SmokingInd'), 'exclude': lambda f: f is None }})
-    r"""If true, return Properties with at least one rate for a smoking room."""
     
 

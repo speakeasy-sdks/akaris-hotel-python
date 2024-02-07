@@ -11,9 +11,9 @@ from typing import List, Optional
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class NextSteps:
+    next_step: List[NextStep] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('NextStep') }})
     base_uri: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('baseURI') }})
     r"""The base portion of the uri in order to shorten the uri's in the individual steps"""
-    next_step: List[NextStep] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('NextStep') }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     r"""Optional internally referenced id"""
     

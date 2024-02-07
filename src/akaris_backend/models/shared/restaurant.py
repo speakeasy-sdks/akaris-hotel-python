@@ -14,10 +14,10 @@ class Restaurant:
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""The name of the restaurant"""
     at_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
-    cuisine_codes: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cuisineCodes'), 'exclude': lambda f: f is None }})
-    r"""An OTA code to define the cuisine type"""
     distance: Optional[Distance] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Distance'), 'exclude': lambda f: f is None }})
     r"""A search radius"""
+    cuisine_codes: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cuisineCodes'), 'exclude': lambda f: f is None }})
+    r"""An OTA code to define the cuisine type"""
     proximity_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('proximityCode'), 'exclude': lambda f: f is None }})
     r"""An OTA proximity code"""
     
