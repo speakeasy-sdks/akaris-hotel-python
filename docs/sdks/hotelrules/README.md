@@ -24,58 +24,7 @@ s = akaris_backend.AkarisBackend(
 )
 
 req = operations.BuildFromCatalogOfferingsRequest(
-    offer_query_build_from_catalog_offerings_hospitality_wrapper=shared.OfferQueryBuildFromCatalogOfferingsHospitalityWrapper(
-        offer_query_build_from_catalog_offerings_hospitality=shared.OfferQueryBuildFromCatalogOfferingsHospitality(
-            at_type='OfferQueryBuildFromCatalogOfferingsHospitality',
-            build_from_catalog_offerings_request=shared.BuildFromCatalogOfferingsRequest(
-                at_type='BuildFromCatalogOfferingsRequestAir',
-                catalog_offering_identifier=shared.CatalogOfferingIdentifier(
-                    catalog_offering_ref='co1',
-                    identifier=shared.Identifier(
-                        authority='TVPT',
-                        value='A0656EFF-FAF4-456F-B061-0161008D7C4E',
-                    ),
-                    id='co1',
-                ),
-                catalog_offerings_identifier=shared.CatalogOfferingsIdentifier(
-                    identifier=shared.Identifier(
-                        authority='TVPT',
-                        value='A0656EFF-FAF4-456F-B061-0161008D7C4E',
-                    ),
-                    id='CatalogOfferings_1',
-                ),
-                product_identifier=[
-                    shared.ProductIdentifier(
-                        identifier=shared.Identifier(
-                            authority='TVPT',
-                            value='A0656EFF-FAF4-456F-B061-0161008D7C4E',
-                        ),
-                        id='product_1',
-                        product_ref='product_1',
-                    ),
-                    shared.ProductIdentifier(
-                        identifier=shared.Identifier(
-                            authority='TVPT',
-                            value='A0656EFF-FAF4-456F-B061-0161008D7C4E',
-                        ),
-                        id='product_1',
-                        product_ref='product_1',
-                    ),
-                ],
-                ancillary_offering_identifier=[
-                    shared.AncillaryOfferingIdentifier(
-                        ancillary_offering_ref='AN1',
-                        catalog_offering_ref='CO1',
-                        identifier=shared.Identifier(
-                            authority='TVPT',
-                            value='A0656EFF-FAF4-456F-B061-0161008D7C4E',
-                        ),
-                        id='AN1',
-                    ),
-                ],
-            ),
-        ),
-    ),
+    offer_query_build_from_catalog_offerings_hospitality_wrapper=shared.OfferQueryBuildFromCatalogOfferingsHospitalityWrapper(),
 )
 
 res = s.hotel_rules.build_from_catalog_offerings(req)
@@ -119,19 +68,7 @@ s = akaris_backend.AkarisBackend(
 )
 
 req = operations.BuildHotelRulesFromCatalogOfferingRequest(
-    offer_query_build_from_catalog_offering_wrapper=shared.OfferQueryBuildFromCatalogOfferingWrapper(
-        offer_query_build_from_catalog_offering=shared.OfferQueryBuildFromCatalogOffering(
-            at_type='OfferQueryBuildFromCatalogOffering',
-            build_from_catalog_offering_hospitality=shared.BuildFromCatalogOfferingHospitality(
-                at_type='BuildFromCatalogOfferingHospitality',
-                catalog_offering_identifier=shared.Identifier(
-                    authority='TVPT',
-                    value='A0656EFF-FAF4-456F-B061-0161008D7C4E',
-                ),
-                number_of_rooms=1,
-            ),
-        ),
-    ),
+    offer_query_build_from_catalog_offering_wrapper=shared.OfferQueryBuildFromCatalogOfferingWrapper(),
 )
 
 res = s.hotel_rules.build_hotel_rules_from_catalog_offering(req)
@@ -166,7 +103,6 @@ Full Payload hotel rules request
 
 ```python
 import akaris_backend
-import dateutil.parser
 from akaris_backend.models import operations, shared
 
 s = akaris_backend.AkarisBackend(
@@ -176,50 +112,7 @@ s = akaris_backend.AkarisBackend(
 )
 
 req = operations.CreateHotelRulesRequest(
-    offer_query_hospitality_request_wrapper=shared.OfferQueryHospitalityRequestWrapper(
-        offer_query_hospitality_request=shared.OfferQueryHospitalityRequest(
-            at_type='OfferQueryHospitalityRequest',
-            property_key=shared.PropertyKey(
-                chain_code='HL',
-                property_code='string',
-            ),
-            checkin_date=dateutil.parser.parse('2024-10-05').date(),
-            checkout_date=dateutil.parser.parse('2022-06-10').date(),
-            number_of_guests=524055,
-            rate_candidate=shared.RateCandidate(
-                at_type='RateCandidate',
-                chain_code='HL',
-                property_code='HL12345',
-                rate_code='HL123',
-            ),
-            room_stay_candidates=shared.RoomStayCandidates(
-                room_stay_candidate=[
-                    shared.RoomStayCandidate(
-                        guest_counts=shared.GuestCounts(
-                            guest_count=[
-                                shared.GuestCount(
-                                    at_type='GuestCount',
-                                    age=21,
-                                    age_qualifying_code='10',
-                                    count=2,
-                                ),
-                            ],
-                            at_type='GuestCounts',
-                        ),
-                        room_amenity=[
-                            shared.RoomAmenity(
-                                inclusion=[
-                                    'string',
-                                ],
-                                name='24 hour Room Service',
-                                description='WiFi',
-                            ),
-                        ],
-                    ),
-                ],
-            ),
-        ),
-    ),
+    offer_query_hospitality_request_wrapper=shared.OfferQueryHospitalityRequestWrapper(),
 )
 
 res = s.hotel_rules.create_hotel_rules(req)

@@ -14,7 +14,6 @@ Hotel Availability returns room types and rates available at one or more specifi
 
 ```python
 import akaris_backend
-import dateutil.parser
 from akaris_backend.models import operations, shared
 
 s = akaris_backend.AkarisBackend(
@@ -24,86 +23,7 @@ s = akaris_backend.AkarisBackend(
 )
 
 req = operations.CreateHotelAvailabilityRequest(
-    catalog_offerings_query_request_hospitality_wrapper=shared.CatalogOfferingsQueryRequestHospitalityWrapper(
-        catalog_offerings_query_request=shared.CatalogOfferingsQueryRequest(
-            at_type='CatalogOfferingsRequestHospitality',
-            catalog_offerings_request=[
-                shared.CatalogOfferingsRequestHospitality(
-                    stay_dates=shared.DateOrDateWindows(
-                        duration='P1D',
-                        end=dateutil.parser.parse('2023-03-03').date(),
-                        specific=dateutil.parser.parse('2023-03-03').date(),
-                        start=dateutil.parser.parse('2023-03-03').date(),
-                    ),
-                    at_type='CatalogOfferingsRequestHospitality',
-                    hotel_search_criterion=shared.HotelSearchCriterion(
-                        property_request=[
-                            shared.PropertyRequest(
-                                property_key=shared.PropertyKey(
-                                    chain_code='HL',
-                                    property_code='string',
-                                ),
-                                at_type='PropertyRequest',
-                            ),
-                        ],
-                        at_type='HotelSearchCriterion',
-                        rate_candidates=shared.RateCandidates(
-                            at_type='RateCandidates',
-                            rate_candidate=[
-                                shared.RateCandidate(
-                                    at_type='RateCandidate',
-                                    chain_code='HL',
-                                    property_code='HL12345',
-                                    rate_code='HL123',
-                                ),
-                            ],
-                        ),
-                        room_stay_candidates=shared.RoomStayCandidates(
-                            room_stay_candidate=[
-                                shared.RoomStayCandidate(
-                                    guest_counts=shared.GuestCounts(
-                                        guest_count=[
-                                            shared.GuestCount(
-                                                at_type='GuestCount',
-                                                age=21,
-                                                age_qualifying_code='10',
-                                                count=2,
-                                            ),
-                                        ],
-                                        at_type='GuestCounts',
-                                    ),
-                                    room_amenity=[
-                                        shared.RoomAmenity(
-                                            inclusion=[
-                                                'string',
-                                            ],
-                                            name='24 hour Room Service',
-                                            description='WiFi',
-                                        ),
-                                    ],
-                                ),
-                            ],
-                        ),
-                    ),
-                    maximum_amount=shared.CurrencyAmount(
-                        approximate_ind=True,
-                        code='USD',
-                        minor_unit=2,
-                        value=124.56,
-                    ),
-                    minimum_amount=shared.CurrencyAmount(
-                        approximate_ind=True,
-                        code='USD',
-                        minor_unit=2,
-                        value=124.56,
-                    ),
-                    search_control_console_channel_id=shared.SearchControlConsoleChannelID(
-                        value='2',
-                    ),
-                ),
-            ],
-        ),
-    ),
+    catalog_offerings_query_request_hospitality_wrapper=shared.CatalogOfferingsQueryRequestHospitalityWrapper(),
 )
 
 res = s.hotel_availability.create_hotel_availability(req)
@@ -147,19 +67,7 @@ s = akaris_backend.AkarisBackend(
 )
 
 req = operations.HotelAvailabilityFromPropertiesRequest(
-    catalog_offerings_query_build_from_properties_wrapper=shared.CatalogOfferingsQueryBuildFromPropertiesWrapper(
-        catalog_offerings_query_build_from_properties=shared.CatalogOfferingsQueryBuildFromProperties(
-            build_from_catalog_offering_hospitality=shared.BuildFromProperties(
-                propert_info_ids=[
-                    'ON-60106',
-                ],
-                properties_identifier=shared.Identifier(
-                    authority='TVPT',
-                    value='A0656EFF-FAF4-456F-B061-0161008D7C4E',
-                ),
-            ),
-        ),
-    ),
+    catalog_offerings_query_build_from_properties_wrapper=shared.CatalogOfferingsQueryBuildFromPropertiesWrapper(),
 )
 
 res = s.hotel_availability.hotel_availability_from_properties(req)

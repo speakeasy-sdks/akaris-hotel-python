@@ -16,7 +16,6 @@ The Hotel Search by ID request searches for hotels by search by one or more prop
 
 ```python
 import akaris_backend
-import dateutil.parser
 from akaris_backend.models import operations, shared
 
 s = akaris_backend.AkarisBackend(
@@ -26,57 +25,7 @@ s = akaris_backend.AkarisBackend(
 )
 
 req = operations.CreateRequest(
-    properties_query_specific_property_list_wrapper=shared.PropertiesQuerySpecificPropertyListWrapper(
-        properties_query_specific_property_list=shared.PropertiesQuerySpecificPropertyList(
-            at_type='PropertiesQuerySpecificPropertyList',
-            property_key=[
-                shared.PropertyKey(
-                    chain_code='HL',
-                    property_code='string',
-                ),
-            ],
-            checkin_date=dateutil.parser.parse('2023-06-12').date(),
-            checkout_date=dateutil.parser.parse('2024-06-06').date(),
-            number_of_guests=264917,
-            rate_candidates=shared.RateCandidates(
-                at_type='RateCandidates',
-                rate_candidate=[
-                    shared.RateCandidate(
-                        at_type='RateCandidate',
-                        chain_code='HL',
-                        property_code='HL12345',
-                        rate_code='HL123',
-                    ),
-                ],
-            ),
-            room_stay_candidates=shared.RoomStayCandidates(
-                room_stay_candidate=[
-                    shared.RoomStayCandidate(
-                        guest_counts=shared.GuestCounts(
-                            guest_count=[
-                                shared.GuestCount(
-                                    at_type='GuestCount',
-                                    age=21,
-                                    age_qualifying_code='10',
-                                    count=2,
-                                ),
-                            ],
-                            at_type='GuestCounts',
-                        ),
-                        room_amenity=[
-                            shared.RoomAmenity(
-                                inclusion=[
-                                    'string',
-                                ],
-                                name='24 hour Room Service',
-                                description='WiFi',
-                            ),
-                        ],
-                    ),
-                ],
-            ),
-        ),
-    ),
+    properties_query_specific_property_list_wrapper=shared.PropertiesQuerySpecificPropertyListWrapper(),
 )
 
 res = s.search_hotel.create(req)
@@ -201,7 +150,6 @@ The Hotel Search by Location request searches for hotels by (a) geographic coord
 
 ```python
 import akaris_backend
-import dateutil.parser
 from akaris_backend.models import operations, shared
 
 s = akaris_backend.AkarisBackend(
@@ -211,60 +159,7 @@ s = akaris_backend.AkarisBackend(
 )
 
 req = operations.SearchPropertiesRequest(
-    properties_query_search_wrapper=shared.PropertiesQuerySearchWrapper(
-        properties_query_search=shared.PropertiesQuerySearch(
-            at_type='PropertiesQuerySearch',
-            check_in_date=dateutil.parser.parse('2023-11-19').date(),
-            check_out_date=dateutil.parser.parse('2023-10-26').date(),
-            search_by=shared.SearchBy(
-                at_type='SearchBy',
-                search_radius=shared.Distance(
-                    value=25,
-                ),
-            ),
-            chain_codes=[
-                'string',
-            ],
-            property_amenity_code=[
-                'string',
-            ],
-            rate_candidates=shared.RateCandidates(
-                at_type='RateCandidates',
-                rate_candidate=[
-                    shared.RateCandidate(
-                        at_type='RateCandidate',
-                        chain_code='HL',
-                        property_code='HL12345',
-                        rate_code='HL123',
-                    ),
-                ],
-            ),
-            room_stay_candidate=[
-                shared.RoomStayCandidate(
-                    guest_counts=shared.GuestCounts(
-                        guest_count=[
-                            shared.GuestCount(
-                                at_type='GuestCount',
-                                age=21,
-                                age_qualifying_code='10',
-                                count=2,
-                            ),
-                        ],
-                        at_type='GuestCounts',
-                    ),
-                    room_amenity=[
-                        shared.RoomAmenity(
-                            inclusion=[
-                                'string',
-                            ],
-                            name='24 hour Room Service',
-                            description='WiFi',
-                        ),
-                    ],
-                ),
-            ],
-        ),
-    ),
+    properties_query_search_wrapper=shared.PropertiesQuerySearchWrapper(),
 )
 
 res = s.search_hotel.search_properties(req)
