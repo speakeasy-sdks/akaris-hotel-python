@@ -69,8 +69,8 @@ s = akaris_backend.AkarisBackend(
 )
 
 req = operations.GetPropertiesDetailRequest(
-    chain_code='string',
-    property_code='string',
+    chain_code='<value>',
+    property_code='<value>',
 )
 
 res = s.search_hotel.get_properties_detail(req)
@@ -114,8 +114,8 @@ s = akaris_backend.AkarisBackend(
 )
 
 req = operations.GetPropertiesPageRequest(
-    identifier='string',
-    page_number='string',
+    identifier='<value>',
+    page_number='<value>',
 )
 
 res = s.search_hotel.get_properties_page(req)

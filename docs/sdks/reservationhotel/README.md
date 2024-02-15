@@ -70,7 +70,7 @@ s = akaris_backend.AkarisBackend(
 )
 
 req = operations.CancelHotelOfferRequest(
-    reservation_identifier='string',
+    reservation_identifier='<value>',
 )
 
 res = s.reservation_hotel.cancel_hotel_offer(req)
@@ -158,7 +158,7 @@ s = akaris_backend.AkarisBackend(
 )
 
 req = operations.RetrieveHotelReservationRequest(
-    identifier='string',
+    identifier='<value>',
     identifier_type=shared.IdentifierTypeENUM.LOCATOR,
 )
 
@@ -203,7 +203,7 @@ s = akaris_backend.AkarisBackend(
 )
 
 req = operations.UpdateHotelReservationRequest(
-    identifier='string',
+    identifier='<value>',
     reservation_detail_wrapper=shared.ReservationDetailWrapper(),
 )
 
