@@ -4,17 +4,17 @@ management:
   docChecksum: 998f6552c41b6b3b7ff66d3f2d784f6a
   docVersion: 11.11.0
   speakeasyVersion: internal
-  generationVersion: 2.272.4
-  releaseVersion: 0.9.2
-  configChecksum: a75f1bf4329ebc6663bf5e73f6d61a16
+  generationVersion: 2.275.4
+  releaseVersion: 0.10.0
+  configChecksum: c0aa89ad0a5a01118a5de844a354dfc8
   repoURL: https://github.com/speakeasy-sdks/akaris-hotel-python.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/akaris-hotel-python.git
 features:
   python:
     constsAndDefaults: 0.1.2
-    core: 4.4.7
-    globalSecurity: 2.83.3
+    core: 4.5.0
+    globalSecurity: 2.83.4
     globalServerURLs: 2.82.1
 generatedFiles:
   - src/akaris_backend/sdkconfiguration.py
@@ -542,3 +542,6 @@ generatedFiles:
   - docs/sdks/precisionsearchhotel/README.md
   - USAGE.md
   - .gitattributes
+  - src/akaris_backend/_hooks/sdkhooks.py
+  - src/akaris_backend/_hooks/types.py
+  - src/akaris_backend/_hooks/__init__.py
