@@ -32,6 +32,7 @@ res = s.hotel_rules.build_from_catalog_offerings(req)
 if res.offer_hospitality_response_wrapper is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -76,6 +77,7 @@ res = s.hotel_rules.build_hotel_rules_from_catalog_offering(req)
 if res.offer_hospitality_response_wrapper is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -120,6 +122,7 @@ res = s.hotel_rules.create_hotel_rules(req)
 if res.offer_hospitality_response_wrapper is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

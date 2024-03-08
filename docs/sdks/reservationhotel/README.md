@@ -34,6 +34,7 @@ res = s.reservation_hotel.build_hotel_reservation(req)
 if res.reservation_response_wrapper is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -78,6 +79,7 @@ res = s.reservation_hotel.cancel_hotel_offer(req)
 if res.reservation_response_wrapper is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -122,6 +124,7 @@ res = s.reservation_hotel.create_hotel_reservation(req)
 if res.reservation_response_wrapper is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -167,6 +170,7 @@ res = s.reservation_hotel.retrieve_hotel_reservation(req)
 if res.reservation_response_wrapper is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -212,6 +216,7 @@ res = s.reservation_hotel.update_hotel_reservation(req)
 if res.reservation_response_wrapper is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

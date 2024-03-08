@@ -3,19 +3,20 @@ id: de716a7b-1c11-48d1-9eee-e5a2748e4064
 management:
   docChecksum: 998f6552c41b6b3b7ff66d3f2d784f6a
   docVersion: 11.11.0
-  speakeasyVersion: internal
-  generationVersion: 2.275.4
-  releaseVersion: 0.10.0
-  configChecksum: c0aa89ad0a5a01118a5de844a354dfc8
+  speakeasyVersion: 1.204.1
+  generationVersion: 2.279.1
+  releaseVersion: 0.11.0
+  configChecksum: 989e41582a791da4bd3c1ebc28117c69
   repoURL: https://github.com/speakeasy-sdks/akaris-hotel-python.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/akaris-hotel-python.git
 features:
   python:
-    constsAndDefaults: 0.1.2
-    core: 4.5.0
+    constsAndDefaults: 0.1.3
+    core: 4.5.1
     globalSecurity: 2.83.4
     globalServerURLs: 2.82.1
+    responseFormat: 0.1.0
 generatedFiles:
   - src/akaris_backend/sdkconfiguration.py
   - src/akaris_backend/hotel_availability.py
@@ -24,6 +25,7 @@ generatedFiles:
   - src/akaris_backend/search_hotel.py
   - src/akaris_backend/precision_search_hotel.py
   - src/akaris_backend/sdk.py
+  - py.typed
   - pylintrc
   - setup.py
   - src/akaris_backend/__init__.py

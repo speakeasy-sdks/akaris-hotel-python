@@ -31,6 +31,7 @@ res = s.precision_search_hotel.create_precision(req)
 if res.properties_response_wrapper is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -75,6 +76,7 @@ res = s.precision_search_hotel.precision_search_properties(req)
 if res.properties_response_wrapper is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

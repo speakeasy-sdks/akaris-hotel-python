@@ -38,6 +38,7 @@ res = s.hotel_availability.create_hotel_availability(req)
 if res.catalog_offerings_hospitality_response_wrapper is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->
 
@@ -117,6 +118,7 @@ except errors.SDKError as e:
 if res.catalog_offerings_hospitality_response_wrapper is not None:
     # handle response
     pass
+
 ```
 <!-- End Error Handling [errors] -->
 
@@ -156,6 +158,7 @@ res = s.hotel_availability.create_hotel_availability(req)
 if res.catalog_offerings_hospitality_response_wrapper is not None:
     # handle response
     pass
+
 ```
 
 
@@ -182,6 +185,7 @@ res = s.hotel_availability.create_hotel_availability(req)
 if res.catalog_offerings_hospitality_response_wrapper is not None:
     # handle response
     pass
+
 ```
 <!-- End Server Selection [server] -->
 
@@ -236,6 +240,7 @@ res = s.hotel_availability.create_hotel_availability(req)
 if res.catalog_offerings_hospitality_response_wrapper is not None:
     # handle response
     pass
+
 ```
 <!-- End Authentication [security] -->
 
